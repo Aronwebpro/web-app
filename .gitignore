@@ -5,11 +5,8 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
 # production
-/build
+.deploy/
 
 # misc
 .DS_Store
@@ -25,9 +22,3 @@ yarn-error.log*
 # Editor indexes
 .idea/
 .idea/*/**
-
-# Firebase Configuration
-src/firebase.js
-.firebaserc
-.firebase/
-firebase.json
