@@ -1,11 +1,4 @@
 import React from 'react';
-import HeroImg from './hero_img';
-// import ArticleCard from '../../mixins/articleCard/articleCard.jsx';
-//
-// //Model Scroller
-// import ModelScroller from '../../modelScroller/modelScroller.jsx';
-// import modelItems from '../../../modelItems.json';
-
 
 class Home extends React.Component {
     state = {
@@ -15,7 +8,6 @@ class Home extends React.Component {
     render() {
         return (
             <div className="home-content">
-                <HeroImg articles={this.state.articles} />
                 <div className="content" style={{ minHeight: '90vh', paddingTop: '0px' }}>
                     <section className="content-header">
                         <div className="container">
@@ -32,7 +24,7 @@ class Home extends React.Component {
                         </div>
                     </section>
                     <section className="statements">
-                        {/*{this.state.articles.map(article => <ArticleCard {...article} key={article.title} />)}*/}
+
                     </section>
                     <section>
                         <div className="body-content">
@@ -41,7 +33,6 @@ class Home extends React.Component {
                                     TECH NEWS
                                 </h2>
                             </div>
-                            {/*<ModelScroller id={'scroller'} count={4} items={modelItems} />*/}
                         </div>
                     </section>
                 </div>

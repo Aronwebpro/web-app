@@ -19,7 +19,7 @@ class Header extends Component {
 
 
     render() {
-        const isLoggedIn = this.props.isLoggedIn();
+        const isLoggedIn = false;
 
         return (
             <header style={{ top: this.state.top, position: 'fixed' }}>
@@ -122,7 +122,7 @@ class Header extends Component {
                 {flash}
             </div>
         )
-    }
+    };
 
     stickHeader = () => {
         const top = window.scrollY;
