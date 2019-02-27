@@ -1,7 +1,6 @@
 /*Put your style*/
 /*@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);*/
-@import url('https://fonts.googleapis.com/css?family=Cormorant:500');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,600');
+
 
 :root {
     --base: #fff;
@@ -57,106 +56,6 @@ a:active {
 
 .content {
     padding-top: 110px;
-}
-
-/*Header********************/
-header {
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    width: 100%;
-    transition: all 0.7s;
-}
-
-/*#logo {*/
-/*	height: 80px;*/
-/*	width: 100%;*/
-/*	background-color: rgba(255, 255, 255, 0.93);*/
-/* position: absolute; */
-/*	left: 0;*/
-/*	margin: 0;*/
-/*	color: #0e3757;*/
-/*	text-align: left;*/
-/* border-bottom: 2px solid white; */
-/*	z-index: 10;*/
-/*	border-bottom: 1px solid var(--base);*/
-/*}*/
-
-.top-row {
-    display: block;
-    position: relative;
-    background-color: #0e3757;
-    background-color: var(--base);
-}
-
-.top-row:after {
-    content: '';
-    display: block;
-    height: 10px;
-    width: 100%;
-    /*background: linear-gradient(90deg, #267570 0%, #7d3a8e 20%, #d89cb3 60%, #bb900c 85%, #3b983b 95%);*/
-    background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%);
-}
-
-.login-wrapper {
-    color: #000;
-    padding: 9px 0px;
-    margin-right: 2%;
-}
-
-.login-wrapper label {
-    margin: 0 6px;
-}
-
-.login-wrapper input {
-    height: 20px;
-}
-
-.login-wrapper button {
-    margin: 0 0 0 6px;
-    padding: 3px 12px;
-}
-
-input[type="submit"].top-row_login {
-    height: auto;
-    width: auto;
-    color: #b52525;
-    padding: 2px;
-    margin-left: 15px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    background-color: transparent;
-    padding: 5px 5px;
-    box-sizing: content-box;
-}
-
-input[type="submit"].top-row_login:hover, input[type="submit"].top-row_login:active {
-    /*background-color: rgba(177, 177, 177, 0.66);*/
-    border: 1px solid #b52525;
-
-}
-
-.header-body {
-    background-color: #1b1a1a;
-    color: white;
-    height: 70px;
-    transition: all 0.6s;
-}
-
-.header-body-inner {
-    transition: all 0.6s;
-    /*height: 100%;*/
-}
-
-.title-wrapper h1 {
-    margin-left: 5%;
-    padding-top: 10px;
-    font-family: 'Cormorant', serif;
-}
-
-.title-wrapper img {
-    margin-left: 3%;
-    transform: translateY(25%);
 }
 
 /*Home page ***********************************************************/

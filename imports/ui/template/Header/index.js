@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+
+//Components
 import Menu from '../../components/Menu';
+
+//Styles
+import './header.css';
 
 export default class Header extends Component {
     state = {
@@ -21,7 +26,6 @@ export default class Header extends Component {
             <header style={{ top: this.state.top, position: 'fixed' }}>
                 <div className="top-row">
                     <div ref={(input) => this.loginRow = input} className="login-wrapper right">
-                        {/*{this.flash(this.state.status, this.state.flashMessage)}*/}
                         <form style={{ display: 'inline-block' }} onSubmit={this.login}>
                             <label htmlFor="username">Username:</label>
                             <input
@@ -45,7 +49,7 @@ export default class Header extends Component {
                             style={{ marginTop: this.state.headerMobileInnerMarginTop }}
                         >
                             <h1 style={{ display: 'inline-block' }}>
-                                ZIPPY <span style={{ color: 'red' }}>WHALE</span>
+                                I'M APP <span style={{ color: 'red' }}>BREWER</span>
                             </h1>
                             <img src={'/img/zippy_whale.png'} alt="logo" id="site-logo"/>
                             <div className="mobile-login_button">
