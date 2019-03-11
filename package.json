@@ -12,6 +12,7 @@
     "antd": "^3.10.3",
     "aphrodite": "^2.2.3",
     "jsonwebtoken": "^8.3.0",
+    "less": "^3.9.0",
     "meteor-node-stubs": "^0.3.3",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
