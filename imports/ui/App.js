@@ -16,7 +16,7 @@ import Header from '../ui/template/Header';
 import { logOut } from '../api/logout';
 
 //Styles
-import '../../assets/css/theme.css';
+//import '../../assets/css/theme.css';
 
 class App extends React.Component {
     state = {

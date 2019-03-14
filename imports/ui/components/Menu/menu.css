@@ -46,7 +46,7 @@
 }
 
 .menu .menu-link a:hover {
-    color: #000;
+    /*color: #20232a;*/
     background: transparent;
     background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%) fixed;
     transition: all 0.5s;

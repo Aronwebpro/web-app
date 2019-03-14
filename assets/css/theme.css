@@ -1,8 +1,3 @@
-/*Put your style*/
-/*@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);*/
-@import url('https://fonts.googleapis.com/css?family=Cormorant:500');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,600');
-
 :root {
     --base: #fff;
     --borders: #460909;
@@ -14,11 +9,11 @@
 body {
     padding: 0;
     margin: 0;
-    /*font-family: 'Quattrocento Sans', sans-serif;*/
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     background-color: rgb(245, 245, 245);
     font-weight: 300;
+    min-height: 1100px;
 }
 
 h1,
@@ -53,7 +48,7 @@ a:active {
 }
 
 .content {
-    padding-top: 110px;
+    padding-top: 130px;
 }
 
 /******************** Header ********************/
@@ -68,6 +63,7 @@ header {
 .header-body {
     display: flex;
     /*background-color: #1b1a1a;*/
+    background-color: #20232a;
     color: white;
     transition: all 0.6s;
 }
@@ -76,7 +72,6 @@ header {
     flex: 1;
     display: flex;
     transition: all 0.6s;
-    /*height: 100%;*/
 }
 
 .menu-wrapper {
@@ -110,63 +105,9 @@ img#site-logo {
     width: 100%;
     height: auto;
 }
-.login-section {
-    display: block;
-    position: relative;
-    background-color: #fff;
-}
 
-.login-section:after {
-    content: '';
-    display: block;
-    height: 10px;
-    width: 100%;
-    /*background: linear-gradient(90deg, #267570 0%, #7d3a8e 20%, #d89cb3 60%, #bb900c 85%, #3b983b 95%);*/
-    background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%);
-}
-
-.login-wrapper {
-    color: #000;
-    padding: 9px 0px;
-    margin-right: 2%;
-}
-
-.login-wrapper label {
-    margin: 0 6px;
-}
-
-.login-wrapper input {
-    height: 20px;
-}
-
-.login-wrapper button {
-    margin: 0 0 0 6px;
-    padding: 3px 12px;
-}
-
-input[type="submit"].top-row_login {
-    height: auto;
-    width: auto;
-    color: #b52525;
-    padding: 2px;
-    margin-left: 15px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    background-color: transparent;
-    padding: 5px 5px;
-    box-sizing: content-box;
-}
-
-input[type="submit"].top-row_login:hover, input[type="submit"].top-row_login:active {
-    /*background-color: rgba(177, 177, 177, 0.66);*/
-    border: 1px solid #b52525;
-
-}
 
 /*Home page ***********************************************************/
-.home-content {
-    margin-top: -110px;
-}
 
 /*Hero Image */
 #hero-img {
@@ -176,7 +117,7 @@ input[type="submit"].top-row_login:hover, input[type="submit"].top-row_login:act
     background-repeat: no-repeat;
     background-size: cover;
     /*filter: contrast(100%) brightness(62%);*/
-    background-image: url(http://www.danschmid.com/wp-content/uploads/2016/02/blx-d-p02-1.jpg);
+    /*background-image: url(http://www.danschmid.com/wp-content/uploads/2016/02/blx-d-p02-1.jpg);*/
     /*background-image: url(https://pixabay.com/get/eb30b40d2cf7023ed1534705fb0938c9bd22ffd41cb1184996f6c57ea0/brushes-2552433_1920.jpg);*/
 
     background-position-y: 0px;
