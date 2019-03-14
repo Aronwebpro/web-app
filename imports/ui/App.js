@@ -15,6 +15,9 @@ import Header from '../ui/template/Header';
 //Handlers
 import { logOut } from '../api/logout';
 
+//Styles
+import '../../assets/css/theme.css';
+
 class App extends React.Component {
     state = {
         isMobile: window.innerWidth < 600,
@@ -23,7 +26,7 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div>
+                <div className='content'>
                     <Header />
                     <Switch>
                         <Route path='/logout' render={logOut}/>

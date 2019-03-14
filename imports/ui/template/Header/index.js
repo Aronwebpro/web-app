@@ -16,18 +16,16 @@ export default class Header extends Component {
 
 
     render() {
-        const isLoggedIn = false;
         return (
-            <header style={{ top: this.state.top, position: 'fixed' }}>
-                <div className="top-row">
+            <header style={{ top: this.state.top }}>
+                <div className="login-section">
                     <div ref={(input) => this.loginRow = input} className="login-wrapper right">
-                        {/*{this.flash(this.state.status, this.state.flashMessage)}*/}
                         <form style={{ display: 'inline-block' }} onSubmit={this.login}>
                             <label htmlFor="username">Username:</label>
                             <input
                                 name="username"
                                 type="text"
-                                onSubmit={this.getUserValue}
+                                onSubmit={this.handleLogin}
                                 ref={input => this.userInput = input}
                             />
                             <label htmlFor="">Password:</label>
@@ -41,20 +39,21 @@ export default class Header extends Component {
                 <div className="header-body" style={{ height: this.state.headerMobile }}>
                     <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
                         <div
-                            className="title-wrapper col-xxs-12 col-xs-5 col-sm-5"
-                            style={{ marginTop: this.state.headerMobileInnerMarginTop }}
+                            className="title-wrapper"
                         >
                             <h1 style={{ display: 'inline-block' }}>
-                                ZIPPY <span style={{ color: 'red' }}>WHALE</span>
+                               App<span style={{ color: 'red' }}> BREWER</span>
                             </h1>
-                            <img src={'/img/zippy_whale.png'} alt="logo" id="site-logo"/>
+                            <div className="title-wrapper-image-container">
+                                <img src={'/img/zippy_whale.png'} alt="logo" id="site-logo"/>
+                            </div>
                             <div className="mobile-login_button">
                                 <a href="">Login</a>
                                 <a href="">Register</a>
                             </div>
                         </div>
-                        <div className="menu-wrapper col-xxs-7 col-xs-7 col-sm-7 col-lg-6">
-                            <Menu/>
+                        <div className="menu-wrapper">
+                            <Menu />
                         </div>
 
                     </div>
@@ -100,29 +99,8 @@ export default class Header extends Component {
 
     }
 
-    flash = (status, message) => {
-        let flash;
-        let height = '0px';
-        let opacity = '0';
-        if (status == 'success') {
-            //flash = (<Flash text={message} status={status}/>);
-            height = '80px';
-            opacity = '1';
-        } else if (status === 'error') {
-            //flash = (<Flash text={message} status={status}/>);
-            height = '80px';
-            opacity = '1';
-        } else if (status === '') {
-            flash = undefined;
-            height = '0px';
-        } else if (status === null) {
-            flash = undefined;
-        }
-        return (
-            <div style={{ height: height, transition: 'height 0.6s, opacity 1.5s', opacity: opacity }}>
-                {flash}
-            </div>
-        );
+    handleLogin = () => {
+
     };
 
     stickHeader = () => {
