@@ -11,6 +11,7 @@
     "@babel/runtime": "7.0.0-beta.55",
     "antd": "^3.10.3",
     "aphrodite": "^2.2.3",
+    "indexof": "0.0.1",
     "jsonwebtoken": "^8.3.0",
     "less": "^3.9.0",
     "meteor-node-stubs": "^0.3.3",
