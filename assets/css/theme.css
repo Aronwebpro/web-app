@@ -51,61 +51,10 @@ a:active {
     padding-top: 130px;
 }
 
-/******************** Header ********************/
-header {
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    width: 100%;
-    transition: all 0.7s;
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
-
-.header-body {
-    display: flex;
-    /*background-color: #1b1a1a;*/
-    background-color: #20232a;
-    color: white;
-    transition: all 0.6s;
-}
-
-.header-body-inner {
-    flex: 1;
-    display: flex;
-    transition: all 0.6s;
-}
-
-.menu-wrapper {
-    flex: 1;
-    display: flex;
-    padding-right: 5%;
-}
-
-.title-wrapper {
-    padding-left: 1%;
-    display: flex;
-    align-items: center;
-}
-
-.title-wrapper h1 {
-    display: flex;
-    font-family: 'Cormorant', serif;
-}
-
-.title-wrapper-image-container {
-    width: 100px;
-    padding: 10px;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-}
-
-img#site-logo {
-    width: 100%;
-    height: auto;
-}
-
 
 /*Home page ***********************************************************/
 

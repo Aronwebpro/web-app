@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: #fff;
+    background-color: #fcfcfc;
     height: 60px;
     color: #20232a;
 }
@@ -12,8 +12,8 @@
     display: block;
     height: 10px;
     width: 100%;
-    /*background: linear-gradient(90deg, #267570 0%, #7d3a8e 20%, #d89cb3 60%, #bb900c 85%, #3b983b 95%);*/
-    background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%);
+    background: linear-gradient(90deg, #ffec29 0%, #fdca70 20%, #61dafb 60%, #ed7061 85%, #ec1919 95%);
+    /*background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%);*/
 }
 
 .login-wrapper {

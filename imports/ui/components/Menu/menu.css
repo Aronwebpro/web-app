@@ -17,7 +17,9 @@
     -webkit-transform: skew(-20deg);
     -ms-transform: skew(-20deg);
     transform: skew(-20deg);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    /*border-right: 1px solid rgba(255, 255, 255, 0.1);*/
+    color: lightgrey;
+    border-right: 1px solid lightgrey;
 }
 
 .menu .menu-link a {
@@ -48,9 +50,9 @@
 .menu .menu-link a:hover {
     /*color: #20232a;*/
     background: transparent;
-    background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%) fixed;
-    transition: all 0.5s;
-    /*background: linear-gradient(90deg, #267570 0%, #7d3a8e 20%, #d89cb3 60%, #bb900c 85%, #3b983b 95%) fixed;*/
+    /*background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%) fixed;*/
+    background: linear-gradient(90deg, #ffec29 0%, #fdca70 20%, #61dafb 60%, #ed7061 85%, #ec1919 95%) fixed;
+    color: #fff;
 }
 
 .menu a:hover:after {
