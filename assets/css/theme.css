@@ -39,54 +39,27 @@ a:active {
     text-decoration: none;
 }
 
-.wrapper {
-    background-color: #b0d2d3;
-    /*background-image:url(../img/overlay.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;*/
-}
-
-.content {
-
-}
-
 .page-container {
-    padding-top: 240px;
-}
-/******************** Header ********************/
-header {
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    width: 100%;
-    transition: all 0.7s;
-}
-
-.header-body {
-    display: flex;
-    background-color: #1b1a1a;
-    color: white;
-    transition: all 0.6s;
-}
-
-.header-body-inner {
-    flex: 1;
-    display: flex;
-    transition: all 0.6s;
-    /*height: 100%;*/
-}
-
-.menu-wrapper {
-    flex: 1;
-    display: flex;
-    padding-right: 5%;
     padding-top: 130px;
 }
 
-.container {
+.content {
     max-width: 1200px;
     margin: auto;
+    display: flex;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.inner-content {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+}
+
+.inner-content section {
+    display: flex;
 }
 
 /*Home page ***********************************************************/
@@ -101,7 +74,6 @@ header {
     /*filter: contrast(100%) brightness(62%);*/
     /*background-image: url(http://www.danschmid.com/wp-content/uploads/2016/02/blx-d-p02-1.jpg);*/
     /*background-image: url(https://pixabay.com/get/eb30b40d2cf7023ed1534705fb0938c9bd22ffd41cb1184996f6c57ea0/brushes-2552433_1920.jpg);*/
-
     background-position-y: 0px;
     background-position-x: 50%;
     border-radius: 0.1px;

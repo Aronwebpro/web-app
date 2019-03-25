@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//Utils
+import { debounce } from '/imports/lib/utils';
+
 //Components
 import Menu from '../../components/Menu';
 import Login from '../../components/Login';
@@ -14,7 +17,8 @@ export default class Header extends Component {
         headerMobileInnerMarginTop: '0px',
         flashMessage: '',
         status: '',
-        shake: ''
+        shake: '',
+        hideHeader: false,
     };
 
     timeOut = '';
@@ -29,9 +33,9 @@ export default class Header extends Component {
                 <div className="header-body" style={{ height: this.state.headerMobile }}>
                     <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
                         <div className="title-wrapper">
-                            <h1 style={{ display: 'inline-block' }}>
-                                Aaron's<span style={{ color: 'red' }}> Website</span>
-                            </h1>
+                            {/*<h1 style={{ display: 'inline-block' }}>*/}
+                            {/*Aaron's<span style={{ color: 'red' }}> Website</span>*/}
+                            {/*</h1>*/}
                             <div className="mobile-login_button">
                                 <a href="">Login</a>
                                 <a href="">Register</a>
@@ -57,25 +61,28 @@ export default class Header extends Component {
 
     //Sticekr Header Effect
     stickHeader = () => {
-        const top = window.scrollY;
-        if (top > 100) {
+        if (window.scrollY > 100 === this.state.hideHeader) return;
+        if (window.scrollY > 100) {
             if (window.innerWidth <= 600) {
                 this.setState({
                     headerMobile: '45px',
                     headerMobileInner: 'scale(0.85)',
-                    headerMobileInnerMarginTop: '-5px'
+                    headerMobileInnerMarginTop: '-5px',
+                    hideHeader: window.scrollY > 100,
                 });
             } else {
                 this.setState({
-                    top: -(this.loginRow.clientHeight - 10) + 'px'
+                    top: -(this.loginRow.clientHeight - 10) + 'px',
+                    hideHeader: window.scrollY > 100,
                 });
             }
         } else {
             this.setState({
                 top: '0px',
                 headerMobile: '70px',
-                headerMobileInner: 'scale(1)'
+                headerMobileInner: 'scale(1)',
+                hideHeader: window.scrollY > 100,
             });
         }
-    }
+    };
 }

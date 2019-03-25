@@ -37,7 +37,7 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div className='content'>
+                <div>
                     <Header/>
                     <Switch>
                         <Route path='/logout' render={logOut}/>
