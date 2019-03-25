@@ -1,0 +1,61 @@
+.home-content .content:first-of-type {
+    margin: -40px auto 0;
+}
+
+.home-content .inner-content {
+    border-radius: 5px;
+    border:1px solid #ededed;
+}
+
+.hello-world-container {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+}
+.hero-image-container {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background: url('/img/hero.png') no-repeat fixed center -190px;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.home-page-greeting {
+    display: flex;
+}
+
+.greeting {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17px;
+    border-left: 5px solid #eee;
+}
+
+.greeting p {
+    font-size: 1.2em;
+    line-height: 1.42857143;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: justify;
+    margin: 0;
+}
+
+.portrait {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 200px;
+    height: 243px;
+    background-image: url('/img/aron.png');
+    background-size: cover;
+}

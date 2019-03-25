@@ -11,9 +11,23 @@ import Home from '../ui/pages/Home/Home';
 
 //Template
 import Header from '../ui/template/Header';
+import PageLayout from './template/PageLayout';
 
 //Handlers
 import { logOut } from '../api/logout';
+
+//Styles
+//import '../../assets/css/theme.css';
+
+//Pages
+const HomePage = PageLayout({
+    PageComponent: Home,
+    pageId: 'home',
+    layout: 'default',
+    SideBarComponent: null,
+});
+
+
 
 class App extends React.Component {
     state = {
@@ -24,12 +38,12 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Header />
+                    <Header/>
                     <Switch>
                         <Route path='/logout' render={logOut}/>
                         {/*<Route path='/enroll-account/:token' render={({ match }) => <ManagePassword token={match && match.params && match.params.token} firstPassword={true}/>}/>*/}
                         <AuthenticatedRoute path='/dashboard' render={() => <div>Hello Dashboard!</div>}/>
-                        <Route path='/' component={Home}/>
+                        <Route path='/' component={HomePage}/>
                     </Switch>
                 </div>
             </BrowserRouter>

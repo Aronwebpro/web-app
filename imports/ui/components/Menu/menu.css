@@ -1,39 +1,67 @@
 /* ********************* Navigation *********************************** */
-.menu-wrapper {
-    padding-left: 0;
-    padding-right: 15px;
-    text-align: right;
+.menu {
+    flex: 1;
+    display: flex;
 }
 
-.menu ul,
-.menu p {
-    margin: auto;
-    padding: 0;
+.menu-inner {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.menu ul li {
-    text-align: center;
-    display: inline-block;
-    width: 16%;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    height: 70px;
+.menu .menu-link {
+    flex: 1;
+    display: flex;
+    max-width: 100px;
+    -webkit-transform: skew(-20deg);
+    -ms-transform: skew(-20deg);
+    transform: skew(-20deg);
+    /*border-right: 1px solid rgba(255, 255, 255, 0.1);*/
+    color: lightgrey;
+    border-right: 1px solid lightgrey;
 }
 
-.menu ul li a {
-    width: 100%;
-    height: 70px;
-    display: inline-block;
+.menu .menu-link a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.menu ul li a p {
-    position: relative;
-    top: 32%;
+.menu a:after {
+    content: '';
+    width: 0;
+    height: 1px;
+    margin-top: 11px;
+    position: absolute;
+    left: 50%;
+    background: #fff;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
+    transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
 }
 
-img#site-logo {
-    width: 65px;
-    display: inline-block;
+.menu .menu-link a:hover {
+    /*color: #20232a;*/
+    background: transparent;
+    /*background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%) fixed;*/
+    background: linear-gradient(90deg, #ffec29 0%, #fdca70 20%, #61dafb 60%, #ed7061 85%, #ec1919 95%) fixed;
+    color: #fff;
 }
+
+.menu a:hover:after {
+    /*width: calc(100% - 40px);*/
+    width: 65%;
+}
+
+
+/********** Mobile Menu ********************/
 
 @media all and (max-width: 992px) {
     .menu ul li {
@@ -63,10 +91,6 @@ img#site-logo {
     .login-wrapper input {
         width: 27%;
     }
-
-    img#site-logo {
-        width: 50px;
-    }
 }
 
 @media all and (max-width: 640px) {
@@ -91,14 +115,6 @@ img#site-logo {
     }
 }
 
-.menu ul li:hover {
-    transition: all 0.5s;
-    background: transparent;
-    background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%) fixed;
-    /*background: linear-gradient(90deg, #267570 0%, #7d3a8e 20%, #d89cb3 60%, #bb900c 85%, #3b983b 95%) fixed;*/
-}
-
-/*Mobile Menu ********************/
 .mobile-login_button {
     display: none;
 }
