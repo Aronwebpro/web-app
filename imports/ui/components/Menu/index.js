@@ -38,11 +38,8 @@ class Menu extends React.PureComponent {
             <nav className="menu">
                 <div className="menu-inner">
                     {menuItems.map(({ title, link, permissions }, index) => (
-                        <div className="menu-link">
-                            <Link
-                                to={link}
-                                key={index.toString()}
-                            >
+                        <div className="menu-link" key={index.toString()}>
+                            <Link to={link} >
                                 {title}
                             </Link>
                         </div>

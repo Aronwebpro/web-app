@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+
+//Components
 import Menu from '../../components/Menu';
+import Login from '../../components/Login';
+
+import './header.css';
 
 export default class Header extends Component {
     state = {
@@ -18,42 +23,22 @@ export default class Header extends Component {
     render() {
         return (
             <header style={{ top: this.state.top }}>
-                <div className="login-section">
-                    <div ref={(input) => this.loginRow = input} className="login-wrapper right">
-                        <form style={{ display: 'inline-block' }} onSubmit={this.login}>
-                            <label htmlFor="username">Username:</label>
-                            <input
-                                name="username"
-                                type="text"
-                                onSubmit={this.handleLogin}
-                                ref={input => this.userInput = input}
-                            />
-                            <label htmlFor="">Password:</label>
-                            <input name="password" type="password" onSubmit={this.getPass} ref={input => this.passInput = input}/>
-                            <input className="top-row_login" type="submit" onSubmit={this.login} value="Login"/>
-                            <a className="register-btn" href="/register">Register</a>
-                        </form>
-
-                    </div>
+                <div ref={(input) => this.loginRow = input} className="login-section">
+                    <Login/>
                 </div>
                 <div className="header-body" style={{ height: this.state.headerMobile }}>
                     <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
-                        <div
-                            className="title-wrapper"
-                        >
+                        <div className="title-wrapper">
                             <h1 style={{ display: 'inline-block' }}>
-                               App<span style={{ color: 'red' }}> BREWER</span>
+                                Aaron's<span style={{ color: 'red' }}> Website</span>
                             </h1>
-                            <div className="title-wrapper-image-container">
-                                <img src={'/img/zippy_whale.png'} alt="logo" id="site-logo"/>
-                            </div>
                             <div className="mobile-login_button">
                                 <a href="">Login</a>
                                 <a href="">Register</a>
                             </div>
                         </div>
                         <div className="menu-wrapper">
-                            <Menu />
+                            <Menu/>
                         </div>
 
                     </div>
@@ -66,43 +51,11 @@ export default class Header extends Component {
         window.addEventListener('scroll', this.stickHeader);
     }
 
-    login = (e) => {
-        e.preventDefault();
-        const name = this.userInput.value;
-        const pass = this.passInput.value;
-
-        //Validation
-        switch (true) {
-            case name === '' && pass === '' :
-                clearTimeout(this.timeOut);
-                this.setState({ flashMessage: 'Username and Password can\'t be empty!', status: 'error' });
-                this.timeOut = setTimeout(() => {
-                    this.setState({ status: '' })
-                }, 4000);
-                return
-            case name === '' :
-                clearTimeout(this.timeOut);
-                this.setState({ flashMessage: 'Username can\'t be empty!', status: 'error' });
-                this.timeOut = setTimeout(() => {
-                    this.setState({ status: '' })
-                }, 4000);
-                this.passInput.value = '';
-                return
-            case pass === '' :
-                clearTimeout(this.timeOut);
-                this.setState({ flashMessage: 'Password can\'t be empty!', status: 'error' });
-                this.timeOut = setTimeout(() => {
-                    this.setState({ status: '' })
-                }, 4000);
-                return
-        }
-
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.stickHeader);
     }
 
-    handleLogin = () => {
-
-    };
-
+    //Sticekr Header Effect
     stickHeader = () => {
         const top = window.scrollY;
         if (top > 100) {
@@ -114,7 +67,7 @@ export default class Header extends Component {
                 });
             } else {
                 this.setState({
-                    top: -this.loginRow.clientHeight + 'px'
+                    top: -(this.loginRow.clientHeight - 10) + 'px'
                 });
             }
         } else {
