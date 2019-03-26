@@ -22,6 +22,7 @@ const PageLayout = ({ PageComponent, SideBarComponent, pageId, layout }) => {
                 render() {
                     return (
                         <div id={pageId ? `${pageId}` : 'page'} className="page-container">
+                            <div className='hero-image-container'/>
                             <PageComponent {...this.props}/>
                         </div>
                     );

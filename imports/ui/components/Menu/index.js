@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 //Styles
 import './menu.css';
@@ -11,18 +11,18 @@ const menuItems = [
         permissions: ['public']
     },
     {
-        title: 'About',
-        link: '/about',
+        title: 'My Story',
+        link: '/my-story',
         permissions: ['public']
     },
     {
-        title: 'Service',
-        link: '/service',
+        title: 'Portfolio',
+        link: '/portfolio',
         permissions: ['public']
     },
     {
-        title: 'Porfolio',
-        link: '/porfolio',
+        title: 'Resume',
+        link: '/resume',
         permissions: ['public']
     },
     {
@@ -34,11 +34,13 @@ const menuItems = [
 
 class Menu extends React.PureComponent {
     render() {
+        const { history } = this.props;
+        const activeUrl = history.location.pathname;
         return (
             <nav className="menu">
                 <div className="menu-inner">
                     {menuItems.map(({ title, link, permissions }, index) => (
-                        <div className="menu-link" key={index.toString()}>
+                        <div className={`menu-link ${activeUrl === link && 'active-link'}`} key={index.toString()}>
                             <Link to={link} >
                                 {title}
                             </Link>
@@ -51,4 +53,4 @@ class Menu extends React.PureComponent {
     }
 }
 
-export default Menu;
+export default withRouter(Menu);

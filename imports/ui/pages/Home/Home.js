@@ -1,17 +1,13 @@
 import React from 'react';
 
+//Style
 import './home.css';
 
 class Home extends React.Component {
-    state = {
-        articles: [],
-    };
-
     render() {
         return (
             <div className="home-content">
-                <div className='hero-image-container'/>
-                <section className="content">
+                <section className="content hello-world-section">
                     <div className="inner-content">
                         <div className="hello-world-container">
                             <h2>Hello World!</h2>
@@ -34,6 +30,16 @@ class Home extends React.Component {
                             <div className="portrait">
                                 <div className="image-container" />
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="content technologies-section">
+                    <div className="inner-content">
+                        <div className="hello-world-container">
+                            <h2>Hello World!</h2>
+                        </div>
+                        <div className="home-page-greeting">
+
                         </div>
                     </div>
                 </section>

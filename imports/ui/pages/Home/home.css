@@ -1,23 +1,36 @@
-.home-content .content:first-of-type {
-    margin: -40px auto 0;
-}
+/*-------------------------------------------------
+# Home content layout
+--------------------------------------------------*/
 
-.home-content .inner-content {
+/*.home-content .content.hello-world-section {*/
+    /*margin: -40px auto 0;*/
+/*}*/
+
+.home-content .hello-world-section .inner-content {
     border-radius: 5px;
     border:1px solid #ededed;
 }
 
-.hello-world-container {
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid lightgray;
-}
+/*-------------------------------------------------
+# Home Hero Image
+--------------------------------------------------*/
+
 .hero-image-container {
     width: 100%;
     height: 300px;
     background-size: cover;
     background: url('/img/hero.png') no-repeat fixed center -190px;
     font-family: 'Quattrocento Sans', sans-serif;
+}
+
+/*-------------------------------------------------
+# Hello World Section
+--------------------------------------------------*/
+
+.hello-world-container {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
 }
 
 .home-page-greeting {
@@ -58,4 +71,23 @@
     height: 243px;
     background-image: url('/img/aron.png');
     background-size: cover;
+}
+
+/*-------------------------------------------------
+# Technologies Section
+--------------------------------------------------*/
+.technologies-section {
+    margin: 50px 0;
+    max-width: unset;
+    justify-content: center;
+}
+
+.technologies-section .inner-content {
+    flex: 1;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    /*Temp Prop*/
+    min-height: 300px;
+
 }
