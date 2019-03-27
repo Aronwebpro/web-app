@@ -1,19 +1,8 @@
 /*Resume tables-------------------------------*/
-table {
-    border-collapse: collapse;
-}
-
-.table-bordered th,
-.table-bordered td {
-    border: 1px solid #ddd;
-}
-.table-responsive {
-    min-height: 0.01%;
-    overflow-x: auto;
-}
 .row-bordered {
     border: 1px dotted #ddd;
 }
+
 .table-hover > tbody > tr:hover {
     background-color: #f5f5f5;
 }
@@ -23,16 +12,6 @@ table {
     border-right: 1px dotted lightgrey;
     border-left: 1px dotted lightgray;
     padding: 0 30px;
-}
-
-.resume-block table {
-    margin-top: 10px;
-    width: 100%;
-}
-
-table.table {
-    margin: auto;
-    color: #212121;
 }
 
 .resume-block table td {
@@ -48,15 +27,6 @@ table.table {
     line-height: 1.2em;
 }
 
-.table-title th {
-    font-size: 1.2em;
-    padding: 15px;
-}
-
-.table-title tr {
-    min-height: 30px;
-}
-
 .click-to-visit {
     font-size: 0.8em;
 }
@@ -69,10 +39,6 @@ table.table {
 .resume-title h2 {
     font-size: 1.5em;
 }
-
-/*.table-wrapper {*/
-    /*margin-top: 50px;*/
-/*}*/
 
 .table-responsive {
     margin-top: 35px;
@@ -89,8 +55,16 @@ table.table {
     font-weight: bold;
 }
 
+#experience .plaidypus img {
+    max-width: 80px;
+}
+
+#experience .jml img {
+    max-width: 120px;
+}
+
 #experience img {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     border-radius: 5px;
 }
