@@ -46,21 +46,21 @@ const MyStoryPage = PageLayout({
 
 const PortfolioPage = PageLayout({
     PageComponent: Portfolio,
-    pageId: 'my-story',
+    pageId: 'portfolio',
     layout: 'default',
     SideBarComponent: null,
 });
 
 const ResumePage = PageLayout({
     PageComponent: Resume,
-    pageId: 'my-story',
+    pageId: 'resume',
     layout: 'default',
     SideBarComponent: null,
 });
 
 const ContactPage = PageLayout({
     PageComponent: Contact,
-    pageId: 'my-story',
+    pageId: 'contact',
     layout: 'default',
     SideBarComponent: null,
 });

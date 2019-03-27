@@ -1,5 +1,8 @@
 import React from 'react';
 
+//Components
+import ResumeTable from '/imports/ui/components/ResumeTable';
+
 //Styles
 import './resume.css';
 
@@ -9,8 +12,9 @@ class Resume extends React.Component {
             <section className="content">
                 <div className="inner-content">
                     <div className="hello-world-container">
-                        <h2>Resume</h2>
+                        <h1>Resume</h1>
                     </div>
+                    <ResumeTable />
                 </div>
             </section>
         );
