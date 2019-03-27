@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './responsiveTable.css';
+//Utils
+import 'imports/lib/utils';
 
-const getObjectPropertyByStringRegex = (obj = {}, string = '') => {
-    return string.split('.').reduce((x, y) => (x === undefined ? undefined : x[y]), obj);
-};
+//Styles
+import './responsiveTable.css';
 
 export default class ResponsiveTableDesktop extends React.PureComponent {
     static propTypes = {

@@ -20,6 +20,17 @@ const debounce = (func, wait = 10, immediate = true) => {
     };
 };
 
+/**
+ * Access Object property by parsing String path with dots and return value of property
+ * @param obj
+ * @param string
+ * @returns * || undefined
+ */
+const getObjectPropertyByStringRegex = (obj = {}, string = '') => {
+    return string.split('.').reduce((x, y) => (x === undefined ? undefined : x[y]), obj);
+};
+
 export {
     debounce,
-}
+    getObjectPropertyByStringRegex,
+};
