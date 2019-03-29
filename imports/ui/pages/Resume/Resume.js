@@ -14,9 +14,9 @@ class Resume extends React.Component {
     render() {
         return (
             <>
-                <section className="content resume-experience-container">
+                <section className="content resume-experience-container shadow">
                     <div className="inner-content">
-                        <div className="hello-world-container">
+                        <div className="section-title-container">
                             <h1>Resume</h1>
                         </div>
                         <div id="resume-content">
@@ -46,7 +46,7 @@ class Resume extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className="content resume-skills-container">
+                <section className="content resume-skills-container shadow">
                     <div className="inner-content">
                         <div className="resume-title">
                             <h2>Skills</h2>
@@ -55,6 +55,13 @@ class Resume extends React.Component {
                 </section>
             </>
         );
+    }
+
+    componentDidMount() {
+        //Scroll Page to Top on Start
+        if (window) {
+            window.scrollTo(0, 0);
+        }
     }
 }
 

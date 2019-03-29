@@ -16,13 +16,13 @@ const menuItems = [
         permissions: ['public']
     },
     {
-        title: 'Portfolio',
-        link: '/portfolio',
+        title: 'Resume',
+        link: '/resume',
         permissions: ['public']
     },
     {
-        title: 'Resume',
-        link: '/resume',
+        title: 'Portfolio',
+        link: '/portfolio',
         permissions: ['public']
     },
     {

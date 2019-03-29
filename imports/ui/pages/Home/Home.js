@@ -7,9 +7,9 @@ class Home extends React.Component {
     render() {
         return (
             <div className="home-content">
-                <section className="content hello-world-section">
+                <section className="content hello-world-section shadow">
                     <div className="inner-content">
-                        <div className="hello-world-container">
+                        <div className="section-title-container">
                             <h2>Hello World!</h2>
                         </div>
                         <div className="home-page-greeting">
@@ -35,7 +35,7 @@ class Home extends React.Component {
                 </section>
                 <section className="content technologies-section">
                     <div className="inner-content">
-                        <div className="hello-world-container">
+                        <div className="section-title-container">
                             <h2>Hello World!</h2>
                         </div>
                         <div className="home-page-greeting">
@@ -45,6 +45,13 @@ class Home extends React.Component {
                 </section>
             </div>
         );
+    }
+
+    componentDidMount() {
+        //Scroll Page to Top on Start
+        if (window) {
+            window.scrollTo(0, 0);
+        }
     }
 }
 
