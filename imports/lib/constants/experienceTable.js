@@ -26,7 +26,7 @@ const resumeTableColumns = [
         render: ({ img, title }) => (
             <div className='center' style={{ display: 'flex', maxWidth: '300px' }}>
                 {img && (<p style={{ flex: 1.5 }}><img src={img}/></p>)}
-                <p style={{ flex: 1, alignItems: 'center', display: 'flex' }}> {title}</p>
+                <p style={{ flex: 1, textAlign: 'center', alignItems: 'center', justifyContent: 'center', display: 'flex' }}> {title}</p>
             </div>
         )
     },

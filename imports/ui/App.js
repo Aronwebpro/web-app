@@ -5,7 +5,6 @@ import {
     BrowserRouter,
     Switch,
     Route,
-    Redirect
 } from 'react-router-dom';
 
 //Meteor
@@ -16,8 +15,9 @@ import { withTracker } from 'meteor/react-meteor-data';
 import AuthenticatedRoute from './AuthenticatedRoute';
 
 //Template
-import Header from '../ui/template/Header';
 import PageLayout from './template/PageLayout';
+import Header from '../ui/template/Header';
+import Footer from '../ui/template/Footer';
 
 //Handlers
 import { logOut } from '../api/logout';
@@ -87,6 +87,7 @@ class App extends React.Component {
                         <Route path='/contact' component={ContactPage}/>
                         <Route path='/' component={HomePage}/>
                     </Switch>
+                    <Footer />
                 </>
             </BrowserRouter>
         );

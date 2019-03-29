@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 //Utils
-import 'imports/lib/utils';
+import { getObjectPropertyByStringRegex } from '/imports/lib/utils';
 
 //Styles
 import './responsiveTable.css';

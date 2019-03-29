@@ -1,3 +1,183 @@
 #resume h1 {
     font-size: 2em;
 }
+
+/*Resume tables-------------------------------*/
+.row-bordered {
+    border: 1px dotted #ddd;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #f5f5f5;
+}
+
+#resume-content {
+    /*overflow: auto;*/
+    border-right: 1px dotted lightgrey;
+    border-left: 1px dotted lightgray;
+    padding: 0 30px;
+}
+
+.resume-block table td {
+    padding: 5px;
+}
+
+.resume-block table td:first-of-type {
+    min-width: 230px;
+}
+
+.resume-block table td ul {
+    font-size: 0.9em;
+    line-height: 1.2em;
+}
+
+.click-to-visit {
+    font-size: 0.8em;
+}
+
+.resume-title {
+    padding: 10px 10px 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.resume-title h2 {
+    font-size: 1.5em;
+}
+
+.table-responsive {
+    margin-top: 35px;
+}
+
+.dotted {
+    background-image: url('../images/gridoverlay.png');
+    background-color: white;
+}
+
+/*Experience Table*/
+
+#experience td::after {
+    font-weight: bold;
+}
+
+#experience .plaidypus img {
+    max-width: 80px;
+}
+
+#experience .jml img {
+    max-width: 120px;
+}
+
+#experience img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#experience a:hover,
+#education a:hover {
+    text-decoration: underline;
+    background-color: rgba(224, 224, 224, 0.5);
+}
+
+#experience li {
+    text-align: left;
+}
+
+#education {
+    margin-top: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+
+#experience thead th {
+    padding: 5px;
+}
+
+#experience td:first-of-type {
+    min-width: 135px;
+}
+
+#education td {
+    padding: 15px;
+}
+
+/*Skills*/
+#skills table {
+    box-sizing: content-box;
+}
+
+#skills table th {
+    width: 20%;
+}
+
+#skills thead th {
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+#skills td.info,
+#skills td.success,
+#skills td.warning {
+    font-size: 10px;
+}
+
+.table-head th {
+    padding: 20px;
+}
+
+#skills td {
+    position: relative;
+    min-width: 140px;
+}
+
+#skills img {
+    max-width: 45px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+#skills .inprogress-skills img {
+    max-width: 90px;
+}
+
+.prog-tech {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.other-techs {
+    position: relative;
+    top: -15px;
+    font-weight: bold;
+}
+
+.google-mobile {
+    position: relative;
+    bottom: 55%;
+}
+
+#other-skills td {
+    height: 80px;
+}
+
+img#office-logo {
+    width: 120px;
+    max-width: unset;
+}
+
+img#photoshop {
+    border-radius: 0px;
+}
+
+img#phpmyadmin {
+    width: 80px;
+    max-width: unset;
+}
+
+.resume-skills-container {
+    margin-top: 50px;
+    min-height: 300px;
+}
