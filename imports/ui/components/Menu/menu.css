@@ -49,8 +49,9 @@
 
 .menu .menu-link a:hover {
     /*color: #20232a;*/
-    background: transparent;
+    /*background: transparent;*/
     /*background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%) fixed;*/
+    font-weight: bold;
     background: linear-gradient(90deg, #ffec29 0%, #fdca70 20%, #61dafb 60%, #ed7061 85%, #ec1919 95%) fixed;
     color: #fff;
 }
@@ -60,6 +61,10 @@
     width: 65%;
 }
 
+.menu .menu-link.active-link {
+    font-size: 17px;
+    font-weight: bold;
+}
 
 /********** Mobile Menu ********************/
 

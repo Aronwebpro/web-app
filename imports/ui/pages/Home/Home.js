@@ -1,19 +1,15 @@
 import React from 'react';
 
+//Style
 import './home.css';
 
 class Home extends React.Component {
-    state = {
-        articles: [],
-    };
-
     render() {
         return (
             <div className="home-content">
-                <div className='hero-image-container'/>
-                <section className="content">
+                <section className="content hello-world-section shadow">
                     <div className="inner-content">
-                        <div className="hello-world-container">
+                        <div className="section-title-container">
                             <h2>Hello World!</h2>
                         </div>
                         <div className="home-page-greeting">
@@ -37,8 +33,25 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
+                <section className="content technologies-section">
+                    <div className="inner-content">
+                        <div className="section-title-container">
+                            <h2>Hello World!</h2>
+                        </div>
+                        <div className="home-page-greeting">
+
+                        </div>
+                    </div>
+                </section>
             </div>
         );
+    }
+
+    componentDidMount() {
+        //Scroll Page to Top on Start
+        if (window) {
+            window.scrollTo(0, 0);
+        }
     }
 }
 

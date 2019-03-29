@@ -1,0 +1,17 @@
+.res-table-container {
+    min-height: 0.01%;
+    overflow-x: auto;
+}
+
+table.res-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-height: 0.01%;
+    overflow-x: auto;
+}
+
+.res-table-bordered th,
+.res-table-bordered td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}

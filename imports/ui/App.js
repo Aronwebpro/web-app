@@ -1,23 +1,33 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { withTracker } from 'meteor/react-meteor-data';
+
+//Router
+import {
+    BrowserRouter,
+    Switch,
+    Route,
+} from 'react-router-dom';
+
+//Meteor
 import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 
 //Components
 import AuthenticatedRoute from './AuthenticatedRoute';
 
-//Pages
-import Home from '../ui/pages/Home/Home';
-
 //Template
-import Header from '../ui/template/Header';
 import PageLayout from './template/PageLayout';
+import Header from '../ui/template/Header';
+import Footer from '../ui/template/Footer';
 
 //Handlers
 import { logOut } from '../api/logout';
 
-//Styles
-//import '../../assets/css/theme.css';
+//Page Components
+import Home from '../ui/pages/Home/Home';
+import Story from '../ui/pages/Story/Story';
+import Portfolio from '../ui/pages/Portfolio/Portfolio';
+import Resume from '../ui/pages/Resume/Resume';
+import Contact from '../ui/pages/Contact/Contact';
 
 //Pages
 const HomePage = PageLayout({
@@ -27,6 +37,33 @@ const HomePage = PageLayout({
     SideBarComponent: null,
 });
 
+const MyStoryPage = PageLayout({
+    PageComponent: Story,
+    pageId: 'my-story',
+    layout: 'default',
+    SideBarComponent: null,
+});
+
+const PortfolioPage = PageLayout({
+    PageComponent: Portfolio,
+    pageId: 'portfolio',
+    layout: 'default',
+    SideBarComponent: null,
+});
+
+const ResumePage = PageLayout({
+    PageComponent: Resume,
+    pageId: 'resume',
+    layout: 'default',
+    SideBarComponent: null,
+});
+
+const ContactPage = PageLayout({
+    PageComponent: Contact,
+    pageId: 'contact',
+    layout: 'default',
+    SideBarComponent: null,
+});
 
 
 class App extends React.Component {
@@ -37,15 +74,21 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div>
+                <>
                     <Header/>
                     <Switch>
                         <Route path='/logout' render={logOut}/>
                         {/*<Route path='/enroll-account/:token' render={({ match }) => <ManagePassword token={match && match.params && match.params.token} firstPassword={true}/>}/>*/}
                         <AuthenticatedRoute path='/dashboard' render={() => <div>Hello Dashboard!</div>}/>
+                        {/*Public Pages*/}
+                        <Route path='/my-story' component={MyStoryPage}/>
+                        <Route path='/portfolio' component={PortfolioPage}/>
+                        <Route path='/resume' component={ResumePage}/>
+                        <Route path='/contact' component={ContactPage}/>
                         <Route path='/' component={HomePage}/>
                     </Switch>
-                </div>
+                    <Footer />
+                </>
             </BrowserRouter>
         );
     }
