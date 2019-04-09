@@ -24,29 +24,75 @@ export default class SkillsDiagram extends React.Component {
         const dataSet = {
             children: [
                 {
-                    name: "JavaScript",
-                    size: 4319,
-                    color: 'red',
-                    img: '/img/resume-companies/plaidypus-logo.png',
+                    name: 'JavaScript',
+                    text: "JavaScript",
+                    size: 3000,
+                    color: '#e4cb01c2',
+                    strokeColor: '#a99600',
+                    img: '/img/logos/javascript.png',
+                    url: '',
                 },
                 {
-                    name: "React Js",
-                    size: 3000,
-                    color: 'blue',
-                    img: '/img/resume-companies/plaidypus-logo.png',
+                    name: 'React Js',
+                    text: 'React Js',
+                    size: 2000,
+                    color: '#61dafba8',
+                    strokeColor: '#4aa6bfa8',
+                    img: '/img/logos/react2.png',
+                    url: 'https://reactjs.org/',
+                },
+                {
+                    name: 'React Native',
+                    text: 'React Native',
+                    size: 1500,
+                    color: '#05a5d1',
+                    strokeColor: '#0585a9',
+                    img: '/img/logos/react2.png',
+                    url: 'https://facebook.github.io/react-native/',
                 },
                 {
                     name: "CSS",
-                    size: 1487,
-                    color: 'green',
-                    img: '/img/resume-companies/plaidypus-logo.png',
+                    size: 500,
+                    color: '#298dd47a',
+                    strokeColor: '#7fadd2',
+                    img: '/img/logos/css3.png',
+                    url: '',
                 },
                 {
                     name: "HTML",
-                    size: 1636,
-                    color: '#ededed',
-                    img: '/img/resume-companies/plaidypus-logo.png',
-                }
+                    size: 500,
+                    color: '#e8783a',
+                    strokeColor: '#bf6431',
+                    img: '/img/logos/html.png',
+                    url: '',
+                },
+                {
+                    name: "MongoDB",
+                    text: "MongoDB",
+                    size: 500,
+                    color: '#73c054',
+                    strokeColor: '#529237',
+                    //img: '/img/logos/html.png',
+                    url: 'https://www.mongodb.com/',
+                },
+                {
+                    name: "MeteorJs",
+                    text: "MeteorJs",
+                    size: 1200,
+                    color: '#de4f4f',
+                    strokeColor: '#ab3130',
+                    //img: '/img/logos/html.png',
+                    url: 'https://www.meteor.com/',
+                },
+                {
+                    name: "NodeJs",
+                    text: "NodeJs",
+                    size: 800,
+                    color: '#026e00',
+                    strokeColor: '#015000',
+                    //img: '/img/logos/html.png',
+                    url: 'https://nodejs.org/en/',
+                },
             ]
         };
 
@@ -87,44 +133,37 @@ export default class SkillsDiagram extends React.Component {
             })
             .style("fill", (d, i) => {
                 return d.data.color;
-            });
+            })
+            .style("stroke-width", '1')
+            .style("stroke", (d) => d.data.strokeColor || '');
 
 
         //Append Titles of circle
         node.append("text")
             .attr("dy", ".2em")
             .style("text-anchor", "middle")
-            .text((d) => d.data.name.substring(0, d.r / 3))
+            .text((d) => d.data.text && d.data.text.substring(0, d.r / 3))
             .attr("font-family", "sans-serif")
             .attr("font-size", (d) => {
-                return d.r / 5;
+                return d.r / 4;
             })
+            .attr("transform", "translate(0, -20)")
             .attr("fill", "white");
 
         //Append Image
+        const imageWidth = 50;
+        const imageHeight = 50;
         node.append("image")
             .attr("xlink:href",(d) => d.data.img )
-            .attr("width", 80)
-            .attr("height", 80)
-            // .attr("transform", (d) => {
-            //     return "translate(" + d.x + "," + d.y + ")";
-            // });
-            .attr("transform", "translate(-40,-10)");
-
-
-        // //Text of Number
-        // node.append("text")
-        //     .attr("dy", "1.3em")
-        //     .style("text-anchor", "middle")
-        //     .text((d) => {
-        //         return d.data.size;
-        //     })
-        //     .attr("font-family", "Gill Sans", "Gill Sans MT")
-        //     .attr("font-size", function (d) {
-        //         return d.r / 5;
-        //     })
-        //     .attr("fill", "white");
-
+            .attr("width", `${imageWidth}px`)
+            .attr("height", `${imageHeight}px`)
+            .attr("transform", (d) => {
+                if (d.data.text) {
+                    return `translate(-${imageWidth/2}, -${imageHeight/8})`;
+                } else {
+                    return `translate(-${imageWidth/2}, -${imageHeight/2})`;
+                }
+            });
 
     }
 
