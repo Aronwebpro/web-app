@@ -27,21 +27,25 @@ export default class SkillsDiagram extends React.Component {
                     name: "JavaScript",
                     size: 4319,
                     color: 'red',
+                    img: '/img/resume-companies/plaidypus-logo.png',
                 },
                 {
                     name: "React Js",
                     size: 3000,
                     color: 'blue',
+                    img: '/img/resume-companies/plaidypus-logo.png',
                 },
                 {
                     name: "CSS",
                     size: 1487,
                     color: 'green',
+                    img: '/img/resume-companies/plaidypus-logo.png',
                 },
                 {
                     name: "HTML",
                     size: 1636,
                     color: '#ededed',
+                    img: '/img/resume-companies/plaidypus-logo.png',
                 }
             ]
         };
@@ -90,27 +94,37 @@ export default class SkillsDiagram extends React.Component {
         node.append("text")
             .attr("dy", ".2em")
             .style("text-anchor", "middle")
-            .text(function (d) {
-                return d.data.name.substring(0, d.r / 3);
-            })
+            .text((d) => d.data.name.substring(0, d.r / 3))
             .attr("font-family", "sans-serif")
             .attr("font-size", (d) => {
                 return d.r / 5;
             })
             .attr("fill", "white");
 
-        //Text of Number
-        node.append("text")
-            .attr("dy", "1.3em")
-            .style("text-anchor", "middle")
-            .text((d) => {
-                return d.data.size;
-            })
-            .attr("font-family", "Gill Sans", "Gill Sans MT")
-            .attr("font-size", function (d) {
-                return d.r / 5;
-            })
-            .attr("fill", "white");
+        //Append Image
+        node.append("image")
+            .attr("xlink:href",(d) => d.data.img )
+            .attr("width", 80)
+            .attr("height", 80)
+            // .attr("transform", (d) => {
+            //     return "translate(" + d.x + "," + d.y + ")";
+            // });
+            .attr("transform", "translate(-40,-10)");
+
+
+        // //Text of Number
+        // node.append("text")
+        //     .attr("dy", "1.3em")
+        //     .style("text-anchor", "middle")
+        //     .text((d) => {
+        //         return d.data.size;
+        //     })
+        //     .attr("font-family", "Gill Sans", "Gill Sans MT")
+        //     .attr("font-size", function (d) {
+        //         return d.r / 5;
+        //     })
+        //     .attr("fill", "white");
+
 
     }
 
