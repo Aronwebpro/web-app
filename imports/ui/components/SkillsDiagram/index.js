@@ -25,7 +25,7 @@ export default class SkillsDiagram extends React.Component {
             children: [
                 {
                     name: 'JavaScript',
-                    text: "JavaScript",
+                    text: 'JavaScript',
                     size: 3000,
                     color: '#e4cb01c2',
                     strokeColor: '#a99600',
@@ -51,7 +51,7 @@ export default class SkillsDiagram extends React.Component {
                     url: 'https://facebook.github.io/react-native/',
                 },
                 {
-                    name: "CSS",
+                    name: 'CSS',
                     size: 500,
                     color: '#298dd47a',
                     strokeColor: '#7fadd2',
@@ -59,7 +59,7 @@ export default class SkillsDiagram extends React.Component {
                     url: '',
                 },
                 {
-                    name: "HTML",
+                    name: 'HTML',
                     size: 500,
                     color: '#e8783a',
                     strokeColor: '#bf6431',
@@ -67,8 +67,8 @@ export default class SkillsDiagram extends React.Component {
                     url: '',
                 },
                 {
-                    name: "MongoDB",
-                    text: "MongoDB",
+                    name: 'MongoDB',
+                    text: 'MongoDB',
                     size: 500,
                     color: '#73c054',
                     strokeColor: '#529237',
@@ -76,8 +76,8 @@ export default class SkillsDiagram extends React.Component {
                     url: 'https://www.mongodb.com/',
                 },
                 {
-                    name: "MeteorJs",
-                    text: "MeteorJs",
+                    name: 'MeteorJs',
+                    text: 'MeteorJs',
                     size: 1200,
                     color: '#de4f4f',
                     strokeColor: '#ab3130',
@@ -85,8 +85,8 @@ export default class SkillsDiagram extends React.Component {
                     url: 'https://www.meteor.com/',
                 },
                 {
-                    name: "NodeJs",
-                    text: "NodeJs",
+                    name: 'NodeJs',
+                    text: 'NodeJs',
                     size: 800,
                     color: '#026e00',
                     strokeColor: '#015000',
@@ -97,13 +97,15 @@ export default class SkillsDiagram extends React.Component {
         };
 
         const diameter = 600; //window.innerWidth - 50 ||  600;
-
+        //Append Image
+        const imageWidth = 50;
+        const imageHeight = 50;
         //Draw SVG canvas
-        const svg = d3.select(".skills-diagram-canvas")
-            .append("svg")
-            .attr("width", diameter)
-            .attr("height", diameter)
-            .attr("class", "bubble");
+        const svg = d3.select('.skills-diagram-canvas')
+            .append('svg')
+            .attr('width', diameter)
+            .attr('height', diameter)
+            .attr('class', 'bubble');
 
         const nodes = d3.hierarchy(dataSet)
             .sum(function (d) {
@@ -114,58 +116,101 @@ export default class SkillsDiagram extends React.Component {
             .size([diameter, diameter])
             .padding(1.5);
 
-        const node = svg.selectAll(".node")
+        const node = svg.selectAll('.node')
             .data(bubble(nodes).descendants())
             .enter()
             .filter((d) => {
                 return !d.children;
             })
-            .append("g")
-            .attr("class", "node")
-            .attr("transform", (d) => {
-                return "translate(" + d.x + "," + d.y + ")";
+            .append('g')
+            .attr('class', 'node')
+            .attr('transform', (d) => {
+                return 'translate(' + d.x + ',' + d.y + ')';
+            })
+            .style('cursor', 'pointer')
+            .on('mouseover', function () {
+                d3.selectAll(this.childNodes).each(function () {
+                    d3.select(this)
+                        .transition()
+                        .duration(1000)
+                        .ease(d3.easeBounce)
+                        .style('opacity', 0.7)
+                        .style('z-index', 100)
+                        .attr('transform', function (d) {
+                            if (this.tagName === 'circle') {
+                                return `scale(1.2) ${d.data.img ? 'scale(1.2) translate(0, 15)' : 'scale(1.2) translate(0, 0)'}`;
+                            } else if (this.tagName === 'text') {
+                                return d.data.img ? 'scale(1.2) translate(0, 30)' : 'scale(1.2) translate(0, 0)';
+                            } else if (this.tagName === 'image') {
+                                if (d.data.text) {
+                                    return `scale(1.2) translate(-${imageWidth / 2}, -${imageHeight})`;
+                                } else {
+                                    return `scale(1.2) translate(-${imageWidth / 2}, -10)`;
+                                }
+                            }
+                        });
+                });
+            })
+            .on('mouseout', function () {
+                d3.selectAll(this.childNodes).each(function () {
+                    d3.select(this)
+                        .transition()
+                        .duration(1000)
+                        .ease(d3.easeBounce)
+                        .style('opacity', 1)
+                        .attr('transform', function (d) {
+                            if (this.tagName === 'circle') {
+                                return `scale(1)`;
+                            } else if (this.tagName === 'text') {
+                                return d.data.img ? 'translate(0, 15)' : 'translate(0, 0)';
+                            } else if (this.tagName === 'image') {
+                                if (d.data.text) {
+                                    return `translate(-${imageWidth / 2}, -${imageHeight})`;
+                                } else {
+                                    return `translate(-${imageWidth / 2}, -${imageHeight / 2})`;
+                                }
+                            }
+                        });
+                });
             });
 
         //Append Circle Graphics to Node
-        node.append("circle")
-            .attr("r", (d) => {
+        node.append('circle')
+            .attr('r', (d) => {
                 return d.r;
             })
-            .style("fill", (d, i) => {
+            .style('fill', (d, i) => {
                 return d.data.color;
             })
-            .style("stroke-width", '1')
-            .style("stroke", (d) => d.data.strokeColor || '');
+            .style('stroke-width', '1')
+            .style('stroke', (d) => d.data.strokeColor || '');
 
 
-        //Append Titles of circle
-        node.append("text")
-            .attr("dy", ".2em")
-            .style("text-anchor", "middle")
-            .text((d) => d.data.text && d.data.text.substring(0, d.r / 3))
-            .attr("font-family", "sans-serif")
-            .attr("font-size", (d) => {
-                return d.r / 4;
-            })
-            .attr("transform", "translate(0, -20)")
-            .attr("fill", "white");
-
-        //Append Image
-        const imageWidth = 50;
-        const imageHeight = 50;
-        node.append("image")
-            .attr("xlink:href",(d) => d.data.img )
-            .attr("width", `${imageWidth}px`)
-            .attr("height", `${imageHeight}px`)
-            .attr("transform", (d) => {
+        node.append('image')
+            .attr('xlink:href', (d) => d.data.img)
+            .attr('width', `${imageWidth}px`)
+            .attr('height', `${imageHeight}px`)
+            .attr('transform', (d) => {
                 if (d.data.text) {
-                    return `translate(-${imageWidth/2}, -${imageHeight/8})`;
+                    return `translate(-${imageWidth / 2}, -${imageHeight})`;
                 } else {
-                    return `translate(-${imageWidth/2}, -${imageHeight/2})`;
+                    return `translate(-${imageWidth / 2}, -${imageHeight / 2})`;
                 }
             });
 
-    }
+        //Append Titles of circle
+        node.append('text')
+            .attr('dy', '.2em')
+            .style('text-anchor', 'middle')
+            .text((d) => d.data.text && d.data.text.substring(0, d.r / 3))
+            .attr('font-family', 'sans-serif')
+            .attr('font-size', (d) => {
+                return d.r / 4;
+            })
+            .attr('transform', (d) => d.data.img ? 'translate(0, 15)' : 'translate(0, 0)')
+            .attr('fill', 'white');
+
+    };
 
 
 }
