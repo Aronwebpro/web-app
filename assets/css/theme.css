@@ -268,9 +268,9 @@ a:active {
         font-size: 1em;
     }
 
-    .content {
-        padding-top: 100px;
-    }
+    /*.content {*/
+        /*padding-top: 100px;*/
+    /*}*/
 
     .site-branding h1 {
         font-size: 2em;
