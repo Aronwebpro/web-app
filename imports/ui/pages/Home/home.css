@@ -18,9 +18,8 @@
 .hero-image-container {
     width: 100%;
     height: 300px;
-    background-size: cover;
     background: url('/img/hero.png') no-repeat fixed center -190px;
-    font-family: 'Quattrocento Sans', sans-serif;
+    background-size: contain;
 }
 
 /*-------------------------------------------------
