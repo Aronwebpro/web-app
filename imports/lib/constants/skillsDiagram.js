@@ -41,7 +41,7 @@ const dataSet = {
             strokeColor: '#7fadd2',
             img: '/img/logos/css3.png',
             url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-            tooltip: 'Essential for web, but I prefer design systems instead. Boostrap, Ant Design and etc.',
+            tooltip: 'Essential for web, but I prefer design systems more, like Boostrap, Ant Design and others.',
         },
         {
             name: 'HTML',

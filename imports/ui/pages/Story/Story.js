@@ -11,7 +11,7 @@ class Story extends React.Component {
                     <div className="section-title-container">
                         <h2>My Story</h2>
                     </div>
-                    <div>
+                    <div className="story-content">
                         <p>
                             Since I was little I was always interested in computers and IT, but I never had an opportunity to
                             study. I chose management studies instead because I thought they would be more valuable. However,

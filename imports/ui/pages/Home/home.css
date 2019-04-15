@@ -16,9 +16,11 @@
 --------------------------------------------------*/
 
 .hero-image-container {
+    /*position: relative;*/
     width: 100%;
     height: 300px;
     background: url('/img/hero.png') no-repeat fixed center -190px;
+    background-position-y: 0;
     background-size: contain;
 }
 
