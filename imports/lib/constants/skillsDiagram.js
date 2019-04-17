@@ -120,6 +120,16 @@ const dataSet = {
             url: 'https://github.com/',
             tooltip: 'All my days starts with coffee and git pull.'
         },
+        {
+            name: 'Redux',
+            size: 500,
+            color: '#fff',
+            //color: '#298dd47a',
+            strokeColor: '#764abc',
+            img: '/img/logos/redux.png',
+            url: 'https://redux.js.org/',
+            tooltip: 'Marvelous of software engineering.',
+        },
     ]
 };
 
