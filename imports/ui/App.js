@@ -22,6 +22,9 @@ import Footer from '../ui/template/Footer';
 //Handlers
 import { logOut } from '../api/logout';
 
+//Theme Styles
+import '/imports/assets/css/theme.css';
+
 //Page Components
 import Home from '../ui/pages/Home/Home';
 import Story from '../ui/pages/Story/Story';

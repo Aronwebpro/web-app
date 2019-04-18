@@ -24,7 +24,7 @@ const PageLayout = ({ PageComponent, SideBarComponent, pageId, layout }) => {
             return class extends React.Component {
                 render() {
                     return (
-                        <div id={pageId ? `${pageId}` : 'page'} className="page-container">
+                        <div id={pageId ? `${pageId}` : 'page'} >
                             <HeroImage />
                             <PageComponent {...this.props}/>
                         </div>
