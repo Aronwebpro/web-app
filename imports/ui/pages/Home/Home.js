@@ -3,6 +3,9 @@ import React from 'react';
 //Style
 import './home.css';
 
+//Components
+import GetSocial from "../../components/GetSocial";
+
 class Home extends React.Component {
     render() {
         return (
@@ -41,6 +44,14 @@ class Home extends React.Component {
                         <div className="home-page-greeting">
 
                         </div>
+                    </div>
+                </section>
+                <section className="content get-social-section">
+                    <div className="inner-content">
+                        <div className="section-title-container">
+                            <h2>Get Social and Find Me</h2>
+                        </div>
+                        <GetSocial />
                     </div>
                 </section>
             </div>

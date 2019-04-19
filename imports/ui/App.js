@@ -77,7 +77,7 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <>
+                <div>
                     <Header/>
                     <Switch>
                         <Route path='/logout' render={logOut}/>
@@ -91,7 +91,7 @@ class App extends React.Component {
                         <Route path='/' component={HomePage}/>
                     </Switch>
                     <Footer />
-                </>
+                </div>
             </BrowserRouter>
         );
     }
