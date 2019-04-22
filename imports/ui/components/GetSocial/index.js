@@ -7,7 +7,7 @@ export default class GetSocial extends React.PureComponent {
         return (
             <div className="get-social">
                 <div className="section-title">
-                    <h2>Get Social and Find Me</h2>
+                    <h2>Find Me and Let's Get Social</h2>
                 </div>
                 <div className="get-social-row">
                     <div className="get-social-column">

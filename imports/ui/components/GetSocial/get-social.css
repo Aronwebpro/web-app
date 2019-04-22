@@ -4,18 +4,42 @@
     flex-direction: column;
     justify-content: center;
 }
+.get-social .section-title {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
 .get-social-row {
     flex: 1;
     display: flex;
-
+    padding-top: 5px;
 }
 
 .get-social-column {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.get-social-column h3 {
+    text-align: center;
 }
 
 .get-social-column img {
-    max-width: 200px;
+    width: 100%;
+}
+
+
+img#linkedin-img {
+    max-width: 250px;
+}
+
+img#codewars-img {
+    max-width: 300px;
+}
+
+img#git-hub-img {
+    max-width: 120px;
 }

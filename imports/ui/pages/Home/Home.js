@@ -36,21 +36,13 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className="content technologies-section">
+                <section className="content get-social-section shadow">
                     <div className="inner-content">
-                        <div className="section-title-container">
-                            <h2></h2>
-                        </div>
-                        <div className="home-page-greeting">
 
-                        </div>
                     </div>
                 </section>
-                <section className="content get-social-section">
+                <section className="content technologies-section">
                     <div className="inner-content">
-                        <div className="section-title-container">
-                            <h2>Get Social and Find Me</h2>
-                        </div>
                         <GetSocial />
                     </div>
                 </section>
@@ -60,9 +52,9 @@ class Home extends React.Component {
 
     componentDidMount() {
         //Scroll Page to Top on Start
-        // if (window) {
-        //     window.scrollTo(0, 0);
-        // }
+        if (window) {
+            window.scrollTo(0, 0);
+        }
     }
 }
 
