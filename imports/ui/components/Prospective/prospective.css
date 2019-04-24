@@ -1,0 +1,26 @@
+.prospective-title-section {
+    margin-top: 50px;
+}
+
+.prospective-body-section {
+    margin-top: 20px;
+}
+
+.prospective-title-section .inner-content {
+    padding: 10px;
+    margin:10px;
+}
+
+.prospective-logos-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prospective-img-container {
+
+}
+
+.prospective-img-container img {
+    width: 50px;
+}

@@ -37,11 +37,7 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className="content get-social-section shadow">
-                    <div className="inner-content">
-                        <Prospective />
-                    </div>
-                </section>
+                <Prospective />
                 <section className="content technologies-section">
                     <div className="inner-content">
                         <GetSocial />
