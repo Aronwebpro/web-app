@@ -9,13 +9,13 @@ export default class GetSocial extends React.PureComponent {
                 <div className="section-title">
                     <h2>Find Me and Let's Get Social</h2>
                 </div>
-                <div className="get-social-row">
-                    <div className="get-social-column">
+                <div className="section-row get-social-row">
+                    <div className="get-social-column section-column">
                         <a href="https://www.linkedin.com/" target="_blank">
                             <img id="linkedin-img" src="/img/linkedin2.png" alt="LinkedIn"/>
                         </a>
                     </div>
-                    <div className="get-social-column">
+                    <div className="get-social-column section-column">
                         <a href="https://www.codewars.com/users/Aronwebpro" target="_blank">
                             <img
                                 id="codewars-img"
@@ -25,13 +25,13 @@ export default class GetSocial extends React.PureComponent {
                             <h3>Code Wars</h3>
                         </a>
                     </div>
-                    <div className="get-social-column">
+                    <div className="get-social-column section-column">
                         <a href="https://github.com/Aronwebpro/" target="_blank">
                             <img id="git-hub-img" src="/img/github-logo.png" alt="GitHub"/>
                         </a>
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }

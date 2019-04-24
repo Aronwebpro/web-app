@@ -5,6 +5,7 @@ import './home.css';
 
 //Components
 import GetSocial from "../../components/GetSocial";
+import Prospective from "../../components/Prospective";
 
 class Home extends React.Component {
     render() {
@@ -38,7 +39,7 @@ class Home extends React.Component {
                 </section>
                 <section className="content get-social-section shadow">
                     <div className="inner-content">
-
+                        <Prospective />
                     </div>
                 </section>
                 <section className="content technologies-section">

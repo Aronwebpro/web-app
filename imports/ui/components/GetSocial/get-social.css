@@ -11,17 +11,10 @@
 }
 
 .get-social-row {
-    flex: 1;
-    display: flex;
     padding-top: 5px;
 }
 
-.get-social-column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .get-social-column h3 {
     text-align: center;
