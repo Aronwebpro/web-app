@@ -1,0 +1,31 @@
+.circle-container {
+    flex: 1;
+    display: flex;
+}
+
+.circle-container ul {
+    flex: 1;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.circle-container li {
+    position: absolute;
+    -webkit-transition: all 2s linear;
+    -moz-transition: all 2s linear;
+    transition: all 2s linear;
+}
+
+.circle-img-container {
+    width: 50px;
+}
+
+.circle-img-container img {
+    width: 100%;
+}
+

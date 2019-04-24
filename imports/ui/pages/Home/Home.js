@@ -10,7 +10,7 @@ import Prospective from "../../components/Prospective";
 class Home extends React.Component {
     render() {
         return (
-            <div className="home-content">
+            <div className="home-content page">
                 <section className="content hello-world-section shadow">
                     <div className="inner-content">
                         <div className="section-title-container">
@@ -37,7 +37,6 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
-                <Prospective />
                 <section className="content technologies-section">
                     <div className="inner-content">
                         <GetSocial />

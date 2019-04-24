@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Circle from '/imports/ui/components/Circle';
+
 //Styles
 import './prospective.css';
 
@@ -8,12 +10,11 @@ export default class Prospective extends React.PureComponent {
 
         const workingData = [
             {
-                title: 'JavaScript',
+                text: 'JavaScript',
                 img: '/img/logos/javascript.png',
                 url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
             }
         ];
-
         return (
             <>
                 <section className="content prospective-title-section shadow">
@@ -45,11 +46,7 @@ export default class Prospective extends React.PureComponent {
                             <div className="section-row">
                                 <div className="section-column">
                                     <div className="prospective-logos-container">
-                                        {workingData.map(({ img }) => (
-                                            <div className="prospective-img-container">
-                                                <img src={img} alt=""/>
-                                            </div>
-                                        ))}
+                                        <Circle />
                                     </div>
                                 </div>
                                 <div className="section-column">
