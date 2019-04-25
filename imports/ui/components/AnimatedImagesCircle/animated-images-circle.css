@@ -5,7 +5,7 @@
 
 .circle-container ul {
     flex: 1;
-    height: 250px;
+    height: 23em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +26,7 @@
 }
 
 .circle-img-container {
-    width: 50px;
+    width: 5em;
 }
 
 .circle-img-container img {

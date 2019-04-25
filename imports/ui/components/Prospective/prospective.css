@@ -1,9 +1,19 @@
-.prospective-title-section {
+/*.prospective-title-section {*/
+    /*margin-top: 50px;*/
+/*}*/
+
+.prospective-body-section {
     margin-top: 50px;
 }
 
-.prospective-body-section {
-    margin-top: 20px;
+.prospective {
+    padding-top: 20px;
+}
+.prospective-body-section .section-title-container h2 {
+    padding: 20px;
+    /*max-width: 1200px;*/
+    /*margin: auto;*/
+    text-align: center;
 }
 
 .prospective-title-section .inner-content {

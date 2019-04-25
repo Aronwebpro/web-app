@@ -37,6 +37,14 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
+                {/*<section className="content prospective-body-section shadow">*/}
+                    {/*<div className="inner-content">*/}
+                        {/*<div className="section-title-container">*/}
+                            {/*<h2>More about me</h2>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                {/*</section>*/}
+                <Prospective/>
                 <section className="content technologies-section">
                     <div className="inner-content">
                         <GetSocial />

@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 //Styles
-import './circle.css';
+import './animated-images-circle.css';
 
-
-export default class Circle extends React.Component {
+export default class AnimatedImagesCircle extends React.Component {
     static propTypes = {
         data: PropTypes.arrayOf(PropTypes.shape({
             img: PropTypes.string,
@@ -19,21 +18,14 @@ export default class Circle extends React.Component {
     };
 
     render() {
-        const { data } = this.props;
-        const { elStyles, centerElStyles} = this.state;
-
-        const centerEl = {
-            text: 'My Stack',
-        };
-
+        const { data, title } = this.props;
+        const { elStyles, centerElStyles } = this.state;
 
         return (
             <div className="circle-container">
                 <ul>
                     <li style={centerElStyles}>
-                        <h2>
-                            I'm working with
-                        </h2>
+                        {title}
                     </li>
                     {data.map(({ text, img }, index) => {
                         return (
@@ -69,13 +61,14 @@ export default class Circle extends React.Component {
         }
         if (window.scrollY > 100) {
             const { data } = this.props;
-            const elStyles = data.map((i, index) => {
+            const elStyles = data.map(({ translatePosition }, index) => {
                 const slice = 360 / (data.length);
+                const r = data.length > 3 ? '8' : '6';
                 return {
-                    transform: `rotate(${(slice * index) + -90 }deg) translate(6em) rotate(${-((slice * index) + -90) }deg)`
+                    transform: `rotate(${(slice * index) + -90 }deg) translate(${translatePosition ? translatePosition : r}em) rotate(${-((slice * index) + -90) }deg)`
                 };
             });
-            this.setState({ elStyles, centerElStyles: { opacity: 1}, loaded: true, });
+            this.setState({ elStyles, centerElStyles: { opacity: 1 }, loaded: true, });
         }
 
     }
