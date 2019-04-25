@@ -1,5 +1,9 @@
 import React from 'react';
 
+//Constants
+import { workingOnImages, test } from '/imports/lib/constants/prospectiveComponent';
+
+//Components
 import Circle from '/imports/ui/components/Circle';
 
 //Styles
@@ -17,36 +21,38 @@ export default class Prospective extends React.PureComponent {
         ];
         return (
             <>
-                <section className="content prospective-title-section shadow">
-                    <div className="inner-content">
-                        <div className="prospective">
-                            <div className="section-row">
-                                <div className="section-column">
-                                    <h2>
-                                        What I'm working with..
-                                    </h2>
-                                </div>
-                                <div className="section-column">
-                                    <h2>
-                                        What I'm studying about..
-                                    </h2>
-                                </div>
-                                <div className="section-column">
-                                    <h2>
-                                        Where I'm planning to go..
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/*<section className="content prospective-title-section shadow">*/}
+                    {/*<div className="inner-content">*/}
+                        {/*<div className="prospective">*/}
+                            {/*<div className="section-row">*/}
+                                {/*<div className="section-column">*/}
+                                    {/*<h2>*/}
+                                        {/*What I'm working with..*/}
+                                    {/*</h2>*/}
+                                {/*</div>*/}
+                                {/*<div className="section-column">*/}
+                                    {/*<h2>*/}
+                                        {/*What I'm studying about..*/}
+                                    {/*</h2>*/}
+                                {/*</div>*/}
+                                {/*<div className="section-column">*/}
+                                    {/*<h2>*/}
+                                        {/*Where I'm planning to go..*/}
+                                    {/*</h2>*/}
+                                {/*</div>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                {/*</section>*/}
                 <section className="content prospective-body-section shadow">
                     <div className="inner-content">
                         <div className="prospective">
                             <div className="section-row">
                                 <div className="section-column">
                                     <div className="prospective-logos-container">
-                                        <Circle />
+                                        <Circle
+                                            data={test}
+                                        />
                                     </div>
                                 </div>
                                 <div className="section-column">

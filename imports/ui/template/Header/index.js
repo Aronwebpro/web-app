@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-
-//Utils
-import { debounce } from '/imports/lib/utils';
+import React from 'react';
 
 //Components
 import Menu from '../../components/Menu';
 import Login from '../../components/Login';
 
+//Styles
 import './header.css';
 
-export default class Header extends Component {
+export default class Header extends React.Component {
     state = {
         top: '0px',
         headerMobile: '70px',
@@ -20,9 +18,6 @@ export default class Header extends Component {
         shake: '',
         hideHeader: false,
     };
-
-    timeOut = '';
-
 
     render() {
         return (

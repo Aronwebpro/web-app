@@ -51,6 +51,15 @@ class Home extends React.Component {
         if (window) {
             window.scrollTo(0, 0);
         }
+
+        console.log(window.outerHeight)
+    }
+
+    componentWillUnmount() {
+        //Setup Flag to know is component Unmounted
+        this.isUnmounted = true;
+
+        console.log(this.isUnmounted);
     }
 }
 
