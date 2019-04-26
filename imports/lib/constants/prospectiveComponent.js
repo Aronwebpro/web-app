@@ -38,13 +38,13 @@ const studyingImages = [
         text: 'Networking',
         img: '/img/iam/networking.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-        translatePosition: '9'
+        translatePosition: '9.3'
     },
     {
         text: 'Computer Science',
         img: '/img/iam/cs.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-        translatePosition: '9'
+        translatePosition: '9.3'
     },
 ];
 

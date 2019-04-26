@@ -1,5 +1,5 @@
 /*.prospective-title-section {*/
-    /*margin-top: 50px;*/
+/*margin-top: 50px;*/
 /*}*/
 
 .prospective-body-section {
@@ -9,8 +9,9 @@
 }
 
 .prospective {
-    padding-top: 20px;
+    padding: 20px 0;
 }
+
 .prospective-body-section .section-title-container h2 {
     padding: 20px;
     text-align: center;
@@ -18,9 +19,22 @@
     font-weight: bold;
 }
 
+.prospective-body-section .section-column:nth-of-type(1),
+.prospective-body-section .section-column:nth-of-type(2) {
+    border-right: 1px solid #ededed;
+}
+
+.prospective-body-section ul {
+    padding-left: 20px;
+}
+
+.prospective-body-section ul {
+    padding-left: 20px;
+}
+
 .prospective-title-section .inner-content {
     padding: 10px;
-    margin:10px;
+    margin: 10px;
 }
 
 .prospective-logos-container {
@@ -29,6 +43,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .prospective-img-container {
 
 }
@@ -36,3 +51,4 @@
 .prospective-img-container img {
     width: 50px;
 }
+
