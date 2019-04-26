@@ -16,7 +16,7 @@ import './prospective.css';
 export default class Prospective extends React.PureComponent {
     render() {
         return (
-            <section className="prospective-body-section">
+            <section className="prospective-body-section shadow">
                 <div className="section-title-container">
                     <h2>What I am ...?</h2>
                 </div>

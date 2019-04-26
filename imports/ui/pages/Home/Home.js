@@ -45,7 +45,7 @@ class Home extends React.Component {
                     {/*</div>*/}
                 {/*</section>*/}
                 <Prospective/>
-                <section className="content technologies-section">
+                <section className="content technologies-section shadow">
                     <div className="inner-content">
                         <GetSocial />
                     </div>

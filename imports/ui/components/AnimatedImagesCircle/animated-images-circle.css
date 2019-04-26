@@ -3,6 +3,11 @@
     display: flex;
 }
 
+.circle-container h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
 .circle-container ul {
     flex: 1;
     height: 23em;
@@ -24,6 +29,16 @@
     -moz-transition: all 2s linear;
     transition: all 2s linear;
 }
+
+.circle-container li:hover {
+    cursor: pointer;
+}
+
+.circle-container li:hover img {
+    transform: scale(1.1);
+    transition: 200ms linear;
+}
+
 
 .circle-img-container {
     width: 5em;

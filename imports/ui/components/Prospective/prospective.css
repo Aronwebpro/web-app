@@ -4,6 +4,8 @@
 
 .prospective-body-section {
     margin-top: 50px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .prospective {
@@ -11,9 +13,9 @@
 }
 .prospective-body-section .section-title-container h2 {
     padding: 20px;
-    /*max-width: 1200px;*/
-    /*margin: auto;*/
     text-align: center;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .prospective-title-section .inner-content {
