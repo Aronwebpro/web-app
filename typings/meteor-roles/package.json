@@ -1,0 +1,57 @@
+{
+  "_from": "@types/meteor-roles@^1.2.31",
+  "_id": "@types/meteor-roles@1.2.31",
+  "_inBundle": false,
+  "_integrity": "sha512-t1nI4JnlxreBypEjsf7P2+2afpD5VXub6OkYzbCNasRWoKLLzP58XbUuh03Ogg2Qc+40olXWCEXV+CpQW89GXQ==",
+  "_location": "/@types/meteor-roles",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@types/meteor-roles@^1.2.31",
+    "name": "@types/meteor-roles",
+    "escapedName": "@types%2fmeteor-roles",
+    "scope": "@types",
+    "rawSpec": "^1.2.31",
+    "saveSpec": null,
+    "fetchSpec": "^1.2.31"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@types/meteor-roles/-/meteor-roles-1.2.31.tgz",
+  "_shasum": "315fd7e89e3579f26cfa6859b7943ced59cf17c6",
+  "_spec": "@types/meteor-roles@^1.2.31",
+  "_where": "/Users/kgrondin/Web/fitminds-billing-hub",
+  "bugs": {
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Robbie Van Gorkom",
+      "url": "https://github.com/vangorra"
+    },
+    {
+      "name": "Matthew Zartman",
+      "url": "https://github.com/mattmm3d"
+    }
+  ],
+  "dependencies": {
+    "@types/meteor": "*"
+  },
+  "deprecated": false,
+  "description": "TypeScript definitions for Meteor Roles",
+  "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped#readme",
+  "license": "MIT",
+  "main": "",
+  "name": "@types/meteor-roles",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "scripts": {},
+  "typeScriptVersion": "2.8",
+  "typesPublisherContentHash": "a8286af56172a1c802bf9b172eed6f2b76f71e1034d3911cdce5ae52c8abd516",
+  "version": "1.2.31"
+}
