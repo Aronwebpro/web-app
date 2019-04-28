@@ -1,5 +1,8 @@
 import React  from 'react';
 
+//Components
+import HeroImage from '/imports/ui/components/HeroImage';
+
 const PageLayout = ({ PageComponent, SideBarComponent, pageId, layout }) => {
     switch (layout) {
         case 'withSidebar' :
@@ -21,8 +24,8 @@ const PageLayout = ({ PageComponent, SideBarComponent, pageId, layout }) => {
             return class extends React.Component {
                 render() {
                     return (
-                        <div id={pageId ? `${pageId}` : 'page'} className="page-container">
-                            <div className='hero-image-container'/>
+                        <div id={pageId ? `${pageId}` : 'page'} >
+                            <HeroImage />
                             <PageComponent {...this.props}/>
                         </div>
                     );

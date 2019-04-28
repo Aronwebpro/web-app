@@ -41,7 +41,7 @@ const dataSet = {
             strokeColor: '#7fadd2',
             img: '/img/logos/css3.png',
             url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-            tooltip: 'Essential for web, but I prefer design systems instead. Boostrap, Ant Design and etc.',
+            tooltip: 'Essential for web, but I prefer design systems more, like Boostrap, Ant Design and others.',
         },
         {
             name: 'HTML',
@@ -119,6 +119,16 @@ const dataSet = {
             img: '/img/logos/git.png',
             url: 'https://github.com/',
             tooltip: 'All my days starts with coffee and git pull.'
+        },
+        {
+            name: 'Redux',
+            size: 500,
+            color: '#fff',
+            //color: '#298dd47a',
+            strokeColor: '#764abc',
+            img: '/img/logos/redux.png',
+            url: 'https://redux.js.org/',
+            tooltip: 'Marvelous of software engineering.',
         },
     ]
 };

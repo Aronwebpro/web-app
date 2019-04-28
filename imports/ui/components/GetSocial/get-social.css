@@ -1,0 +1,38 @@
+.get-social {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.get-social .section-title {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.get-social-row {
+    padding-top: 5px;
+}
+
+
+
+.get-social-column h3 {
+    text-align: center;
+}
+
+.get-social-column img {
+    width: 100%;
+}
+
+
+img#linkedin-img {
+    max-width: 250px;
+}
+
+img#codewars-img {
+    max-width: 300px;
+}
+
+img#git-hub-img {
+    max-width: 120px;
+}

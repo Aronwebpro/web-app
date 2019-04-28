@@ -1,0 +1,50 @@
+.circle-container {
+    flex: 1;
+    display: flex;
+}
+
+.circle-container h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.circle-container ul {
+    flex: 1;
+    height: 23em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.circle-container li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    -webkit-transition: all 2s linear;
+    -moz-transition: all 2s linear;
+    transition: all 2s linear;
+}
+
+.circle-container li:hover {
+    cursor: pointer;
+}
+
+.circle-container li:hover img {
+    transform: scale(1.1);
+    transition: 200ms linear;
+}
+
+
+.circle-img-container {
+    width: 5em;
+}
+
+.circle-img-container img {
+    width: 100%;
+}
+

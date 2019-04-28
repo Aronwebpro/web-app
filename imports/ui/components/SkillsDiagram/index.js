@@ -88,7 +88,7 @@ export default class SkillsDiagram extends React.Component {
                                 if (d.data.text) {
                                     return `scale(1.2) translate(-${(imageSize + 20) / 2}, -${imageSize})`;
                                 } else {
-                                    return `scale(1.2) translate(-${(imageSize + 20) / 2}, -${10})`;
+                                    return `scale(1.2) translate(-${(imageSize + 20) / 2}, -${20})`;
                                 }
                             }
                         })

@@ -16,13 +16,13 @@ class Login extends React.PureComponent {
                     />
                     <label htmlFor="">Password:</label>
                     <input name="password" type="password" ref={input => this.passInput = input}/>
-                    <div>
+                    <div className="top-row-login-button">
                         <input className="top-row_login" type="submit"  value="Login"/>
                     </div>
-                    <div className="linkedIn-button">
-                        LinkedIn
-                    </div>
                 </form>
+                <div className="linkedIn-button">
+                    <img src="/img/logos/linkedInButton.png" alt=""/>
+                </div>
             </div>
         );
     }
