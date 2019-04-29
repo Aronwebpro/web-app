@@ -3,6 +3,9 @@ import React from 'react';
 //Styles
 import './portfolio.css';
 
+//Components
+import PortfolioTimeLine from "../../components/PortfolioTimeLine";
+
 class Portfolio extends React.Component {
     render() {
         return (
@@ -11,6 +14,7 @@ class Portfolio extends React.Component {
                     <div className="section-title-container">
                         <h2>Portfolio</h2>
                     </div>
+                    <PortfolioTimeLine />
                 </div>
             </section>
         );

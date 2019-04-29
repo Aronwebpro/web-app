@@ -8,8 +8,9 @@ header {
 
 .header-body {
     display: flex;
-    background-color: #1f2329e0;
+    /*background-color: #1f2329e0;*/
     /*background-color: #20232a;*/
+    background-color: #1f2329;
     transition: all 0.6s;
     border-bottom: 1px solid lightgrey;
 }

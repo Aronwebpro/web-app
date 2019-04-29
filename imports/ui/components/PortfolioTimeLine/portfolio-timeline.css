@@ -1,0 +1,15 @@
+.timeline {
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
+
+.timeline::before {
+    content: '';
+    background: #babaaf;
+    width: 5px;
+    height: 95%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
