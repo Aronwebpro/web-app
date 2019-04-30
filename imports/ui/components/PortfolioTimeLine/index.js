@@ -11,7 +11,14 @@ export default class PortfolioTimeLine extends React.Component {
         return (
             <div>
                 <section className="timeline">
+                    <div className='timeline-container'>
+                        <div className='timeline-item'>
+                            <div className='timeline-img'></div>
+                            <div className='timeline-card'>
 
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <Accordion
                     title={'2019 Year'}

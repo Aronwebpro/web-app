@@ -19,20 +19,16 @@ export default class Accordion extends React.Component {
 
     render() {
         const { title, index } = this.props;
-        const { isOpen, sticky } = this.state;
+        const { sticky } = this.state;
         return (
             <>
                 <section className={`accordion-wrapper ${sticky && 'accordion-sticky-header'}`}>
                     <div
-                        className={`accordion-header`}
+                        className='accordion-header'
                         onClick={this.scrollTo}
                         ref={this.titleHeader}
                         style={{ top: `${80 + (index * 75)}px` }}
                     >
-                        {/*<div className='plus-wrapper'>*/}
-                            {/*<div className={`vertical ${isOpen ? 'vertical-open' : ''}`}/>*/}
-                            {/*<div className="horizontal"/>*/}
-                        {/*</div>*/}
                         <h3>{title}</h3>
                     </div>
                     <div className='accordion-inner' style={{ height: this.state.height }}>
