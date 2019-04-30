@@ -19,15 +19,19 @@ export default class PortfolioTimeLine extends React.Component {
                 />
                 <Accordion
                     title={'2018 Year'}
+                    index={1}
                 />
                 <Accordion
                     title={'2017 Year'}
+                    index={2}
                 />
                 <Accordion
                     title={'2016 Year'}
+                    index={3}
                 />
                 <Accordion
                     title={'2015 Year'}
+                    index={4}
                 />
             </div>
         );

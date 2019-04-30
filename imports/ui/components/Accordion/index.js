@@ -18,20 +18,21 @@ export default class Accordion extends React.Component {
     };
 
     render() {
-        const { title } = this.props;
+        const { title, index } = this.props;
         const { isOpen, sticky } = this.state;
         return (
             <>
                 <section className={`accordion-wrapper ${sticky && 'accordion-sticky-header'}`}>
                     <div
                         className={`accordion-header`}
-                        onClick={this.open}
+                        onClick={this.scrollTo}
                         ref={this.titleHeader}
+                        style={{ top: `${80 + (index * 75)}px` }}
                     >
-                        <div className='plus-wrapper'>
-                            <div className={`vertical ${isOpen ? 'vertical-open' : ''}`}/>
-                            <div className="horizontal"/>
-                        </div>
+                        {/*<div className='plus-wrapper'>*/}
+                            {/*<div className={`vertical ${isOpen ? 'vertical-open' : ''}`}/>*/}
+                            {/*<div className="horizontal"/>*/}
+                        {/*</div>*/}
                         <h3>{title}</h3>
                     </div>
                     <div className='accordion-inner' style={{ height: this.state.height }}>
@@ -78,12 +79,8 @@ export default class Accordion extends React.Component {
 
     onScroll = () => {
         const { index } = this.props;
-        if (index === 0) {
-            console.dir(this.innerContent.current.getBoundingClientRect().top);
-            console.log(window.scrollY)
-        }
 
-        if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 150) < (window.scrollY) ) {
+        if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 170 - (index * 80)) < (window.scrollY) ) {
             this.setState({ sticky: true });
         } else {
             if (this.state.sticky) {
@@ -92,12 +89,11 @@ export default class Accordion extends React.Component {
         }
     };
 
-    open = () => {
-        if (this.state.isOpen) {
-            this.setState({ height: '0px', isOpen: false });
-        } else {
-            this.setState({ height: `${this.innerContent.current.clientHeight + 20}px`, isOpen: true });
-        }
-
+    scrollTo = () => {
+        const { index } = this.props;
+        window.scrollTo({
+            top: window.scrollY + this.innerContent.current.getBoundingClientRect().top - (150 + (index * 80)),
+            behavior: 'smooth'
+        });
     }
 }
