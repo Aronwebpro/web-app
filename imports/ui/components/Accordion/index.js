@@ -27,11 +27,14 @@ export default class Accordion extends React.Component {
                         className='accordion-header'
                         onClick={this.scrollTo}
                         ref={this.titleHeader}
-                        style={{ top: `${80 + (index * 75)}px` }}
+                        style={{ top: `${80 + (index * 73)}px` }}
                     >
-                        <h3>{title}</h3>
+                        <h3><span>{title}</span></h3>
                     </div>
-                    <div className='accordion-inner' style={{ height: this.state.height }}>
+                    <div
+                        className='accordion-inner'
+                        //style={{ height: this.state.height }}
+                    >
                         <div className='inner-content' ref={this.innerContent}>
                             <div>
                                 {this.props.children}
@@ -48,7 +51,7 @@ export default class Accordion extends React.Component {
     innerContent = React.createRef();
 
     componentDidMount() {
-        this.setState({ height: `${this.innerContent.current.clientHeight + 20}px`, isOpen: true });
+        //this.setState({ height: `${this.innerContent.current.clientHeight + 20}px`, isOpen: true });
         window.addEventListener('scroll', this.onScroll);
     }
 

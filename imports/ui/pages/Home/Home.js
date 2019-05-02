@@ -14,7 +14,7 @@ class Home extends React.Component {
                 <section className="content hello-world-section shadow">
                     <div className="inner-content">
                         <div className="section-title-container">
-                            <h2>Hello World!</h2>
+                            <h1>Hello World!</h1>
                         </div>
                         <div className="home-page-greeting">
                             <div className="greeting">

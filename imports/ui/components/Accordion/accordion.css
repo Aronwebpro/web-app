@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px 5px;
-    border-bottom: 2px solid lightgrey;
+    //border-bottom: 1px solid lightgrey;
     font-size: 1.5em;
     cursor: pointer;
     z-index: 2;
@@ -22,15 +22,26 @@
 
 .accordion-sticky-header .accordion-header {
     position: fixed;
-    top: 80px;
-    width: 100%;
+    top: 81px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
     max-width: 1070px;
     background-color: #fff;
 }
 
 .accordion-header h3 {
-    margin: 0;
+    margin: 10px 0 20px;
     padding: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dotted lightgray;
+    line-height: 0.1em;
+}
+
+.accordion-header h3 span {
+    background:#fff;
+    padding:0 10px;
 }
 
 /*Plus Icon */

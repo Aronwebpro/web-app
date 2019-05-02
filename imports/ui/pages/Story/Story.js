@@ -10,7 +10,7 @@ class Story extends React.Component {
                 <section className="content shadow">
                     <div className="inner-content">
                         <div className="section-title-container">
-                            <h2>My Story</h2>
+                            <h1>My Story</h1>
                         </div>
                         <div className="story-content">
                             <p>

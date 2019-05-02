@@ -35,6 +35,10 @@
     border-bottom: 1px solid lightgray;
 }
 
+.section-title-container h1 {
+    font-size: 2em;
+}
+
 .home-page-greeting {
     display: flex;
 }

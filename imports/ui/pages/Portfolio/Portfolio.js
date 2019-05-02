@@ -3,46 +3,23 @@ import React from 'react';
 //Styles
 import './portfolio.css';
 
+//Constants
+import { portfolioProjects } from '/imports/lib/constants/portfolioProjects';
+
 //Components
-import PortfolioTimeLine from "../../components/TimeLine";
-import Accordion from "../../components/Accordion";
-import TimeLine from "../../components/TimeLine";
+import Accordion from "/imports/ui/components/Accordion";
+import TimeLine from "/imports/ui/components/TimeLine";
 
 class Portfolio extends React.Component {
     render() {
-        const years = [
-            {
-                title: '2015 year',
-                data: [
-                    {
-                        title: 'project1'
-                    },
-                    {
-                        title: 'project2'
-                    }
-                ],
-            },
-            {
-                title: '2016 year',
-                data: [
-                    {
-                        title: 'project1'
-                    },
-                    {
-                        title: 'project2'
-                    }
-                ],
-            },
-
-        ];
         return (
             <div className='page'>
                 <section className="content shadow">
                     <div className="inner-content">
                         <div className="section-title-container">
-                            <h2>Portfolio</h2>
+                            <h1>Portfolio</h1>
                         </div>
-                        {years.map(({ title, data }, index) => (
+                        {portfolioProjects.map(({ title, data }, index) => (
                             <Accordion
                                 {...{
                                     title,
