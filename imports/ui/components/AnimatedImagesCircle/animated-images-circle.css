@@ -4,13 +4,13 @@
 }
 
 .circle-container h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 .circle-container ul {
     flex: 1;
-    height: 23em;
+    height: 27em;
     display: flex;
     align-items: center;
     justify-content: center;

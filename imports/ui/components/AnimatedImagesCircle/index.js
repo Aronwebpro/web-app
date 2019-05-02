@@ -9,7 +9,8 @@ export default class AnimatedImagesCircle extends React.Component {
         data: PropTypes.arrayOf(PropTypes.shape({
             img: PropTypes.string,
             text: PropTypes.string,
-        }))
+        })),
+        title: PropTypes.object.isRequired,
     };
     state = {
         elStyles: [],
@@ -24,7 +25,10 @@ export default class AnimatedImagesCircle extends React.Component {
         return (
             <div className="circle-container">
                 <ul>
-                    <li style={centerElStyles}>
+                    <li
+                        style={centerElStyles}
+                        className='center-title'
+                    >
                         {title}
                     </li>
                     {data.map(({ text, img }, index) => {
@@ -63,7 +67,7 @@ export default class AnimatedImagesCircle extends React.Component {
             const { data } = this.props;
             const elStyles = data.map(({ translatePosition }, index) => {
                 const slice = 360 / (data.length);
-                const r = data.length > 3 ? '8' : '6';
+                const r = '9';//data.length > 3 ? '9' : '8';
                 return {
                     transform: `rotate(${(slice * index) + -90 }deg) translate(${translatePosition ? translatePosition : r}em) rotate(${-((slice * index) + -90) }deg)`
                 };

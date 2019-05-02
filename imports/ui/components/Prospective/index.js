@@ -45,7 +45,7 @@ export default class Prospective extends React.PureComponent {
                                 <AnimatedImagesCircle
                                     data={goingImages}
                                     //title={<><h2>Where</h2><h2>I'm going</h2></>}
-                                    title={<h2>want to be</h2>}
+                                    title={<h2>dreaming</h2>}
                                 />
                             </div>
                         </div>

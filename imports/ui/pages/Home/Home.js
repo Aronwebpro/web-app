@@ -59,8 +59,6 @@ class Home extends React.Component {
         if (window) {
             window.scrollTo(0, 0);
         }
-
-        console.log(window.outerHeight)
     }
 
     componentWillUnmount() {
