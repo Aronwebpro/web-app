@@ -12,17 +12,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 5px;
-    //border-bottom: 1px solid lightgrey;
+    padding: 10px 5px;
     font-size: 1.5em;
     cursor: pointer;
     z-index: 2;
-    /*background-color: rgb(245, 245, 245);*/
+    border-left: 1px dotted lightgray;
+    border-right: 1px dotted lightgray;
+}
+
+.accordion-wrapper:last-of-type.accordion-sticky-header .accordion-header {
+    border-bottom: 1px dotted lightgray;
 }
 
 .accordion-sticky-header .accordion-header {
     position: fixed;
-    top: 81px;
+    /*top: 81px;*/
     left: 50%;
     transform: translateX(-50%);
     width: 80vw;
@@ -83,7 +87,7 @@
 }
 
 .accordion-sticky-header .accordion-inner {
-    padding-top: 75px;
+    padding-top: 55px;
 }
 
 

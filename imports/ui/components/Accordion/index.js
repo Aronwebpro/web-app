@@ -27,7 +27,7 @@ export default class Accordion extends React.Component {
                         className='accordion-header'
                         onClick={this.scrollTo}
                         ref={this.titleHeader}
-                        style={{ top: `${80 + (index * 73)}px` }}
+                        style={{ top: `${80 + (index * 53)}px` }}
                     >
                         <h3><span>{title}</span></h3>
                     </div>
@@ -62,7 +62,7 @@ export default class Accordion extends React.Component {
     onScroll = () => {
         const { index } = this.props;
 
-        if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 170 - (index * 80)) < (window.scrollY) ) {
+        if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 158 - (index * 50)) < (window.scrollY) ) {
             this.setState({ sticky: true });
         } else {
             if (this.state.sticky) {
@@ -74,7 +74,7 @@ export default class Accordion extends React.Component {
     scrollTo = () => {
         const { index } = this.props;
         window.scrollTo({
-            top: window.scrollY + this.innerContent.current.getBoundingClientRect().top - (150 + (index * 80)),
+            top: window.scrollY + this.innerContent.current.getBoundingClientRect().top - (150 + (index * 50)),
             behavior: 'smooth'
         });
     }
