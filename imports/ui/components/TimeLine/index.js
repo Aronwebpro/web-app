@@ -11,29 +11,28 @@ class TimelineItem extends React.PureComponent {
     render() {
         const {
             title,
-            text,
+            description,
             img,
             date,
             projectId,
+            type,
         } = this.props;
+        console.log(img)
         return (
             <div className='timeline-item'>
                 <div className='timeline-img' />
                 <div className='timeline-card shadow'>
-                    <div className='timeline-img-header'>
-                        <h2>Card Title</h2>
+                    <div
+                        className='timeline-img-header'
+                        style={{ backgroundImage: `url(${img})` }}
+                    >
+                        <h2>{ title }</h2>
                     </div>
                     <div className='timline-card-date'>
-                        25 April 2019
+                        { date }
                     </div>
                     <div className='timline-card-description'>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis
-                            alias
-                            cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum
-                            excepturi
-                            amet in dolores. Alias, ullam.
-                        </p>
+                        <p>{ description }</p>
                     </div>
                     <div className='timline-card-button-container'>
                         <button className='btn'>

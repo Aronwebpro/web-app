@@ -87,7 +87,8 @@
     align-items: flex-end;
     height: 200px;
     margin-bottom: 20px;
-    background: #d6d6d6 url('https://picsum.photos/1000/800/?random') center center no-repeat;
+    background: #d6d6d6 center center no-repeat;
+    /*background-image: url('https://picsum.photos/1000/800/?random');*/
     background-size: cover;
 }
 

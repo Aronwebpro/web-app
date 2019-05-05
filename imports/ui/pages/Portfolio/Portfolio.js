@@ -26,6 +26,7 @@ class Portfolio extends React.Component {
                                     index,
                                     key: index.toString()
                                 }}
+                                {...data}
                             >
                                 <TimeLine {...{ data }} />
                             </Accordion>

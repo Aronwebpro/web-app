@@ -31,10 +31,7 @@ export default class Accordion extends React.Component {
                     >
                         <h3><span>{title}</span></h3>
                     </div>
-                    <div
-                        className='accordion-inner'
-                        //style={{ height: this.state.height }}
-                    >
+                    <div className='accordion-inner'>
                         <div className='inner-content' ref={this.innerContent}>
                             <div>
                                 {this.props.children}
