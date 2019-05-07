@@ -71,14 +71,14 @@ const ContactPage = PageLayout({
 
 class App extends React.Component {
     state = {
-        isMobile: window.innerWidth < 600,
+        refresh: true,
     };
 
     render() {
         return (
             <BrowserRouter>
                 <div>
-                    <Header/>
+                    <Header {...{ refresh: this.refresh }} />
                     <Switch>
                         <Route path='/logout' render={logOut}/>
                         {/*<Route path='/enroll-account/:token' render={({ match }) => <ManagePassword token={match && match.params && match.params.token} firstPassword={true}/>}/>*/}
@@ -95,6 +95,7 @@ class App extends React.Component {
             </BrowserRouter>
         );
     }
+    refresh = () => this.setState({ refresh: true });
 }
 
 const getData = () => {

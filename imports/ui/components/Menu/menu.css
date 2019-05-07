@@ -54,6 +54,7 @@
     font-weight: bold;
     background: linear-gradient(90deg, #ffec29 0%, #fdca70 20%, #61dafb 60%, #ed7061 85%, #ec1919 95%) fixed;
     color: #fff;
+    cursor: pointer;
 }
 
 .menu a:hover:after {

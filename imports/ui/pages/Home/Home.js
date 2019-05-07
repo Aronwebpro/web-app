@@ -53,8 +53,6 @@ class Home extends React.Component {
     componentWillUnmount() {
         //Setup Flag to know is component Unmounted
         this.isUnmounted = true;
-
-        console.log(this.isUnmounted);
     }
 }
 
