@@ -107,16 +107,22 @@
     background: #eb1917;
     color: #FFFFFF;
 }
+
 .timeline-item:nth-child(even) .timline-card-date {
     right: unset;
 }
 
 .timline-card-description p {
     padding: 0 20px;
+    text-align: justify;
+    line-height: 1.4em;
 }
 
 .timline-card-button-container {
-    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 15px;
+    border-top: 1px dotted #cacaca;
 }
 
 .timline-card-button-container .btn {
@@ -141,4 +147,20 @@
 
 .timline-card-button-container .btn:active {
     transform: scale(1.1);
+}
+
+.project-type-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-type-container h3 {
+    padding: 6px 20px;
+    background-color: #70cde9;
+    color: #fff;
+    margin-left: -15px;
+}
+
+.project-type-container h3:nth-of-type(2) {
+    margin-left: 10px;
 }

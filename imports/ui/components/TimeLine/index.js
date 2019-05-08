@@ -16,8 +16,9 @@ class TimelineItem extends React.PureComponent {
             date,
             projectId,
             type,
+            appType,
+            appTypeColor,
         } = this.props;
-        console.log(img)
         return (
             <div className='timeline-item'>
                 <div className='timeline-img' />
@@ -30,6 +31,10 @@ class TimelineItem extends React.PureComponent {
                     </div>
                     <div className='timline-card-date'>
                         { date }
+                    </div>
+                    <div className='project-type-container'>
+                        <h3>#{type} project</h3>
+                        <h3 style={ appTypeColor || {} }>{appType}</h3>
                     </div>
                     <div className='timline-card-description'>
                         <p>{ description }</p>
