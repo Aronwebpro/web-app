@@ -18,26 +18,29 @@ class TimelineItem extends React.PureComponent {
             type,
             appType,
             appTypeColor,
+            render,
         } = this.props;
         return (
             <div className='timeline-item'>
-                <div className='timeline-img' />
+                <div className='timeline-img'/>
                 <div className='timeline-card shadow'>
-                    <div
-                        className='timeline-img-header'
-                        style={{ backgroundImage: `url(${img})` }}
-                    >
-                        <h2>{ title }</h2>
-                    </div>
-                    <div className='timline-card-date'>
-                        { date }
-                    </div>
-                    <div className='project-type-container'>
-                        <h3>#{type} project</h3>
-                        <h3 style={ appTypeColor || {} }>{appType}</h3>
+                    <div>
+                        <div
+                            className='timeline-img-header'
+                            style={{ backgroundImage: `url(${img})` }}
+                        >
+                            <h2>{title}</h2>
+                        </div>
+                        <div className='timline-card-date'>
+                            <strong> {date}</strong>
+                        </div>
+                        <div className='project-type-container'>
+                            <h3><strong>#{type} project</strong></h3>
+                            <h3 style={appTypeColor || {}}>{appType}</h3>
+                        </div>
                     </div>
                     <div className='timline-card-description'>
-                        <p>{ description }</p>
+                        {render && render()}
                     </div>
                     <div className='timline-card-button-container'>
                         <button className='btn'>
