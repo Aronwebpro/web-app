@@ -169,9 +169,35 @@ const portfolioProjects = [
                 )
             },
             {
+                title: 'Roselle Park District',
+                date: 'June - August, 2018',
+                img: '/img/projects/roselle-parks.png',
+                type: 'Work',
+                appType: 'Mobile Application',
+                appTypeColor: { backgroundColor: '#0659a5' },
+                url: '',
+                render: () => (
+                    <div>
+                        <h3>Central Parks Mobile Application</h3>
+                        <h4><strong>Main Task:</strong> Create Mobile Application controlled via REST API</h4>
+                        <ul>
+                            <h4><strong>General Tasks:</strong></h4>
+                            <li>Mobile UI</li>
+                            <li>REST API end points to communicate with management system</li>
+                            <li>Push Notifications</li>
+                            <li>Check-in Game</li>
+                            <li>User Management, Login with Google, Facebook or Email</li>
+                        </ul>
+                        <div>
+                            <p>Another very interesting project built by me.</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
                 title: 'Vertabiz Mobile App',
                 description: 't is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. ',
-                date: 'June, 2018',
+                date: 'April - June, 2018',
                 img: '/img/projects/vertabiz-project.png',
                 type: 'Work',
                 appType: 'Mobile Application',
@@ -308,14 +334,29 @@ const portfolioProjects = [
                 )
             },
             {
-                title: 'Heathy Living Skills',
+                title: 'Heathy Living Skills website',
                 description: 'Most of my daily jobs was re-skin web sites for dealers',
                 date: 'December, 2017',
                 img: '/img/projects/healthy_living_skills.png',
                 type: 'Client',
                 appType: 'Website',
                 appTypeColor: { backgroundColor: '#429934' },
-                url: '',
+                url: 'http://healthylivingskills.com/',
+                render: () => (
+                    <div>
+                        <h4><strong>Main Task:</strong> Create custom Wordpress theme designed for customer.</h4>
+                        <h4><strong>General Tasks:</strong></h4>
+                        <ul>
+                            <li>Home Page Design and UI</li>
+                            <li>Posts, Pages UI</li>
+                            <li>Wordpress installation and deployment</li>
+                        </ul>
+                        <div>
+                            <p>Client wanted nice and clean design for posting healthy living skills and tips.</p>
+                        </div>
+                    </div>
+                )
+
             },
         ],
     },
@@ -323,18 +364,32 @@ const portfolioProjects = [
         title: '2016 year',
         data: [
             {
-                title: 'Floral Glory',
+                title: 'Floral Glory website',
                 description: 'Landing site for Nicotac sugar-free nicotine chewing gum.',
                 date: 'October, 2016',
-                img: '/img/projects/floralglorydesign.png',
+                img: '/img/projects/floral-glory-project.png',
                 type: 'Client',
                 appType: 'Website',
                 appTypeColor: { backgroundColor: '#429934' },
-                url: '',
+                url: 'http://floralglorydesign.com/',
+                render: () => (
+                    <div>
+                        <h4><strong>Main Task:</strong> Create custom Wordpress theme designed for customer.</h4>
+                        <h4><strong>General Tasks:</strong></h4>
+                        <ul>
+                            <li>Home Page Design and UI</li>
+                            <li>Posts, Pages UI</li>
+                            <li>Wordpress installation and deployment</li>
+                        </ul>
+                        <div>
+                            <p>Client wanted nice and clean design for flower business.</p>
+                        </div>
+                    </div>
+                )
             },
 
             {
-                title: 'JakECig',
+                title: 'JakECig eShop',
                 description: 'JAK ECIG is an Illinois based ECIG manufacturer that has captured an amazing offline customer base through retail distribution channels since 2012. This places JAK ECIG is the #1 independent private owned brand',
                 date: 'August, 2016',
                 img: '/img/projects/jakecig-project.png',
@@ -342,9 +397,25 @@ const portfolioProjects = [
                 appType: 'Website',
                 appTypeColor: { backgroundColor: '#429934' },
                 url: '',
+                render: () => (
+                    <div>
+                        <h4><strong>Main Task:</strong> Create eShop with Open Cart CMS.</h4>
+                        <h4><strong>General Tasks:</strong></h4>
+                        <ul>
+                            <li>Home Page Design and UI</li>
+                            <li>OpenCart theme installation</li>
+                            <li>Upload items, descriptions and pictures</li>
+                            <li>Setup payment system</li>
+                            <li>SEO optimization</li>
+                        </ul>
+                        <div>
+                            <p>Client wanted resking existing OpenCart store for e-cigarettes.</p>
+                        </div>
+                    </div>
+                )
             },
             {
-                title: 'NicotacUSA',
+                title: 'NicotacUSA website',
                 description: 'Landing site for Nicotac sugar-free nicotine chewing gum.',
                 date: 'May, 2015',
                 img: '/img/projects/nicotac-project.png',
@@ -352,9 +423,23 @@ const portfolioProjects = [
                 appType: 'Website',
                 appTypeColor: { backgroundColor: '#429934' },
                 url: '',
+                render: () => (
+                    <div>
+                        <h4><strong>Main Task:</strong> Create custom Wordpress theme designed for customer.</h4>
+                        <h4><strong>General Tasks:</strong></h4>
+                        <ul>
+                            <li>Home Page Design and UI</li>
+                            <li>Posts, Pages UI</li>
+                            <li>Wordpress installation and deployment</li>
+                        </ul>
+                        <div>
+                            <p>Client wanted nice and clean design for Nicotac gum.</p>
+                        </div>
+                    </div>
+                )
             },
             {
-                title: 'AnitaPro Cleaning',
+                title: 'AnitaPro Cleaning website',
                 description: 'Cleaning services website.',
                 date: 'March, 2016',
                 img: '/img/projects/anitaproclean.png',
@@ -362,6 +447,18 @@ const portfolioProjects = [
                 appType: 'Website',
                 appTypeColor: { backgroundColor: '#429934' },
                 url: '',
+                render: () => (
+                    <div>
+                        <h4><strong>Main Task:</strong> Create website for cleaning business.</h4>
+                        <h4><strong>General Tasks:</strong></h4>
+                        <ul>
+                            <li>Home Page Design and UI</li>
+                        </ul>
+                        <div>
+                            <p>Simple website coded with plain html, css and javascript.</p>
+                        </div>
+                    </div>
+                )
             },
             {
                 title: 'Aaron Menu Pro',
@@ -372,6 +469,14 @@ const portfolioProjects = [
                 appType: 'Script',
                 appTypeColor: { backgroundColor: '#ae3738' },
                 url: '',
+                render: () => (
+                    <div>
+                        <h4><strong>Main Task:</strong> Create nice UI for menu.</h4>
+                        <div>
+                            <p>Personal project to utilize JavaScrip and DOM</p>
+                        </div>
+                    </div>
+                )
             },
         ],
     },
@@ -387,6 +492,18 @@ const portfolioProjects = [
                 appType: 'Website',
                 appTypeColor: { backgroundColor: '#429934' },
                 url: '',
+                render: () => (
+                    <div>
+                        <h4><strong>Main Task:</strong>Create website for accounting business.</h4>
+                        <h4><strong>General Tasks:</strong></h4>
+                        <ul>
+                            <li>Pages Design and UI</li>
+                        </ul>
+                        <div>
+                            <p>Simple website coded with plain html, css and javascript and php.</p>
+                        </div>
+                    </div>
+                )
             },
             {
                 title: 'Ledinis.lt',
