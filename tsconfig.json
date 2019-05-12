@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom", "es7"],
+    "baseUrl": "./",
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "typeRoots": ["node_modules/@types/", "typings/"]
+  },
+  "include": [
+    "client/**/*",
+    "imports/**/*",
+    "startup/**/*"
+  ],
+  "exclude": [
+    ".meteor",
+    "node_modules"
+  ]
+}

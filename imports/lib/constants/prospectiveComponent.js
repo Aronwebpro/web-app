@@ -37,14 +37,13 @@ const studyingImages = [
         text: 'Networking',
         img: '/img/iam/networking.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-        translatePosition: '10'
+        translatePosition: '9.3'
     },
     {
         text: 'C++',
         img: '/img/iam/cpp.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-        translatePosition: '10'
-
+        translatePosition: '9.3'
     },
 
 ];
