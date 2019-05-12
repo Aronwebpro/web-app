@@ -34,22 +34,28 @@ const menuItems = [
 
 class Menu extends React.PureComponent {
     render() {
-        const { history } = this.props;
+        const { history, refresh } = this.props;
         const activeUrl = history.location.pathname;
         return (
             <nav className="menu">
                 <div className="menu-inner">
                     {menuItems.map(({ title, link, permissions }, index) => (
                         <div className={`menu-link ${activeUrl === link && 'active-link'}`} key={index.toString()}>
-                            <Link to={link} >
+                            <a onClick={this.handleClick.bind(this, link)} >
                                 {title}
-                            </Link>
+                            </a>
                         </div>
                     ))}
                 </div>
             </nav>
 
         );
+    }
+
+    handleClick = (link) => {
+        //const { refresh } = this.props;
+        this.props.history.push(link);
+        //refresh();
     }
 }
 

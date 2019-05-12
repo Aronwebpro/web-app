@@ -1,0 +1,96 @@
+/*Acordion----------------------------------------------------------------------------------*/
+
+.accordion-wrapper {
+    position: relative;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header*/
+.accordion-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 2;
+    border-left: 1px dotted lightgray;
+    border-right: 1px dotted lightgray;
+}
+
+.accordion-wrapper:last-of-type.accordion-sticky-header .accordion-header {
+    border-bottom: 1px dotted lightgray;
+}
+
+.accordion-sticky-header .accordion-header {
+    position: fixed;
+    /*top: 81px;*/
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    max-width: 1070px;
+    background-color: #fff;
+}
+
+.accordion-header h3 {
+    margin: 10px 0 20px;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dotted lightgray;
+    line-height: 0.1em;
+}
+
+.accordion-header h3 span {
+    background:#fff;
+    padding:0 10px;
+}
+
+/*Plus Icon */
+.plus-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.horizontal {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: -12px;
+    transform: translateY(-50%);
+    padding: 1px 6px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.vertical {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    transform: rotate(90deg);
+    padding: 1px 6px;
+    transition: transform linear 0.6s;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.vertical-open {
+    transform: rotate(0deg);
+}
+
+/*Body*/
+.accordion-inner {
+    overflow: hidden;
+    transition: height ease 600ms;
+}
+
+.accordion-sticky-header .accordion-inner {
+    padding-top: 55px;
+}
+
+
+
+
+

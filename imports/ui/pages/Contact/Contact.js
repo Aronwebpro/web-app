@@ -11,11 +11,10 @@ class Contact extends React.Component {
                 <section className="content">
                     <div className="inner-content">
                         <div className="section-title-container">
-                            <h2>Contact</h2>
+                            <h1>Contact</h1>
                         </div>
                     </div>
                 </section>
-                <Prospective/>
             </>
         );
     }

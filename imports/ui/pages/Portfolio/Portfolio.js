@@ -3,16 +3,37 @@ import React from 'react';
 //Styles
 import './portfolio.css';
 
+//Constants
+import { portfolioProjects } from '/imports/lib/constants/portfolioProjects';
+
+//Components
+import Accordion from "/imports/ui/components/Accordion";
+import TimeLine from "/imports/ui/components/TimeLine";
+
 class Portfolio extends React.Component {
     render() {
         return (
-            <section className="content shadow">
-                <div className="inner-content">
-                    <div className="section-title-container">
-                        <h2>Portfolio</h2>
+            <div className='page'>
+                <section className="content shadow">
+                    <div className="inner-content">
+                        <div className="section-title-container">
+                            <h1>Portfolio</h1>
+                        </div>
+                        {portfolioProjects.map(({ title, data }, index) => (
+                            <Accordion
+                                {...{
+                                    title,
+                                    index,
+                                    key: index.toString()
+                                }}
+                                {...data}
+                            >
+                                <TimeLine {...{ data }} />
+                            </Accordion>
+                        ))}
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         );
     }
 

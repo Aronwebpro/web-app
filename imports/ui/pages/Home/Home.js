@@ -14,7 +14,7 @@ class Home extends React.Component {
                 <section className="content hello-world-section shadow">
                     <div className="inner-content">
                         <div className="section-title-container">
-                            <h2>Hello World!</h2>
+                            <h1>Hello World!</h1>
                         </div>
                         <div className="home-page-greeting">
                             <div className="greeting">
@@ -37,19 +37,8 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
-                {/*<section className="content prospective-body-section shadow">*/}
-                    {/*<div className="inner-content">*/}
-                        {/*<div className="section-title-container">*/}
-                            {/*<h2>More about me</h2>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</section>*/}
                 <Prospective/>
-                <section className="content technologies-section shadow">
-                    <div className="inner-content">
-                        <GetSocial />
-                    </div>
-                </section>
+                <GetSocial />
             </div>
         );
     }
@@ -59,15 +48,11 @@ class Home extends React.Component {
         if (window) {
             window.scrollTo(0, 0);
         }
-
-        console.log(window.outerHeight)
     }
 
     componentWillUnmount() {
         //Setup Flag to know is component Unmounted
         this.isUnmounted = true;
-
-        console.log(this.isUnmounted);
     }
 }
 

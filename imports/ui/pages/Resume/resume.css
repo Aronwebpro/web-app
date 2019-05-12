@@ -144,3 +144,8 @@
     /*border-radius: 10px;*/
     margin: 4px;
 }
+
+.other-skills-container img:hover {
+    transform: scale(1.2);
+    transition: all 400ms linear;
+}

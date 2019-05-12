@@ -133,6 +133,60 @@ const dataSet = {
     ]
 };
 
+
+const otherSkillsRow1 = [
+    {
+        name: 'Photoshop',
+        img: '/img/logos/photoshop.png',
+        url: 'https://www.adobe.com/products/photoshop.html'
+    },
+    {
+        name: 'MySql',
+        img: '/img/logos/mysql.png',
+        url: 'https://www.mysql.com/',
+    },
+    {
+        name: 'Express Js',
+        img: '/img/logos/expressJs.png',
+        url: 'https://expressjs.com',
+    },
+    {
+        name: 'jQuery',
+        img: '/img/logos/jquery.png',
+        url: 'https://jquery.com/',
+    },
+    {
+        name: 'Zoho API',
+        img: '/img/logos/zoho.png',
+        url: 'https://www.zoho.com/',
+    },
+    {
+        name: 'MS Office',
+        img: '/img/logos/office.png',
+        url: 'https://www.office.com',
+    },
+];
+
+const otherSkillsRow2 = [
+    {
+        name: 'Robo 3t',
+        img: '/img/logos/robo.png',
+        url: 'https://robomongo.org/',
+    },
+    {
+        name: 'WebPack',
+        img: '/img/logos/webpack.png',
+        url: 'https://webpack.js.org',
+    },
+    {
+        name: 'Postman',
+        img: '/img/logos/postman.png',
+        url: 'https://www.getpostman.com/',
+    },
+];
+
 export {
-    dataSet
+    dataSet,
+    otherSkillsRow1,
+    otherSkillsRow2
 }

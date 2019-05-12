@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class HeroImage extends React.PureComponent {
     state = {
-        backgroundPositionY: -187,
+        backgroundPositionY: -220,
     };
 
     render() {
@@ -24,7 +24,7 @@ export default class HeroImage extends React.PureComponent {
 
     imageMove = () => {
         if (window.scrollY < 440) {
-            this.setState({ backgroundPositionY: ((window.scrollY * -1.6) -187) });
+            this.setState({ backgroundPositionY: ((window.scrollY * -1.6) -220) });
         }
     }
 }

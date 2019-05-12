@@ -4,13 +4,13 @@
 }
 
 .circle-container h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 .circle-container ul {
     flex: 1;
-    height: 23em;
+    height: 27em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +27,7 @@
     position: absolute;
     -webkit-transition: all 2s linear;
     -moz-transition: all 2s linear;
-    transition: all 2s linear;
+    transition: all 1.5s linear;
 }
 
 .circle-container li:hover {
@@ -48,3 +48,11 @@
     width: 100%;
 }
 
+li.center-title {
+    background-color: #2e78a5;
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 2s linear;
+}

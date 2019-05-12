@@ -47,7 +47,7 @@ export default class SkillsDiagram extends React.Component {
             .padding(1.5);
 
         //Tooltip Container
-        const tooltip = d3.select("body").append("div")
+        const tooltip = d3.select(".skills-diagram-container").append("div")
             .attr("class", "tooltip")
             .style("color", "white")
             .style("background-color", "#626D71")

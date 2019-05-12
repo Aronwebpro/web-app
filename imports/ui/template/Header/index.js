@@ -27,17 +27,17 @@ export default class Header extends React.Component {
                 </div>
                 <div className="header-body" style={{ height: this.state.headerMobile }}>
                     <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
-                        <div className="title-wrapper">
-                            {/*<h1 style={{ display: 'inline-block' }}>*/}
-                            {/*Aaron's<span style={{ color: 'red' }}> Website</span>*/}
-                            {/*</h1>*/}
-                            <div className="mobile-login_button">
-                                <a href="">Login</a>
-                                <a href="">Register</a>
-                            </div>
-                        </div>
+                        {/*<div className="title-wrapper">*/}
+                            {/*/!*<h1 style={{ display: 'inline-block' }}>*!/*/}
+                            {/*/!*Aaron's<span style={{ color: 'red' }}> Website</span>*!/*/}
+                            {/*/!*</h1>*!/*/}
+                            {/*<div className="mobile-login_button">*/}
+                                {/*<a href="">Login</a>*/}
+                                {/*<a href="">Register</a>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
                         <div className="menu-wrapper">
-                            <Menu/>
+                            <Menu {...this.props} />
                         </div>
 
                     </div>

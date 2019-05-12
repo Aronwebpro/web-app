@@ -5,13 +5,13 @@ const workingImages = [
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     {
-        text: 'WEB Apps',
-        img: '/img/iam/web_app.png',
+        text: 'Mobile Apps',
+        img: '/img/iam/mobile2.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     {
-        text: 'Mobile Apps',
-        img: '/img/iam/mobile2.png',
+        text: 'WEB Apps',
+        img: '/img/iam/web_app.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     {
@@ -28,11 +28,10 @@ const workingImages = [
 
 const studyingImages = [
     {
-        text: 'C++',
-        img: '/img/iam/cpp.png',
+        text: 'Computer Science',
+        img: '/img/iam/cs.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-        translatePosition: '6'
-
+        translatePosition: '9'
     },
     {
         text: 'Networking',
@@ -41,11 +40,12 @@ const studyingImages = [
         translatePosition: '9.3'
     },
     {
-        text: 'Computer Science',
-        img: '/img/iam/cs.png',
+        text: 'C++',
+        img: '/img/iam/cpp.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
         translatePosition: '9.3'
     },
+
 ];
 
 const goingImages = [
@@ -53,11 +53,13 @@ const goingImages = [
         text: 'Cyber Security Developer',
         img: '/img/iam/cyber_security.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        translatePosition: '8.5'
     },
     {
         text: 'Platform Architect',
         img: '/img/iam/platform_architect.png',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        translatePosition: '8.5'
     },
 ];
 
