@@ -55,7 +55,7 @@
     float: left;
 }
 
-.timeline-item:nth-child(even) .timeline-card   {
+.timeline-item:nth-child(even) .timeline-card {
     float: right;
 }
 
@@ -116,8 +116,17 @@
 .timeline-item:nth-child(even) .timline-card-date {
     right: unset;
 }
+
 .timline-card-description {
     padding: 0 20px;
+}
+
+.timline-card-description ul {
+    margin-top: 0;
+}
+.timline-card-description h3,
+.timline-card-description h4 {
+    margin-top: 5px;
 }
 
 .timline-card-description p {
