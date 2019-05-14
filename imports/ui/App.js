@@ -13,7 +13,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 //Components
 import AuthenticatedRoute from './AuthenticatedRoute';
-import Modal from '/imports/ui/components/Modal';
+import ContactModal from '/imports/ui/components/ContactModal';
 
 //Template
 import PageLayout from './template/PageLayout';
@@ -93,16 +93,12 @@ class App extends React.Component {
                         <Route path='/' component={HomePage}/>
                     </Switch>
                     <Footer />
-                    <Modal
+                    <ContactModal
                         {...{
                             visible: this.state.contactsModalVisible,
                             onClose: this.handleModalClose,
                         }}
-                    >
-                        <div>
-                            <h1>Aaron the best</h1>
-                        </div>
-                    </Modal>
+                    />
                 </div>
             </BrowserRouter>
         );

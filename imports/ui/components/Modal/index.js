@@ -14,6 +14,13 @@ export default class Modal extends React.PureComponent {
         onClose: PropTypes.func.isRequired,
         closeText: PropTypes.string,
         okText: PropTypes.string,
+        width: PropTypes.string,
+        maxWidth: PropTypes.string,
+    };
+
+    static defaultProps = {
+        width: '100%',
+        maxWidth: '600px',
     };
 
     state = {
@@ -27,19 +34,21 @@ export default class Modal extends React.PureComponent {
             footer,
             title,
             onClose,
-            okText
+            okText,
+            width,
+            maxWidth,
         } = this.props;
         const { top } = this.state;
         return visible ? (
             <div className="modal-block">
-                <div className="modal-inner" style={{ top }}>
+                <div className="modal-inner" style={{ top, width, maxWidth }}>
                     <div className="modal-inner-content">
                         <div className="modal-header">
                             <div className="modal-header-content">
                                 {header ? header : (
-                                    <h3 className="modal-title">
+                                    <h2 className="modal-title">
                                         {title}
-                                    </h3>
+                                    </h2>
                                 )}
                             </div>
                             <div className="modal-header-button">

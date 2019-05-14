@@ -7,7 +7,6 @@
     bottom: 0;
     left: 0;
     z-index: 1050;
-    /*overflow: hidden;*/
     -webkit-overflow-scrolling: touch;
     outline: 0;
     background-color: rgba(0, 0, 0, 0.78);
@@ -17,10 +16,8 @@
 
 .modal-inner {
     position: relative;
-    max-width: 600px;
     margin: 50px auto;
     max-height: 98%;
-    /*top:-100%;*/
     transition: all 0.5s;
 }
 
@@ -98,14 +95,6 @@
 }
 
 /*Footer Close Button*/
-/*.footer-close-button {*/
-/*margin-left: 10px;*/
-/*padding:8px 17px;*/
-/*border-radius: 5px;*/
-/*border: 1px solid black;*/
-/*cursor: pointer;*/
-/*}*/
-
 .modal-footer-button {
     margin-left: 10px;
     display: inline-block;

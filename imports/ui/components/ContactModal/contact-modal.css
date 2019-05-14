@@ -1,0 +1,8 @@
+.contact-container .greeting .link,
+.contact-container .greeting .link p {
+    text-align: center;
+}
+
+.contact-container .greeting .link img {
+    margin: 10px auto;
+}
