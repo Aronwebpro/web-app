@@ -13,6 +13,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 //Components
 import AuthenticatedRoute from './AuthenticatedRoute';
+import ContactModal from '/imports/ui/components/ContactModal';
 
 //Template
 import PageLayout from './template/PageLayout';
@@ -24,6 +25,7 @@ import { logOut } from '../api/logout';
 
 //Theme Styles
 import '/imports/assets/css/theme.css';
+
 
 //Page Components
 import Home from '../ui/pages/Home/Home';
@@ -71,14 +73,14 @@ const ContactPage = PageLayout({
 
 class App extends React.Component {
     state = {
-        refresh: true,
+        contactsModalVisible: false,
     };
 
     render() {
         return (
             <BrowserRouter>
                 <div>
-                    <Header {...{ refresh: this.refresh }} />
+                    <Header {...{ openModal: this.handleModalOpen }} />
                     <Switch>
                         <Route path='/logout' render={logOut}/>
                         {/*<Route path='/enroll-account/:token' render={({ match }) => <ManagePassword token={match && match.params && match.params.token} firstPassword={true}/>}/>*/}
@@ -91,11 +93,19 @@ class App extends React.Component {
                         <Route path='/' component={HomePage}/>
                     </Switch>
                     <Footer />
+                    <ContactModal
+                        {...{
+                            visible: this.state.contactsModalVisible,
+                            onClose: this.handleModalClose,
+                        }}
+                    />
                 </div>
             </BrowserRouter>
         );
     }
-    refresh = () => this.setState({ refresh: true });
+
+    handleModalClose = () => this.setState({ contactsModalVisible: false });
+    handleModalOpen = () => this.setState({ contactsModalVisible: true });
 }
 
 const getData = () => {

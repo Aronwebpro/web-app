@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 //Styles
 import './menu.css';
@@ -48,15 +48,17 @@ class Menu extends React.PureComponent {
                     ))}
                 </div>
             </nav>
-
         );
     }
 
     handleClick = (link) => {
-        //const { refresh } = this.props;
-        this.props.history.push(link);
-        //refresh();
-    }
+        const { openModal } = this.props;
+        if (link === '/contact') {
+            openModal();
+        } else {
+            this.props.history.push(link);
+        }
+    };
 }
 
 export default withRouter(Menu);
