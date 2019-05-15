@@ -3,12 +3,12 @@
 --------------------------------------------------*/
 
 /*.home-content .content.hello-world-section {*/
-    /*margin: -40px auto 0;*/
+/*margin: -40px auto 0;*/
 /*}*/
 
 .home-content .hello-world-section .inner-content {
     border-radius: 5px;
-    border:1px solid #ededed;
+    border: 1px solid #ededed;
 }
 
 /*-------------------------------------------------
@@ -79,28 +79,33 @@
     background-size: cover;
 }
 
-/*-------------------------------------------------
-# Technologies Section
---------------------------------------------------*/
-.technologies-section {
-    margin: 50px auto;
-    /*max-width: unset;*/
-    justify-content: center;
+@media all and (max-width: 1100px) {
+    .portrait {
+        align-items: flex-start;
+    }
+    .greeting {
+        flex: 2;
+    }
+    .portrait {
+        flex: 1;
+    }
 }
 
-.technologies-section .inner-content {
-    flex: 1;
-    max-width: 1200px;
-    padding: 20px;
-    box-sizing: border-box;
-    /*Temp Prop*/
-    min-height: 300px;
-
+@media all and (max-width: 769px) {
+    .image-container {
+        width: 100px;
+        height: 125px;
+    }
+    .greeting {
+        flex: 2;
+    }
 }
 
-/*-------------------------------------------------
-# Get Social Section
---------------------------------------------------*/
-.get-social-section {
-    margin-top: 50px;
+@media all and (max-width: 600px) {
+    .portrait {
+        display: none;
+    }
+    .greeting {
+        flex: 2;
+    }
 }

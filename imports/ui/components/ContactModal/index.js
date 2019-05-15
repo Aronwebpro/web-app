@@ -31,7 +31,7 @@ export default class ContactModal extends React.PureComponent {
                                 Linkedin.</p>
                         </blockquote>
                         <div className='link'>
-                            <p>Just click the link below, visit my profile and send me a message!</p>
+                            <p>Just click the link below and send me a message!</p>
                             <a href="http://www.linkedin.com/in/aaron-app-brewer" target="_blank">
                                 <img id="linkedin-img" src="/img/linkedin2.png" alt="LinkedIn"/>
                             </a>
