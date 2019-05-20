@@ -1,9 +1,13 @@
-import { getDisplayName } from '/imports/ui/hoc/utils';
-import hoistNonReactStatics from 'hoist-non-react-statics';
-import PropTypes from 'prop-types';
 import * as React from 'react';
-const { Component, PureComponent } = React;
+import PropTypes from 'prop-types';
+import hoistNonReactStatics from 'hoist-non-react-statics';
+
+//Redux
 import { connect } from 'react-redux';
+
+//HOC Utils
+import { getDisplayName } from '/imports/ui/hoc/utils';
+
 
 /**
  * Provides the following props from Redux:

@@ -77,10 +77,13 @@ const ContactPage = PageLayout({
 
 
 class App extends React.Component {
-    state = {
-        contactsModalVisible: false,
-    };
-
+    constructor(props) {
+        super(props);
+        store.dispatch(changeIsMobile(window.innerWidth < 600));
+        this.state = {
+            contactsModalVisible: false,
+        };
+    }
     render() {
         return (
             <BrowserRouter>
@@ -113,7 +116,6 @@ class App extends React.Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.updateDimensions);
-        store.dispatch(changeIsMobile(window.innerWidth < 769));
     }
 
     componentWillUnmount() {
@@ -121,7 +123,7 @@ class App extends React.Component {
     }
 
     updateDimensions = () => {
-        const currIsMobile = window.innerWidth < 769;
+        const currIsMobile = window.innerWidth < 600;
         const prevIsMobile = store.getState().isMobile;
         if (prevIsMobile !== currIsMobile) {
             store.dispatch(changeIsMobile(currIsMobile));

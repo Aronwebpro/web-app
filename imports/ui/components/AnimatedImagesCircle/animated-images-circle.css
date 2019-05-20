@@ -16,9 +16,8 @@
     justify-content: center;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 20px;
 }
-
 .circle-container li {
     display: flex;
     flex-direction: column;
@@ -55,4 +54,15 @@ li.center-title {
     border-radius: 50%;
     color: #fff;
     transition: all 2s linear;
+}
+@media all and (max-width: 1100px) {
+    .prospective-body-section ul {
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .circle-container ul {
+        height: 18em;
+    }
 }

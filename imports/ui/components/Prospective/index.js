@@ -27,7 +27,7 @@ export default class Prospective extends React.PureComponent {
                                 <div className="prospective-logos-container">
                                     <AnimatedImagesCircle
                                         data={workingImages}
-                                        title={<h2>doing</h2>}
+                                        title={'doing'}
                                     />
                                 </div>
                             </div>
@@ -35,7 +35,7 @@ export default class Prospective extends React.PureComponent {
                                 <div className="prospective-logos-container">
                                     <AnimatedImagesCircle
                                         data={studyingImages}
-                                        title={<h2>studying</h2>}
+                                        title={'studying'}
                                     />
                                 </div>
                             </div>
@@ -43,7 +43,7 @@ export default class Prospective extends React.PureComponent {
                                 <div className="prospective-logos-container">
                                     <AnimatedImagesCircle
                                         data={goingImages}
-                                        title={<h2>seeking</h2>}
+                                        title={'seeking'}
                                     />
                                 </div>
                             </div>

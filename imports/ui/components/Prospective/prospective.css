@@ -24,14 +24,6 @@
     border-right: 1px solid #ededed;
 }
 
-.prospective-body-section ul {
-    padding-left: 20px;
-}
-
-.prospective-body-section ul {
-    padding-left: 20px;
-}
-
 .prospective-title-section .inner-content {
     padding: 10px;
     margin: 10px;
@@ -73,5 +65,11 @@
     .prospective-body-section .inner-content {
         border-radius: 5px;
         border:1px solid #ededed;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .prospective-body-section .section-title-container h2 {
+        font-size: 1.5em;
     }
 }
