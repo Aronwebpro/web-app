@@ -46,6 +46,7 @@
     padding-right: 5px;
 }
 input[type="submit"].top-row_login {
+    width: 60px;
     /*color: #b52525;*/
     margin: 0 5px 0 10px;
     /*color: #00679a;*/

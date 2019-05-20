@@ -109,3 +109,15 @@
         flex: 2;
     }
 }
+
+@media all and (max-width: 500px) {
+    .greeting p {
+        font-size: 0.8em;
+    }
+    .hero-image-container {
+        margin-top: 0;
+    }
+    .section-title-container h1 {
+        font-size: 1.5em;
+    }
+}

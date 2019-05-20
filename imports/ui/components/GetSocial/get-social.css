@@ -70,3 +70,11 @@ img#git-hub-img {
         border:1px solid #ededed;
     }
 }
+@media all and (max-width: 500px) {
+    .get-social .section-title {
+        font-size: 0.8em;
+    }
+    img#linkedin-img {
+        max-width: 200px;
+    }
+}
