@@ -11,6 +11,11 @@ import {
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 
+//Redux
+import { Provider } from 'react-redux';
+import store from '/imports/redux/store';
+import { changeIsMobile } from '../redux/actions';
+
 //Components
 import AuthenticatedRoute from './AuthenticatedRoute';
 import ContactModal from '/imports/ui/components/ContactModal';
@@ -79,35 +84,54 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div>
-                    <Header {...{ openModal: this.handleModalOpen }} />
-                    <Switch>
-                        <Route path='/logout' render={logOut}/>
-                        {/*<Route path='/enroll-account/:token' render={({ match }) => <ManagePassword token={match && match.params && match.params.token} firstPassword={true}/>}/>*/}
-                        <AuthenticatedRoute path='/dashboard' render={() => <div>Hello Dashboard!</div>}/>
-                        {/*Public Pages*/}
-                        <Route path='/my-story' component={MyStoryPage}/>
-                        <Route path='/portfolio' component={PortfolioPage}/>
-                        <Route path='/resume' component={ResumePage}/>
-                        <Route path='/contact' component={ContactPage}/>
-                        <Route path='/' component={HomePage}/>
-                    </Switch>
-                    <Footer />
-                    <ContactModal
-                        {...{
-                            visible: this.state.contactsModalVisible,
-                            onClose: this.handleModalClose,
-                        }}
-                    />
-                </div>
+                <Provider store={store}>
+                    <div>
+                        <Header {...{ openModal: this.handleModalOpen }} />
+                        <Switch>
+                            <Route path='/logout' render={logOut}/>
+                            {/*<Route path='/enroll-account/:token' render={({ match }) => <ManagePassword token={match && match.params && match.params.token} firstPassword={true}/>}/>*/}
+                            <AuthenticatedRoute path='/dashboard' render={() => <div>Hello Dashboard!</div>}/>
+                            {/*Public Pages*/}
+                            <Route path='/my-story' component={MyStoryPage}/>
+                            <Route path='/portfolio' component={PortfolioPage}/>
+                            <Route path='/resume' component={ResumePage}/>
+                            <Route path='/contact' component={ContactPage}/>
+                            <Route path='/' component={HomePage}/>
+                        </Switch>
+                        <Footer/>
+                        <ContactModal
+                            {...{
+                                visible: this.state.contactsModalVisible,
+                                onClose: this.handleModalClose,
+                            }}
+                        />
+                    </div>
+                </Provider>
             </BrowserRouter>
         );
     }
 
+    componentDidMount() {
+        window.addEventListener('resize', this.updateDimensions);
+        store.dispatch(changeIsMobile(window.innerWidth < 769));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateDimensions);
+    }
+
+    updateDimensions = () => {
+        const currIsMobile = window.innerWidth < 769;
+        const prevIsMobile = store.getState().isMobile;
+        if (prevIsMobile !== currIsMobile) {
+            store.dispatch(changeIsMobile(currIsMobile));
+        }
+    };
+
     handleModalClose = () => this.setState({ contactsModalVisible: false });
     handleModalOpen = () => this.setState({ contactsModalVisible: true });
 }
-
+//TODO: Start to use Redux for USER
 const getData = () => {
     const user = Meteor.user();
     return {
