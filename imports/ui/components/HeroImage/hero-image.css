@@ -20,7 +20,7 @@
     .hero-image-container {
         margin-top: 0;
         /*TODO: Create image for Mobile view*/
-        background: url('/img/hero.png') no-repeat fixed center -190px;
+        background: url('/img/hero_mobile.png') no-repeat fixed center 0px;
     }
 
 }

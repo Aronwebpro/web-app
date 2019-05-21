@@ -75,7 +75,8 @@ class AnimatedImagesCircle extends React.Component {
         if (this.state.loaded) {
             window.removeEventListener('scroll', this.scatterItems);
         }
-        if (window.scrollY > 100) {
+        const initHeight = isMobile ? 200 : 100;
+        if (window.scrollY > initHeight) {
             const { data } = this.props;
             const elStyles = data.map(({ translatePosition }, index) => {
                 const slice = 360 / (data.length);

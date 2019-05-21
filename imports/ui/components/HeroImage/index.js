@@ -13,7 +13,7 @@ const initYPosition = 220;
 
 class HeroImage extends React.PureComponent {
     state = {
-        backgroundPositionY: this.props.isMobile ? -(initYPosition * 2) : -(initYPosition),
+        backgroundPositionY: this.props.isMobile ? 0 : -(initYPosition),
     };
 
     render() {
@@ -37,14 +37,19 @@ class HeroImage extends React.PureComponent {
     componentDidUpdate(prevProps) {
         if (prevProps.isMobile !== this.props.isMobile) {
             const { backgroundPositionY } = this.state;
-            this.setState({ backgroundPositionY: this.props.isMobile ? backgroundPositionY * 2 : backgroundPositionY / 2 });
+            this.setState({ backgroundPositionY: this.props.isMobile ? backgroundPositionY : backgroundPositionY / 2 });
         }
     }
 
     imageMove = () => {
         const { isMobile } = this.props;
         if (window.scrollY < 440) {
-            this.setState({ backgroundPositionY: ((window.scrollY * -1.6) - (isMobile ? (initYPosition * 2) : initYPosition)) });
+            if (isMobile) {
+                this.setState({ backgroundPositionY: ((window.scrollY * -1.2)) });
+            } else {
+                this.setState({ backgroundPositionY: ((window.scrollY * -1.6) - initYPosition) });
+            }
+
         }
     };
 }
