@@ -93,3 +93,12 @@ input[type="submit"].top-row_login:active {
 .linkedIn-button img:active {
     transform: scale(1.1);
 }
+
+@media all and (max-width: 600px) {
+    .login-section:after {
+        height: 0;
+    }
+    .login-section {
+        height: 40px;
+    }
+}

@@ -19,6 +19,7 @@ import { changeIsMobile } from '../redux/actions';
 //Components
 import AuthenticatedRoute from './AuthenticatedRoute';
 import ContactModal from '/imports/ui/components/ContactModal';
+import MobileNavigation from '/imports/ui/components/MobileNavigation';
 
 //Template
 import PageLayout from './template/PageLayout';
@@ -108,6 +109,7 @@ class App extends React.Component {
                                 onClose: this.handleModalClose,
                             }}
                         />
+                        <MobileNavigation />
                     </div>
                 </Provider>
             </BrowserRouter>
