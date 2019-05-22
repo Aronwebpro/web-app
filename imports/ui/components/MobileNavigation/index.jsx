@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 //HOC
-import withMobile from "../../hoc/withMobile";
+import withMobile from '../../hoc/withMobile';
 
 //Antd
 import Icon from 'antd/lib/icon';
@@ -14,11 +14,14 @@ import './mobile-navigation.css';
 //Menu Items
 const iconStyles = {
     fontSize: '25px',
-    color: '#fff'
+    color: '#fff',
+    marginTop: '15px',
 };
 
 const navigationItems = [
     {
+        title: 'Home',
+        icon: 'home',
         labelComponent:
             (
                 <div className='mobile-navigation-item-button'>
@@ -29,6 +32,8 @@ const navigationItems = [
         link: '/'
     },
     {
+        title: 'My Story',
+        icon: 'coffee',
         labelComponent:
             (
                 <div className='mobile-navigation-item-button'>
@@ -39,6 +44,8 @@ const navigationItems = [
         link: '/my-story',
     },
     {
+        title: 'Resume',
+        icon: 'file-done',
         labelComponent:
             (
                 <div className='mobile-navigation-item-button'>
@@ -49,6 +56,8 @@ const navigationItems = [
         link: '/resume',
     },
     {
+        title: 'Portfolio',
+        icon: 'laptop',
         labelComponent:
             (
                 <div className='mobile-navigation-item-button'>
@@ -60,23 +69,37 @@ const navigationItems = [
     },
 ];
 
-class MobileNavigation extends React.Component {
+class MobileNavigation extends React.PureComponent {
+    state = {
+        activeLink: '/',
+    };
+
     render() {
         const { isMobile } = this.props;
-
+        const { activeLink } = this.state;
         return (
             <div className='mobile-navigation-container shadow' style={{ bottom: isMobile ? 0 : -110 }}>
                 <div className='mobile-navigation-wrapper'>
-                    {navigationItems.map(({ labelComponent, link }, index) => {
+                    {navigationItems.map(({ title, icon, link }, index) => {
                         const hasBorder = index !== navigationItems.length - 1 ? 'has-border' : '';
-                        const active = window.location.pathname === link ? 'active' : '';
+                        const active = activeLink === link ? 'active' : '';
+                        const iconStyles = {
+                            fontSize: '25px',
+                            color: active ? '#5f5f5f' : 'lightgray',
+                            marginTop: '15px',
+                        };
                         return (
                             <div
                                 key={link}
                                 className={`mobile-navigation-item ${hasBorder} ${active}`}
                             >
-                                <Link to={link}>
-                                    {labelComponent}
+                                <Link
+                                    to={link}
+                                    onClick={this.handleClick.bind(this, link)}>
+                                    <div className='mobile-navigation-item-button'>
+                                        <Icon type={icon} style={iconStyles}/>
+                                        <p>{title}</p>
+                                    </div>
                                 </Link>
                             </div>
                         );
@@ -86,6 +109,8 @@ class MobileNavigation extends React.Component {
             </div>
         );
     }
+
+    handleClick = (activeLink) => this.setState({ activeLink });
 }
 
 

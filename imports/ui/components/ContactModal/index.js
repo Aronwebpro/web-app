@@ -27,11 +27,10 @@ export default class ContactModal extends React.PureComponent {
                 <section className='contact-container'>
                     <div className='greeting'>
                         <blockquote>
-                            <p>Hey! Thanks for stopping by, if you want to contact me, please do that through
-                                Linkedin.</p>
+                            <p>Hey! Thanks for stopping by, if you want to contact me, shoot me a message on LinkedIn.</p>
                         </blockquote>
                         <div className='link'>
-                            <p>Just click the link below and send me a message!</p>
+                            <p>Just click the link below to my profile!</p>
                             <a href="http://www.linkedin.com/in/aaron-app-brewer" target="_blank">
                                 <img id="linkedin-img" src="/img/linkedin2.png" alt="LinkedIn"/>
                             </a>

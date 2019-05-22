@@ -100,3 +100,16 @@ a:active {
     justify-content: center;
     align-items: center;
 }
+
+@media all and (max-width: 500px) {
+    .inner-content {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+    .section-title-container {
+        padding: 20px;
+        margin: 0;
+        text-align: center;
+    }
+}

@@ -16,7 +16,7 @@
     padding: 20px;
     text-align: center;
     font-size: 2em;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .prospective-body-section .section-column:nth-of-type(1),
@@ -70,6 +70,21 @@
 
 @media all and (max-width: 600px) {
     .prospective-body-section .section-title-container h2 {
-        font-size: 1.5em;
+        font-size: 22px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .prospective-body-section .inner-content {
+       border: unset;
+    }
+    .prospective-body-section .section-title-container {
+        padding: 0;
+    }
+    .prospective-body-section .section-title-container h2 {
+        padding: 10px;
+    }
+    .prospective-body-section {
+        padding-bottom: 0;
     }
 }

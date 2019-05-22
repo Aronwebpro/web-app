@@ -65,16 +65,30 @@ img#git-hub-img {
     .get-social-column {
         margin: 30px 0;
     }
+
     .technologies-section .inner-content {
         border-radius: 5px;
-        border:1px solid #ededed;
+        border: 1px solid #ededed;
     }
 }
+
 @media all and (max-width: 500px) {
     .get-social .section-title {
         font-size: 0.8em;
+        padding: 10px;
     }
+
     img#linkedin-img {
         max-width: 200px;
     }
+
+    .technologies-section .inner-content {
+        padding: 10px 0 0 0;
+    }
+
+    .get-social .section-title h2 {
+        /*font-weight: bold;*/
+        font-size: 22px;
+    }
+
 }

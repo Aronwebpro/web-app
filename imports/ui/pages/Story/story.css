@@ -6,6 +6,17 @@
     .story-content p {
         font-size: 0.9em;
         text-align: justify;
+        line-height: 1.5em;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .story-content {
+        padding: 0 15px;
+    }
+
+    .story-content p {
+
     }
 
 }

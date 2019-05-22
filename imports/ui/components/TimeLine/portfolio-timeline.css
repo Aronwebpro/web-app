@@ -15,7 +15,7 @@
     content: '';
     background: #a6d1bc;
     width: 5px;
-    height: 95%;
+    height: 100%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -36,30 +36,24 @@
 }
 
 /*-------------------------------------------------
-# Time line Item
+# Time line Item / Timeline Card
 --------------------------------------------------*/
 .timeline-container {
     flex: 1;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
 }
 
-timeline-item-container {
-    position: relative;
-    flex: 1;
-
-}
-
-.timeline-item {
+.timeline-item-container {
     position: relative;
     flex: 1;
     display: flex;
     margin-bottom: 50px;
 }
 
-.timeline-item:after {
-    content: '';
-    clear: both;
+.timeline-item {
+    position: relative;
+    flex: 1;
 }
 
 .timeline-card {
@@ -78,26 +72,14 @@ timeline-item-container {
     top: 8px;
 }
 
-/*Item Left Side*/
+/*Left timeline-card*/
 .timeline-container .timeline-item-container:nth-child(odd) .timeline-card {
     float: left;
 }
 
-.timeline-container:nth-child(odd) .timeline-item-container:nth-child(odd) .timeline-card::after {
-    right: -28px;
-    border-width: 20px 0 19px 28px;
-    border-color: transparent transparent transparent #eb1917
-}
-
-/*Item Right Side*/
+/*Right timeline-card*/
 .timeline-container .timeline-item-container:nth-child(even) .timeline-card {
     float: right;
-}
-
-.timeline-container .timeline-item-container:nth-child(even) .timeline-card::after {
-    left: -28px;
-    border-width: 20px 28px 19px 0;
-    border-color: transparent #eb1917 transparent transparent;
 }
 
 /*Item Header Image Container*/
@@ -129,15 +111,30 @@ timeline-item-container {
 }
 
 /*Item Date Left Side*/
-.timeline-container:nth-child(odd) .timeline-card-date {
+.timeline-container:nth-child(odd) .timeline-item-container:nth-child(odd) .timeline-card-date {
     right: 0;
 }
 
 /*Item Date Right Side*/
-.timeline-container:nth-child(even) .timeline-card-date {
-    right: unset;
+.timeline-container .timeline-item-container:nth-child(even) .timeline-card-date {
+    left: 0;
 }
 
+/*Left Date Arrow*/
+.timeline-container:nth-child(odd) .timeline-item-container:nth-child(odd) .timeline-card::after {
+    right: -27px;
+    border-width: 20px 0 19px 28px;
+    border-color: transparent transparent transparent #eb1917;
+}
+
+/*Right Date Arrow*/
+.timeline-container .timeline-item-container:nth-child(even) .timeline-card:after {
+    left: -27px;
+    border-width: 20px 28px 19px 0;
+    border-color: transparent #eb1917 transparent transparent;
+}
+
+/*Card Body */
 .timeline-card-description {
     padding: 0 20px;
 }
@@ -205,42 +202,121 @@ timeline-item-container {
     margin-left: 10px;
 }
 
+/*-------------------------------------------------
+# Responsive Styles
+--------------------------------------------------*/
 @media all and (max-width: 1100px) {
     .timeline::before {
-        right: 0;
+        right: -22px;
         left: unset;
     }
 
-    /*.timeline-img {*/
-    /*right: -35.9%;*/
-    /*left: unset;*/
-    /*}*/
+    .timeline-img {
+        left: unset;
+        right: -32px;
+    }
+
     .timeline-card {
-        width: 400px;
+        width: 92%;
     }
 
     .timeline-container {
         align-items: center;
     }
 
-    .timeline-card {
-        float: right;
+    /*timeline-card both left floated*/
+    .timeline-container .timeline-item-container:nth-child(even) .timeline-card {
+        float: left;
     }
 
-    .timeline-item:nth-child(odd) .timeline-card-date {
+    /*Item Date both Right*/
+    .timeline-container:nth-child(odd) .timeline-item-container:nth-child(odd) .timeline-card-date,
+    .timeline-container .timeline-item-container:nth-child(even) .timeline-card-date {
         right: 0;
+        left: unset;
     }
 
-    .timeline-item:nth-child(odd) .timeline-card::after {
-        content: '';
-        position: absolute;
-        border-style: solid;
-        width: 0;
-        height: 0;
-        top: 8px;
-        right: -28px;
+    /*Date Arrow both Right*/
+    .timeline-container .timeline-item-container:nth-child(odd) .timeline-card:after,
+    .timeline-container .timeline-item-container:nth-child(even) .timeline-card:after {
+        right: -27px;
         left: unset;
         border-width: 20px 0 19px 28px;
         border-color: transparent transparent transparent #eb1917;
     }
+}
+
+@media all and (max-width: 769px) {
+    .accordion-wrapper {
+        padding: 0;
+    }
+
+    #portfolio .inner-content {
+        margin: 0;
+    }
+
+    .timeline::before {
+        right: -10px;
+        left: unset;
+    }
+
+    .timeline-img {
+        left: unset;
+        right: -20px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .timeline-card {
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .timeline-card:after,
+    .timeline-img,
+    .timeline::before {
+        display: none;
+    }
+
+    #portfolio .inner-content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #portfolio .section-title-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .accordion-header {
+        position: static !important;
+        top: unset !important;
+        left: unset !important;
+        transform: unset !important;
+        margin-bottom: 20px;
+        padding: 6px 5px;
+        border-left: unset;
+        border-right: unset;
+    }
+
+    .accordion-header h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 17px;
+        border-bottom: unset;
+        background-color: #1f2229;
+    }
+
+    .accordion-header h3 span {
+        background: #1f2229;
+        color: #fff;
+    }
+
 }

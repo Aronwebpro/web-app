@@ -101,6 +101,9 @@
 }
 
 @media all and (max-width: 500px) {
+    .greeting {
+        padding: 10px;
+    }
     .greeting p {
         font-size: 0.8em;
     }
