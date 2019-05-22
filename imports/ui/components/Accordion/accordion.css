@@ -16,12 +16,12 @@
     font-size: 1.5em;
     cursor: pointer;
     z-index: 2;
-    border-left: 1px dotted lightgray;
-    border-right: 1px dotted lightgray;
+    border-left: 1px dotted #a6d1bc;
+    border-right: 1px dotted #a6d1bc;
 }
 
 .accordion-wrapper:last-of-type.accordion-sticky-header .accordion-header {
-    border-bottom: 1px dotted lightgray;
+    border-bottom: 1px dotted #a6d1bc;
 }
 
 .accordion-sticky-header .accordion-header {
@@ -39,7 +39,7 @@
     padding: 0;
     width: 100%;
     text-align: center;
-    border-bottom: 1px dotted lightgray;
+    border-bottom: 1px dotted #a6d1bc;
     line-height: 0.1em;
 }
 
