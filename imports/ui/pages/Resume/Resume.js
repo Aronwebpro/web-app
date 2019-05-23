@@ -16,7 +16,7 @@ import './resume.css';
 class Resume extends React.Component {
     render() {
         return (
-            <>
+            <div className='page'>
                 <section className="content resume-experience-container shadow">
                     <div className="inner-content">
                         <div className="section-title-container">
@@ -67,7 +67,7 @@ class Resume extends React.Component {
                         </div>
                     </div>
                 </section>
-            </>
+            </div>
         );
     }
 

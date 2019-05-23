@@ -1,13 +1,19 @@
 import React from 'react';
 import * as d3 from 'd3';
 
+//Redux
+import { compose } from 'redux';
+
+//HOC
+import withMobile from '/imports/ui/hoc/withMobile';
+
 //Constants
-import { dataSet } from "/imports/lib/constants/skillsDiagram";
+import { dataSet } from '/imports/lib/constants/skillsDiagram';
 
 //Styles
 import './skills-diagram.css';
 
-export default class SkillsDiagram extends React.Component {
+class SkillsDiagram extends React.Component {
     render() {
         return (
             <div className='skills-diagram-container'>
@@ -19,16 +25,27 @@ export default class SkillsDiagram extends React.Component {
     }
 
     componentDidMount() {
+        window.addEventListener('resize', this.drawChart);
         this.drawChart();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.drawChart);
     }
 
     drawChart = () => {
 
         //Canvas diameter
-        const diameter = window.innerWidth > 600 ? 600 : window.innerWidth - 20;
+        const diameter = window.innerWidth > 1000 ? 600 : window.innerWidth - 200;
 
         //Append Image
         const imageSize = diameter / 12;
+
+        //Remove Old Image
+        const oldSvg = d3.select('.skills-diagram-canvas').select('svg');
+        if (oldSvg) {
+            oldSvg.remove();
+        }
 
         //Draw SVG canvas
         const svg = d3.select('.skills-diagram-canvas')
@@ -47,16 +64,16 @@ export default class SkillsDiagram extends React.Component {
             .padding(1.5);
 
         //Tooltip Container
-        const tooltip = d3.select(".skills-diagram-container").append("div")
-            .attr("class", "tooltip")
-            .style("color", "white")
-            .style("background-color", "#626D71")
-            .style("border-radius", "6px")
-            .style("text-align", "center")
-            .style("font-family", "monospace")
-            .style("width", "200px")
-            .style("height", "auto")
-            .style("opacity", 0);
+        const tooltip = d3.select('.skills-diagram-container').append('div')
+            .attr('class', 'tooltip')
+            .style('color', 'white')
+            .style('background-color', '#626D71')
+            .style('border-radius', '6px')
+            .style('text-align', 'center')
+            .style('font-family', 'monospace')
+            .style('width', '200px')
+            .style('height', 'auto')
+            .style('opacity', 0);
 
         //Create Buble Node
         const node = svg.selectAll('.node')
@@ -107,10 +124,10 @@ export default class SkillsDiagram extends React.Component {
                 //Make tooltip visible
                 tooltip.transition()
                     .duration(200)
-                    .style("opacity", .9);
+                    .style('opacity', .9);
                 tooltip.html(`<h2>${selection.data.tooltip || ''}</h2>`)
-                    .style("left", (d3.event.pageX + selection.r) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
+                    .style('left', (d3.event.pageX + selection.r) + 'px')
+                    .style('top', (d3.event.pageY - 28) + 'px');
 
             })
             .on('mouseout', function () {
@@ -147,7 +164,7 @@ export default class SkillsDiagram extends React.Component {
                 //Hide ToolTip
                 tooltip.transition()
                     .duration(500)
-                    .style("opacity", 0);
+                    .style('opacity', 0);
             })
             .on('click', function (d) {
                 const link = window.open(d.data.url, '_blank');
@@ -189,8 +206,9 @@ export default class SkillsDiagram extends React.Component {
             })
             .attr('transform', (d) => d.data.img ? 'translate(0, 25)' : 'translate(0, 0)')
             .attr('fill', (d) => d.data.textColor || 'white');
-
     };
-
-
 }
+
+export default compose(
+    withMobile({})
+)(SkillsDiagram);
