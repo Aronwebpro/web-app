@@ -136,11 +136,6 @@ const dataSet = {
 
 const otherSkillsRow1 = [
     {
-        name: 'Photoshop',
-        img: '/img/logos/photoshop.png',
-        url: 'https://www.adobe.com/products/photoshop.html'
-    },
-    {
         name: 'MySql',
         img: '/img/logos/mysql.png',
         url: 'https://www.mysql.com/',
@@ -161,9 +156,9 @@ const otherSkillsRow1 = [
         url: 'https://www.zoho.com/',
     },
     {
-        name: 'MS Office',
-        img: '/img/logos/office.png',
-        url: 'https://www.office.com',
+        name: 'Postman',
+        img: '/img/logos/postman.png',
+        url: 'https://www.getpostman.com/',
     },
 ];
 
@@ -179,9 +174,14 @@ const otherSkillsRow2 = [
         url: 'https://webpack.js.org',
     },
     {
-        name: 'Postman',
-        img: '/img/logos/postman.png',
-        url: 'https://www.getpostman.com/',
+        name: 'Photoshop',
+        img: '/img/logos/photoshop.png',
+        url: 'https://www.adobe.com/products/photoshop.html'
+    },
+    {
+        name: 'MS Office',
+        img: '/img/logos/office.png',
+        url: 'https://www.office.com',
     },
 ];
 

@@ -1,0 +1,35 @@
+.other-skills-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.other-skill {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*margin: 0 5px;*/
+}
+
+.other-skills-container img {
+    max-width: 70px;
+    display: inline-block;
+    margin: 4px;
+}
+
+.other-skills-container img:hover {
+    transform: scale(1.2);
+    transition: all 400ms linear;
+}
+
+@media all and (max-width: 600px) {
+    .other-skills-container img {
+        max-width: 40px;
+    }
+
+    .other-skill h4 {
+        font-size: 0.75em;
+    }
+}

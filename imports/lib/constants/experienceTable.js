@@ -6,7 +6,7 @@ const resumeTableColumns = [
         dataIndex: 'year',
         key: 'year',
         render: ({ start, end }) => (
-            <div className='center'>
+            <div className='center' style={{ maxWidth: '145px' }}>
                 {start} - <br/>{end}
             </div>
         )
@@ -24,7 +24,7 @@ const resumeTableColumns = [
         dataIndex: 'company',
         key: 'company',
         render: ({ img, title }) => (
-            <div className='center' style={{ display: 'flex', maxWidth: '300px' }}>
+            <div className='center company-cell'>
                 {img && (<p style={{ flex: 1.5 }}><img src={img}/></p>)}
                 <p style={{ flex: 1, textAlign: 'center', alignItems: 'center', justifyContent: 'center', display: 'flex' }}> {title}</p>
             </div>

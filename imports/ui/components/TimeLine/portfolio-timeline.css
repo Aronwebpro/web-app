@@ -270,6 +270,10 @@
     .timeline-card {
         width: 90%;
     }
+    .timeline-img-header {
+        background-size: contain;
+        background-position-y: initial;
+    }
 }
 
 @media all and (max-width: 500px) {

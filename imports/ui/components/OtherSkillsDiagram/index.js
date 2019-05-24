@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 //Constants
 import { otherSkillsRow1, otherSkillsRow2 } from '/imports/lib/constants/skillsDiagram';
 
+//Styles
+import './other-skills.css';
+
 export default class OtherSkillsDiagram extends React.PureComponent {
     static propTypes = {};
 

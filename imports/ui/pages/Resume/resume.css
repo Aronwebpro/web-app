@@ -2,6 +2,10 @@
     font-size: 2em;
 }
 
+.resume-experience-container {
+    display: block;
+}
+
 /*Resume tables-------------------------------*/
 .row-bordered {
     border: 1px dotted #ddd;
@@ -124,28 +128,18 @@
     text-align: center;
 }
 
-.other-skills-container {
+/*
+#experience Table
+*/
+
+#experience .company-cell {
+    max-width: 300px;
     display: flex;
-    justify-content: center;
-
+    flex-direction: row;
 }
 
-.other-skill {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /*margin: 0 5px;*/
-}
-.other-skills-container img {
-    max-width: 45px;
-    display: inline-block;
-    /*border-radius: 10px;*/
-    margin: 4px;
-}
-
-.other-skills-container img:hover {
-    transform: scale(1.2);
-    transition: all 400ms linear;
+@media all and (max-width: 1100px) {
+    #experience .company-cell {
+        flex-direction: column;
+    }
 }

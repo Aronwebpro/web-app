@@ -34,10 +34,8 @@ class SkillsDiagram extends React.Component {
     }
 
     drawChart = () => {
-
         //Canvas diameter
-        const diameter = window.innerWidth > 1000 ? 600 : window.innerWidth - 200;
-
+        const diameter = window.innerWidth > 1000 ? 600 : window.innerWidth * 0.8;
         //Append Image
         const imageSize = diameter / 12;
 
@@ -97,10 +95,13 @@ class SkillsDiagram extends React.Component {
                         .style('opacity', 0.7)
                         .style('z-index', 100)
                         .attr('transform', function (d) {
+                            //Circle Position
                             if (this.tagName === 'circle') {
                                 return `scale(1.2) ${d.data.img ? `scale(1.2) translate(0, ${imageSize / 4})` : 'scale(1.2) translate(0, 0)'}`;
+                                //Text Position
                             } else if (this.tagName === 'text') {
                                 return d.data.img ? `scale(1.2) translate(0, ${imageSize / 1.3})` : 'scale(1.2) translate(0, 0)';
+                                //Image Position
                             } else if (this.tagName === 'image') {
                                 if (d.data.text) {
                                     return `scale(1.2) translate(-${(imageSize + 20) / 2}, -${imageSize})`;
@@ -121,14 +122,15 @@ class SkillsDiagram extends React.Component {
                         });
                 });
 
-                //Make tooltip visible
-                tooltip.transition()
-                    .duration(200)
-                    .style('opacity', .9);
-                tooltip.html(`<h2>${selection.data.tooltip || ''}</h2>`)
-                    .style('left', (d3.event.pageX + selection.r) + 'px')
-                    .style('top', (d3.event.pageY - 28) + 'px');
-
+                if (window.innerWidth > 769) {
+                    //Make tooltip visible
+                    tooltip.transition()
+                        .duration(200)
+                        .style('opacity', .9);
+                    tooltip.html(`<h2>${selection.data.tooltip || ''}</h2>`)
+                        .style('left', (d3.event.pageX + selection.r) + 'px')
+                        .style('top', (d3.event.pageY - 28) + 'px');
+                }
             })
             .on('mouseout', function () {
                 d3.selectAll(this.childNodes).each(function () {
@@ -204,7 +206,7 @@ class SkillsDiagram extends React.Component {
             .attr('font-size', (d) => {
                 return d.r / 3.5;
             })
-            .attr('transform', (d) => d.data.img ? 'translate(0, 25)' : 'translate(0, 0)')
+            .attr('transform', (d) => d.data.img ? `translate(0, ${imageSize / 2})` : 'translate(0, 0)')
             .attr('fill', (d) => d.data.textColor || 'white');
     };
 }
