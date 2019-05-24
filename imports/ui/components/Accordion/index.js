@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Redux
+import { compose } from 'redux';
+
+// HOC
+import withMobile from '../../hoc/withMobile';
+
 //Styles
 import './accordion.css';
 
-export default class Accordion extends React.Component {
+class Accordion extends React.Component {
     static propTypes = {
         title: PropTypes.string,
     };
@@ -18,11 +24,11 @@ export default class Accordion extends React.Component {
     };
 
     render() {
-        const { title, index } = this.props;
+        const { title, index, isMobile } = this.props;
         const { sticky } = this.state;
         return (
             <>
-                <section className={`accordion-wrapper ${sticky && 'accordion-sticky-header'}`}>
+                <section className={`accordion-wrapper ${sticky && !isMobile && 'accordion-sticky-header'}`}>
                     <div
                         className='accordion-header'
                         onClick={this.scrollTo}
@@ -48,7 +54,6 @@ export default class Accordion extends React.Component {
     innerContent = React.createRef();
 
     componentDidMount() {
-        //this.setState({ height: `${this.innerContent.current.clientHeight + 20}px`, isOpen: true });
         window.addEventListener('scroll', this.onScroll);
     }
 
@@ -57,13 +62,14 @@ export default class Accordion extends React.Component {
     }
 
     onScroll = () => {
-        const { index } = this.props;
-
-        if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 158 - (index * 50)) < (window.scrollY) ) {
-            this.setState({ sticky: true });
-        } else {
-            if (this.state.sticky) {
-                this.setState({ sticky: false });
+        const { index, isMobile } = this.props;
+        if (!isMobile) {
+            if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 158 - (index * 50)) < (window.scrollY)) {
+                this.setState({ sticky: true });
+            } else {
+                if (this.state.sticky) {
+                    this.setState({ sticky: false });
+                }
             }
         }
     };
@@ -74,5 +80,9 @@ export default class Accordion extends React.Component {
             top: window.scrollY + this.innerContent.current.getBoundingClientRect().top - (150 + (index * 50)),
             behavior: 'smooth'
         });
-    }
+    };
 }
+
+export default compose(
+    withMobile({})
+)(Accordion);

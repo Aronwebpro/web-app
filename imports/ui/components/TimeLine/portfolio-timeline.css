@@ -202,6 +202,10 @@
     margin-left: 10px;
 }
 
+.timeline-card-description tr {
+    text-align: left;
+}
+
 /*-------------------------------------------------
 # Responsive Styles
 --------------------------------------------------*/
@@ -266,17 +270,19 @@
     }
 }
 
+/*@media all and (max-width: 600px) {*/
+
+/*}*/
+
 @media all and (max-width: 600px) {
     .timeline-card {
         width: 90%;
     }
+
     .timeline-img-header {
         background-size: contain;
         background-position-y: initial;
     }
-}
-
-@media all and (max-width: 500px) {
     .timeline-card:after,
     .timeline-img,
     .timeline::before {
@@ -293,6 +299,7 @@
         flex-direction: column;
         align-items: center;
     }
+
     #portfolio .section-title-container {
         padding: 20px;
         text-align: center;
@@ -321,6 +328,10 @@
     .accordion-header h3 span {
         background: #1f2229;
         color: #fff;
+    }
+
+    .timeline-img-header h2 {
+        font-size: 1.2em;
     }
 
 }
