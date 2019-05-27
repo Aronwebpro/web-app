@@ -11,8 +11,7 @@
 .mobile-navigation-wrapper {
     display: flex;
     height: 60px;
-    margin-bottom: 5px;
-    align-items: stretch;
+    margin-bottom: 3px;
     z-index: 1;
     border-top: 1px solid lightgrey;
 }
@@ -22,14 +21,10 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    background-color: #ffffff;
 }
 
 .mobile-navigation-item a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: stretch;
     text-decoration: none;
 
 }
@@ -39,14 +34,8 @@
 }
 
 .mobile-navigation-item-button {
-    padding: 7px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #1f2329;
-    background-color: #ffffff;
+    padding-top: 6px;
+    text-align: center;
 }
 
 .mobile-navigation-item-button p {
@@ -59,14 +48,14 @@
     border-right: 1px solid lightgray;
 }
 
-.mobile-navigation-item.active .mobile-navigation-item-button {
+.mobile-navigation-item.active {
     background-color: transparent;
 
 }
 
 .mobile-navigation-footer {
     background: linear-gradient(90deg, #ffec29 0%, #fdca70 20%, #61dafb 60%, #ed7061 85%, #ec1919 95%);
-    height: 65px;
+    height: 63px;
     position: absolute;
     left: 0;
     right: 0;

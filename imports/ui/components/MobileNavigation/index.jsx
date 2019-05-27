@@ -15,7 +15,6 @@ import './mobile-navigation.css';
 const iconStyles = {
     fontSize: '25px',
     color: '#fff',
-    marginTop: '15px',
 };
 
 const navigationItems = [
