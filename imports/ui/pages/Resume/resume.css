@@ -155,11 +155,14 @@
     #resume-content {
         border-right: none;
         border-left: none;
-        padding: 0 0 0 10px;
+        padding: 0;
     }
     .resume-title h2 {
         font-size: 1.2em;
         font-weight: normal;
         text-align: left;
+    }
+    #experience {
+        padding: 0 10px;
     }
 }

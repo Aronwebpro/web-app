@@ -8,9 +8,9 @@ import { compose } from 'redux';
 import withMobile from '../../hoc/withMobile';
 
 //Styles
-import './accordion.css';
+import './scroll-to-section.css';
 
-class Accordion extends React.Component {
+class ScrollToSection extends React.Component {
     static propTypes = {
         title: PropTypes.string,
     };
@@ -28,16 +28,16 @@ class Accordion extends React.Component {
         const { sticky } = this.state;
         return (
             <>
-                <section className={`accordion-wrapper ${sticky && !isMobile && 'accordion-sticky-header'}`}>
+                <section className={`scroll-to-wrapper ${sticky && !isMobile && 'scroll-to-sticky-header'}`}>
                     <div
-                        className='accordion-header'
+                        className='scroll-to-header'
                         onClick={this.scrollTo}
                         ref={this.titleHeader}
                         style={{ top: `${80 + (index * 53)}px` }}
                     >
                         <h3><span>{title}</span></h3>
                     </div>
-                    <div className='accordion-inner'>
+                    <div className='scroll-to-inner'>
                         <div className='inner-content' ref={this.innerContent}>
                             <div>
                                 {this.props.children}
@@ -85,4 +85,4 @@ class Accordion extends React.Component {
 
 export default compose(
     withMobile({})
-)(Accordion);
+)(ScrollToSection);

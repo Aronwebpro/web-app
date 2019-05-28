@@ -85,7 +85,7 @@ const dataSet = {
             strokeColor: '#015000',
             img: '/img/logos/nodejs.png',
             url: 'https://nodejs.org/en/',
-            tooltip: 'Main JavaScrip runtime, I\'m using more and more just plain NodeJs.'
+            tooltip: 'JavaScrip runtime, but I\'m using more and more plain NodeJs.'
         },
         {
             name: 'Firebase',
@@ -129,6 +129,16 @@ const dataSet = {
             img: '/img/logos/redux.png',
             url: 'https://redux.js.org/',
             tooltip: 'Marvelous of software engineering.',
+        },
+        {
+            name: 'TypeScript',
+            size: 500,
+            color: '#fff',
+            //color: '#298dd47a',
+            strokeColor: '#007acc',
+            img: '/img/logos/type-script.png',
+            url: 'https://www.typescriptlang.org/',
+            tooltip: 'We started to implement TypeScript to all of our projects',
         },
     ]
 };

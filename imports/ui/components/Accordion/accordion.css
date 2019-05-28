@@ -1,49 +1,33 @@
 /*Acordion----------------------------------------------------------------------------------*/
 
-.scroll-to-wrapper {
+.accordion-wrapper {
     position: relative;
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
 }
 
 /* Header*/
-.scroll-to-header {
+.accordion-header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px 5px;
-    font-size: 1.5em;
+    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed;
     cursor: pointer;
     z-index: 2;
-    border-left: 1px dotted #a6d1bc;
-    border-right: 1px dotted #a6d1bc;
+    border-radius: 5px;
 }
 
-.scroll-to-wrapper:last-of-type.scroll-to-sticky-header .scroll-to-header {
-    border-bottom: 1px dotted #a6d1bc;
-}
-
-.scroll-to-sticky-header .scroll-to-header {
-    position: fixed;
-    /*top: 81px;*/
-    left: 50%;
-    transform: translateX(-50%);
-    width: 82vw;
-    max-width: 1070px;
-    background-color: #fff;
-}
-
-.scroll-to-header h3 {
+.accordion-header h3 {
     margin: 10px 0 20px;
     padding: 0;
     width: 100%;
     text-align: center;
-    border-bottom: 1px dotted #a6d1bc;
     line-height: 0.1em;
 }
 
-.scroll-to-header h3 span {
+.accordion-header h3 span {
     background: #fff;
     padding: 0 10px;
 }
@@ -81,19 +65,17 @@
 }
 
 /*Body*/
-.scroll-to-inner {
+.accordion-inner {
     overflow: hidden;
     transition: height ease 600ms;
 }
 
-.scroll-to-sticky-header .scroll-to-inner {
-    padding-top: 55px;
+.accordion-inner .inner-content {
+    padding: 10px;
 }
 
 @media all and (max-width: 1100px) {
-    .scroll-to-sticky-header .scroll-to-header {
-        width: 100%;
-    }
+
 }
 
 

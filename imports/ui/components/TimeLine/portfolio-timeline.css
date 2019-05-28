@@ -251,7 +251,7 @@
 }
 
 @media all and (max-width: 769px) {
-    .accordion-wrapper {
+    .scroll-to-wrapper {
         padding: 0;
     }
 
@@ -305,7 +305,7 @@
         text-align: center;
     }
 
-    .accordion-header {
+    .scroll-to-header {
         position: static !important;
         top: unset !important;
         left: unset !important;
@@ -316,7 +316,7 @@
         border-right: unset;
     }
 
-    .accordion-header h3 {
+    .scroll-to-header h3 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -325,7 +325,7 @@
         background-color: #1f2229;
     }
 
-    .accordion-header h3 span {
+    .scroll-to-header h3 span {
         background: #1f2229;
         color: #fff;
     }

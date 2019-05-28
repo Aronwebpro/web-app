@@ -7,7 +7,7 @@ import './portfolio.css';
 import { portfolioProjects } from '/imports/lib/constants/portfolioProjects';
 
 //Components
-import Accordion from "/imports/ui/components/Accordion";
+import ScrollToSection from "/imports/ui/components/ScrollToSection";
 import TimeLine from "/imports/ui/components/TimeLine";
 
 class Portfolio extends React.Component {
@@ -20,7 +20,7 @@ class Portfolio extends React.Component {
                             <h1>Portfolio</h1>
                         </div>
                         {portfolioProjects.map(({ title, data }, index) => (
-                            <Accordion
+                            <ScrollToSection
                                 {...{
                                     title,
                                     index,
@@ -29,7 +29,7 @@ class Portfolio extends React.Component {
                                 {...data}
                             >
                                 <TimeLine {...{ data }} />
-                            </Accordion>
+                            </ScrollToSection>
                         ))}
                     </div>
                 </section>
