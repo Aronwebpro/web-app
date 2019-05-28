@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+
+// Redux
+import { compose } from 'redux';
 
 //HOC
 import withMobile from '../../hoc/withMobile';
@@ -76,6 +79,7 @@ class MobileNavigation extends React.PureComponent {
     render() {
         const { isMobile } = this.props;
         const { activeLink } = this.state;
+        console.log(activeLink);
         return (
             <div className='mobile-navigation-container shadow' style={{ bottom: isMobile ? 0 : -110 }}>
                 <div className='mobile-navigation-wrapper'>
@@ -109,8 +113,16 @@ class MobileNavigation extends React.PureComponent {
         );
     }
 
+    componentDidMount() {
+        const { history } = this.props;
+        this.setState({ activeLink: history.location.pathname });
+    }
+
     handleClick = (activeLink) => this.setState({ activeLink });
 }
 
 
-export default withMobile({})(MobileNavigation);
+export default compose (
+    withMobile({}),
+    withRouter,
+)(MobileNavigation);

@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+//Components
+import Arrow from '/imports/ui/components/Arrow';
+
 import './accordion.css';
 
 export default class Accordion extends React.Component {
@@ -11,8 +14,9 @@ export default class Accordion extends React.Component {
     };
     static defaultProps = {
         headerStyles: {
-            backgroundColor: 'red',
-            color: 'white',
+            backgroundColor: 'transparent',
+            color: '#1f2229',
+            border: '1px solid #ededed'
         },
         expandOnRender: false,
     };
@@ -31,10 +35,14 @@ export default class Accordion extends React.Component {
                 <section className='accordion-wrapper'>
                     <div
                         style={headerStyles}
-                        className='accordion-header'
+                        className="accordion-header"
                         onClick={this.expand}
                         ref={this.titleHeader}
                     >
+                        <Arrow
+                            state={height ? 'up' : 'down'}
+                            color={'#4c4c4c'}
+                        />
                         {title}
                     </div>
                     <div
@@ -67,7 +75,7 @@ export default class Accordion extends React.Component {
     expand = () => {
         const currentHeight = this.state.height;
         if (currentHeight === 0) {
-            this.setState({ height: this.innerContent.current.clientHeight });
+            this.setState({ height: this.innerContent.current.clientHeight + 10 });
         } else {
             this.setState({ height: 0 });
         }

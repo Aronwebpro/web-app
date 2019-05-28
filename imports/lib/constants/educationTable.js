@@ -6,7 +6,7 @@ const educationTableColumns = [
         dataIndex: 'year',
         key: 'year',
         render: (text) => (
-            <p className='center'>{text}</p>
+            <div className='center'>{text}</div>
         )
     },
     {
@@ -31,6 +31,7 @@ const educationTableColumns = [
         title: 'Link',
         dataIndex: 'link',
         key: 'link',
+        textAlign: 'center',
         render: ({ link, title }) => (
             <div style={{ minWidth: '80px' }}>
                 <a href={link} target='_blank'>
@@ -43,6 +44,7 @@ const educationTableColumns = [
         title: 'Occupation',
         dataIndex: 'occupation',
         key: 'occupation',
+        textAlign: 'center',
     },
 ];
 

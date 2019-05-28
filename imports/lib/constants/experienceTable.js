@@ -144,7 +144,7 @@ const resumeTableData = [
         position: 'Real Estate Broker',
         company: { title: 'Ober-Haus LTD', img: '/img/resume-companies/oh-logo.png' },
         website: { title: 'Click to Visit', link: 'http://www.ober-haus.lt/en/' },
-        responsibilities: ['Create custom pages for clients', 'Database Management', 'Create JavaScript applications'],
+        responsibilities: ['Represent Commercial Real Estate to clients', 'Selling/Buying paperwork', 'Market Analysis'],
     }
 ];
 

@@ -35,7 +35,14 @@ class SkillsDiagram extends React.Component {
 
     drawChart = () => {
         //Canvas diameter
-        const diameter = window.innerWidth > 1000 ? 600 : window.innerWidth * 0.8;
+        const diameter = window.innerWidth > 1000 ?
+            600 :
+            (
+                window.innerWidth > 500 ?
+                    window.innerWidth * 0.6 :
+                    window.innerWidth * 0.8
+            );
+
         //Append Image
         const imageSize = diameter / 12;
 

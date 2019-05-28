@@ -1,6 +1,6 @@
 import React from 'react';
-import Accordion from "../Accordion";
-import { getObjectPropertyByStringRegex } from "../../../lib/utils";
+import Accordion from '../Accordion';
+import { getObjectPropertyByStringRegex } from '../../../lib/utils';
 
 
 export default class ResponsiveTableMobile extends React.PureComponent {
@@ -15,27 +15,27 @@ export default class ResponsiveTableMobile extends React.PureComponent {
             headerColumns.push(columns[0]);
             hiddenColumns.shift();
         }
-        return (
-            <div>
-                {data.map((row, index) => (
-                    <Accordion
-                        key={index.toString()}
-                        title={<div>{headerColumns.map(column => this.renderColumn(column, row))}</div>}
-                    >
-                        {hiddenColumns.map((column) => this.renderColumn(column, row))}
-                    </Accordion>
-                ))}
-            </div>
-        );
+        return data.map((row, index) => (
+            <Accordion
+                key={index.toString()}
+                title={<div>{headerColumns.map(column => this.renderColumn(column, row))}</div>}
+                expandOnRender={!index}
+            >
+                {hiddenColumns.map((column) => this.renderColumn(column, row))}
+            </Accordion>
+        ));
     }
 
 
     renderColumn = ({ dataIndex, key, render, renderOnMobile, textAlign }, row) => {
         return (
-            <div {...{ key }} className={`${textAlign} ${row.customClass || ''}`}>
+            <div {...{ key }} className={`cell ${textAlign || ''} ${row.customClass || ''}`}>
                 {
                     render ?
-                        (renderOnMobile ? renderOnMobile(getObjectPropertyByStringRegex(row, dataIndex)) : render(getObjectPropertyByStringRegex(row, dataIndex))) :
+                        (renderOnMobile ?
+                            renderOnMobile(getObjectPropertyByStringRegex(row, dataIndex)) :
+                            render(getObjectPropertyByStringRegex(row, dataIndex))
+                        ) :
                         getObjectPropertyByStringRegex(row, dataIndex)
                 }
             </div>
@@ -53,5 +53,5 @@ export default class ResponsiveTableMobile extends React.PureComponent {
             }
         }
         return [columns1, columns2];
-    }
+    };
 }
