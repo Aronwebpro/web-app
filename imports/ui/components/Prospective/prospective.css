@@ -16,20 +16,12 @@
     padding: 20px;
     text-align: center;
     font-size: 2em;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .prospective-body-section .section-column:nth-of-type(1),
 .prospective-body-section .section-column:nth-of-type(2) {
     border-right: 1px solid #ededed;
-}
-
-.prospective-body-section ul {
-    padding-left: 20px;
-}
-
-.prospective-body-section ul {
-    padding-left: 20px;
 }
 
 .prospective-title-section .inner-content {
@@ -50,4 +42,49 @@
 
 .prospective-img-container img {
     width: 50px;
+}
+@media all and (max-width: 1370px) {
+    .prospective-body-section .section-column:nth-of-type(1),
+    .prospective-body-section .section-column:nth-of-type(2) {
+        border-right: none;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .section-row {
+        flex-direction: column;
+    }
+    .prospective-body-section .section-column:nth-of-type(1),
+    .prospective-body-section .section-column:nth-of-type(2) {
+        border-bottom: 2px solid #ededed;
+    }
+    .prospective-body-section {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .prospective-body-section .inner-content {
+        border-radius: 5px;
+        border:1px solid #ededed;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .prospective-body-section .section-title-container h2 {
+        font-size: 22px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .prospective-body-section .inner-content {
+       border: unset;
+    }
+    .prospective-body-section .section-title-container {
+        padding: 0;
+    }
+    .prospective-body-section .section-title-container h2 {
+        padding: 10px;
+    }
+    .prospective-body-section {
+        padding-bottom: 0;
+    }
 }

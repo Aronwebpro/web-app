@@ -1,0 +1,29 @@
+/*Arrors*****/
+.arrows {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 600ms;
+}
+
+.arrow-left-side {
+    position: absolute;
+    height: 12px;
+    left: 30%;
+    transform: rotate(135deg) translate(107%, -19%);
+}
+
+.arrow-right-side {
+    position: absolute;
+    height: 12px;
+    left: 70%;
+    transform: rotate(45deg) translate(31%, 35%);
+}
+
+.arrows.down {
+    transform: rotateZ(0deg);
+}
+.arrows.up {
+    transform: rotateZ(-180deg);
+}

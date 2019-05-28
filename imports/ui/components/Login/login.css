@@ -46,6 +46,7 @@
     padding-right: 5px;
 }
 input[type="submit"].top-row_login {
+    width: 60px;
     /*color: #b52525;*/
     margin: 0 5px 0 10px;
     /*color: #00679a;*/
@@ -91,4 +92,13 @@ input[type="submit"].top-row_login:active {
 
 .linkedIn-button img:active {
     transform: scale(1.1);
+}
+
+@media all and (max-width: 600px) {
+    .login-section:after {
+        height: 0;
+    }
+    .login-section {
+        height: 40px;
+    }
 }

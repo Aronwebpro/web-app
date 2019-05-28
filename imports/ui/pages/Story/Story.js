@@ -6,7 +6,7 @@ import './story.css';
 class Story extends React.Component {
     render() {
         return (
-            <div className="page">
+            <div id='story' className="page">
                 <section className="content shadow">
                     <div className="inner-content">
                         <div className="section-title-container">

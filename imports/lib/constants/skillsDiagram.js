@@ -85,7 +85,7 @@ const dataSet = {
             strokeColor: '#015000',
             img: '/img/logos/nodejs.png',
             url: 'https://nodejs.org/en/',
-            tooltip: 'Main JavaScrip runtime, I\'m using more and more just plain NodeJs.'
+            tooltip: 'JavaScrip runtime, but I\'m using more and more plain NodeJs.'
         },
         {
             name: 'Firebase',
@@ -130,16 +130,21 @@ const dataSet = {
             url: 'https://redux.js.org/',
             tooltip: 'Marvelous of software engineering.',
         },
+        {
+            name: 'TypeScript',
+            size: 500,
+            color: '#fff',
+            //color: '#298dd47a',
+            strokeColor: '#007acc',
+            img: '/img/logos/type-script.png',
+            url: 'https://www.typescriptlang.org/',
+            tooltip: 'We started to implement TypeScript to all of our projects',
+        },
     ]
 };
 
 
 const otherSkillsRow1 = [
-    {
-        name: 'Photoshop',
-        img: '/img/logos/photoshop.png',
-        url: 'https://www.adobe.com/products/photoshop.html'
-    },
     {
         name: 'MySql',
         img: '/img/logos/mysql.png',
@@ -161,9 +166,9 @@ const otherSkillsRow1 = [
         url: 'https://www.zoho.com/',
     },
     {
-        name: 'MS Office',
-        img: '/img/logos/office.png',
-        url: 'https://www.office.com',
+        name: 'Postman',
+        img: '/img/logos/postman.png',
+        url: 'https://www.getpostman.com/',
     },
 ];
 
@@ -179,9 +184,14 @@ const otherSkillsRow2 = [
         url: 'https://webpack.js.org',
     },
     {
-        name: 'Postman',
-        img: '/img/logos/postman.png',
-        url: 'https://www.getpostman.com/',
+        name: 'Photoshop',
+        img: '/img/logos/photoshop.png',
+        url: 'https://www.adobe.com/products/photoshop.html'
+    },
+    {
+        name: 'MS Office',
+        img: '/img/logos/office.png',
+        url: 'https://www.office.com',
     },
 ];
 

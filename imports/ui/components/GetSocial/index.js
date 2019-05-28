@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Styles
 import './get-social.css';
 
 export default class GetSocial extends React.PureComponent {

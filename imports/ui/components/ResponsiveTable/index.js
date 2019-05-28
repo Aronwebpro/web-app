@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+//Redux
+import { compose } from 'redux';
+
+//HOC
+import withMobile  from '/imports/ui/hoc/withMobile';
+
 //Components
 import ResponsiveTableDesktop from './ResponsiveTableDesktop';
 import ResponsiveTableMobile from './ResponsiveTableMobile';
 
 
-export default class ResponsiveTable extends React.Component {
+class ResponsiveTable extends React.Component {
     static propTypes = {
         isMobile: PropTypes.bool,
     };
@@ -24,3 +30,7 @@ export default class ResponsiveTable extends React.Component {
         );
     }
 }
+
+export default compose(
+    withMobile({})
+)(ResponsiveTable);

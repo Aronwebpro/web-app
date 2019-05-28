@@ -5,11 +5,17 @@ const resumeTableColumns = [
         title: 'Years',
         dataIndex: 'year',
         key: 'year',
+        showAsMobileTableHeader: true,
         render: ({ start, end }) => (
-            <div className='center'>
+            <div className='center' style={{ maxWidth: '145px' }}>
                 {start} - <br/>{end}
             </div>
-        )
+        ),
+        renderOnMobile: ({ start, end }) => (
+            <div>
+                {start} -{end}
+            </div>
+        ),
     },
     {
         title: 'Position',
@@ -17,6 +23,9 @@ const resumeTableColumns = [
         key: 'position',
         render: (text) => (
             <p style={{ fontWeight: 'bold' }}>{text}</p>
+        ),
+        renderOnMobile: (text) => (
+            <h2 style={{ fontWeight: 'bold', textAlign: 'left' }}>{text}</h2>
         )
     },
     {
@@ -24,7 +33,7 @@ const resumeTableColumns = [
         dataIndex: 'company',
         key: 'company',
         render: ({ img, title }) => (
-            <div className='center' style={{ display: 'flex', maxWidth: '300px' }}>
+            <div className='center company-cell'>
                 {img && (<p style={{ flex: 1.5 }}><img src={img}/></p>)}
                 <p style={{ flex: 1, textAlign: 'center', alignItems: 'center', justifyContent: 'center', display: 'flex' }}> {title}</p>
             </div>
@@ -38,6 +47,13 @@ const resumeTableColumns = [
             <div style={{ minWidth: '80px' }}>
                 <a href={link} target='_blank'>
                     {title}
+                </a>
+            </div>
+        ),
+        renderOnMobile: ({ link, title }) => (
+            <div style={{ minWidth: '80px', textAlign: 'left' }}>
+                <a href={link} target='_blank'>
+                    Company's Website
                 </a>
             </div>
         )
@@ -54,6 +70,15 @@ const resumeTableColumns = [
                     ))}
                 </ul>
             </div>
+        ),
+        renderOnMobile: (responsibilities) => (
+            <div>
+                <ul className='left' style={{ paddingLeft: '20px' }}>
+                    {responsibilities.map((text) => (
+                        <li key={text} style={{ fontSize: '0.9em' }}>{text}</li>
+                    ))}
+                </ul>
+            </div>
         )
     },
 ];
@@ -64,7 +89,7 @@ const resumeTableData = [
         position: 'JavaScript Engineer',
         company: { title: 'Plaidypus, Inc.', img: '/img/resume-companies/plaidypus-logo.png' },
         website: { title: 'Click to Visit', link: 'https://www.plaidypus.com/' },
-        responsibilities: ['Create custom pages for clients', 'Database Management', 'Create JavaScript applications'],
+        responsibilities: ['Develop Mobile/Web Apps from A to Z', 'REST APIs',  'Design apps architecture', 'Agile team work environment', 'Daily morning stand-ups'],
         customClass: 'plaidypus'
     },
     {
@@ -119,7 +144,7 @@ const resumeTableData = [
         position: 'Real Estate Broker',
         company: { title: 'Ober-Haus LTD', img: '/img/resume-companies/oh-logo.png' },
         website: { title: 'Click to Visit', link: 'http://www.ober-haus.lt/en/' },
-        responsibilities: ['Create custom pages for clients', 'Database Management', 'Create JavaScript applications'],
+        responsibilities: ['Represent Commercial Real Estate to clients', 'Selling/Buying paperwork', 'Market Analysis'],
     }
 ];
 

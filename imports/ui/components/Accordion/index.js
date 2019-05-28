@@ -1,41 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-//Styles
+//Components
+import Arrow from '/imports/ui/components/Arrow';
+
 import './accordion.css';
 
 export default class Accordion extends React.Component {
     static propTypes = {
-        title: PropTypes.string,
+        title: PropTypes.object.isRequired,
+        headerStyles: PropTypes.object,
+        expandOnRender: PropTypes.bool,
     };
     static defaultProps = {
-        title: 'Header Title'
+        headerStyles: {
+            backgroundColor: 'transparent',
+            color: '#1f2229',
+            border: '1px solid #ededed'
+        },
+        expandOnRender: false,
     };
     state = {
-        isOpen: true,
-        height: '0px',
-        sticky: false,
+        height: 0,
     };
 
     render() {
-        const { title, index } = this.props;
-        const { sticky } = this.state;
+        const {
+            title,
+            headerStyles,
+        } = this.props;
+        const { height } = this.state;
         return (
             <>
-                <section className={`accordion-wrapper ${sticky && 'accordion-sticky-header'}`}>
+                <section className='accordion-wrapper'>
                     <div
-                        className='accordion-header'
-                        onClick={this.scrollTo}
+                        style={headerStyles}
+                        className="accordion-header"
+                        onClick={this.expand}
                         ref={this.titleHeader}
-                        style={{ top: `${80 + (index * 53)}px` }}
                     >
-                        <h3><span>{title}</span></h3>
+                        <Arrow
+                            state={height ? 'up' : 'down'}
+                            color={'#4c4c4c'}
+                        />
+                        {title}
                     </div>
-                    <div className='accordion-inner'>
-                        <div className='inner-content' ref={this.innerContent}>
-                            <div>
-                                {this.props.children}
-                            </div>
+                    <div
+                        className='accordion-inner'
+                        style={{ height }}
+                    >
+                        <div
+                            className='inner-content'
+                            ref={this.innerContent}
+                        >
+                            {this.props.children}
                         </div>
                     </div>
                 </section>
@@ -44,35 +62,30 @@ export default class Accordion extends React.Component {
     }
 
     titleHeader = React.createRef();
-
     innerContent = React.createRef();
 
     componentDidMount() {
-        //this.setState({ height: `${this.innerContent.current.clientHeight + 20}px`, isOpen: true });
-        window.addEventListener('scroll', this.onScroll);
+        const { expandOnRender } = this.props;
+        if (expandOnRender) {
+            setTimeout(this.expand, 100);
+        }
     }
 
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScroll);
-    }
-
-    onScroll = () => {
-        const { index } = this.props;
-
-        if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 158 - (index * 50)) < (window.scrollY) ) {
-            this.setState({ sticky: true });
+    //Expand Widget Header on Click
+    expand = () => {
+        const currentHeight = this.state.height;
+        if (currentHeight === 0) {
+            this.setState({ height: this.innerContent.current.clientHeight + 10 });
         } else {
-            if (this.state.sticky) {
-                this.setState({ sticky: false });
-            }
+            this.setState({ height: 0 });
         }
     };
 
-    scrollTo = () => {
-        const { index } = this.props;
-        window.scrollTo({
-            top: window.scrollY + this.innerContent.current.getBoundingClientRect().top - (150 + (index * 50)),
-            behavior: 'smooth'
-        });
-    }
+    changeBtn = (position) => {
+        if (position === 'down') {
+            this.arrow.style.transform = 'rotateZ(-90deg) translate(7%, 40%)';
+        } else {
+            this.arrow.style.transform = 'rotateZ(0deg) translate(20%, 0%)';
+        }
+    };
 }

@@ -17,33 +17,35 @@ export default class Prospective extends React.PureComponent {
     render() {
         return (
             <section className="prospective-body-section shadow">
-                <div className="section-title-container">
-                    <h2>What I am..</h2>
-                </div>
-                <div className="prospective">
-                    <div className="section-row">
-                        <div className="section-column">
-                            <div className="prospective-logos-container">
-                                <AnimatedImagesCircle
-                                    data={workingImages}
-                                    title={<h2>doing</h2>}
-                                />
+                <div className="inner-content">
+                    <div className="section-title-container">
+                        <h2>What I am..</h2>
+                    </div>
+                    <div className="prospective">
+                        <div className="section-row">
+                            <div className="section-column">
+                                <div className="prospective-logos-container">
+                                    <AnimatedImagesCircle
+                                        data={workingImages}
+                                        title={'doing'}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className="section-column">
-                            <div className="prospective-logos-container">
-                                <AnimatedImagesCircle
-                                    data={studyingImages}
-                                    title={<h2>studying</h2>}
-                                />
+                            <div className="section-column">
+                                <div className="prospective-logos-container">
+                                    <AnimatedImagesCircle
+                                        data={studyingImages}
+                                        title={'studying'}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className="section-column">
-                            <div className="prospective-logos-container">
-                                <AnimatedImagesCircle
-                                    data={goingImages}
-                                    title={<h2>seeking</h2>}
-                                />
+                            <div className="section-column">
+                                <div className="prospective-logos-container">
+                                    <AnimatedImagesCircle
+                                        data={goingImages}
+                                        title={'seeking'}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
