@@ -465,7 +465,7 @@ const portfolioProjects = [
                 description: 'This is one of the first my JavaScript Project where I tried to understand DOM and CSS animation.',
                 date: 'January, 2016',
                 img: '/img/projects/menupro.jpg',
-                type: 'Client',
+                type: 'Personal',
                 appType: 'Script',
                 appTypeColor: { backgroundColor: '#ae3738' },
                 url: '',
