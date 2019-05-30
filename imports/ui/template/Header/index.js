@@ -1,5 +1,11 @@
 import React from 'react';
 
+// HOC
+import withMobile from '../../hoc/withMobile';
+
+// Antd
+import Icon from 'antd/lib/icon';
+
 //Components
 import Menu from '../../components/Menu';
 import Login from '../../components/Login';
@@ -7,7 +13,8 @@ import Login from '../../components/Login';
 //Styles
 import './header.css';
 
-export default class Header extends React.Component {
+
+class Header extends React.Component {
     state = {
         top: '0px',
         headerMobile: '70px',
@@ -20,6 +27,7 @@ export default class Header extends React.Component {
     };
 
     render() {
+        const { isMobile } = this.props;
         return (
             <header style={{ top: this.state.top }}>
                 <div ref={(input) => this.loginRow = input} className="login-section">
@@ -27,19 +35,23 @@ export default class Header extends React.Component {
                 </div>
                 <div className="header-body" style={{ height: this.state.headerMobile }}>
                     <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
-                        {/*<div className="title-wrapper">*/}
-                            {/*/!*<h1 style={{ display: 'inline-block' }}>*!/*/}
-                            {/*/!*Aaron's<span style={{ color: 'red' }}> Website</span>*!/*/}
-                            {/*/!*</h1>*!/*/}
-                            {/*<div className="mobile-login_button">*/}
-                                {/*<a href="">Login</a>*/}
-                                {/*<a href="">Register</a>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                        <div className="menu-wrapper">
-                            <Menu {...this.props} />
+                        <div className='logo-container'>
+                            <h1>{`{  I'm Apps Brewer  }  `}</h1>
                         </div>
-
+                        {isMobile && (
+                            <div className='login-container'>
+                                <Icon
+                                    type="login"
+                                    onClick={this.handleMobileLoginClick}
+                                    style={{ fontSize: 35, color: '#fff', display: 'flex' }}
+                                />
+                            </div>
+                        )}
+                        {!isMobile && (
+                            <div className="menu-wrapper">
+                                <Menu {...this.props} />
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>
@@ -80,4 +92,10 @@ export default class Header extends React.Component {
             });
         }
     };
+
+    handleMobileLoginClick = () => {
+        console.log('handleMobileLoginClick');
+    }
 }
+
+export default withMobile({})(Header);

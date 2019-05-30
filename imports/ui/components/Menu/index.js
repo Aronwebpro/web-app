@@ -34,7 +34,7 @@ const menuItems = [
 
 class Menu extends React.PureComponent {
     render() {
-        const { history, refresh } = this.props;
+        const { history } = this.props;
         const activeUrl = history.location.pathname;
         return (
             <nav className="menu">
@@ -57,6 +57,7 @@ class Menu extends React.PureComponent {
             openModal();
         } else {
             this.props.history.push(link);
+            this.forceUpdate();
         }
     };
 }

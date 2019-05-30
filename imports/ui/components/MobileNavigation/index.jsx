@@ -79,7 +79,6 @@ class MobileNavigation extends React.PureComponent {
     render() {
         const { isMobile } = this.props;
         const { activeLink } = this.state;
-        console.log(activeLink);
         return (
             <div className='mobile-navigation-container shadow' style={{ bottom: isMobile ? 0 : -110 }}>
                 <div className='mobile-navigation-wrapper'>
