@@ -28,6 +28,7 @@ react-meteor-data # Meteor React Js support
 underscore@1.0.10
 barbatus:typescript # TypeScript compiler
 pauli:accounts-linkedin # LinkedIn Login implementation
+service-configuration # LinkedIn Login implementation
 # Comment out for now
 #simple:json-routes              # The simplest bare-bones way to define server-side JSON API endpoints, without any extra functionality.
 #simple:rest-json-error-handler  # SimpleRest error middleware for converting thrown Meteor.Errors to JSON and sending the response.
