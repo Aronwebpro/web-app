@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Router
+import { Link } from 'react-router-dom';
+
 // HOC
 import withMobile from '../../hoc/withMobile';
 
@@ -36,7 +39,15 @@ class Header extends React.Component {
                 <div className="header-body" style={{ height: this.state.headerMobile }}>
                     <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
                         <div className='logo-container'>
-                            <h1>{`{  I'm Apps Brewer  }  `}</h1>
+                            <h1>
+                                <Link to='/' style={{ textDecoration: 'none' }}>
+                                    {`{`}
+                                    <span style={{ color: '#ffdb4d' }}>{` I'm`}</span>
+                                    <span style={{ color: '#aae3f3' }}>{` Apps`}</span>
+                                    <span style={{ color: '#ec2720' }}>{` Brewer `}</span>
+                                    {`}`}
+                                </Link>
+                            </h1>
                         </div>
                         {isMobile && (
                             <div className='login-container'>
@@ -66,7 +77,7 @@ class Header extends React.Component {
         window.removeEventListener('scroll', this.stickHeader);
     }
 
-    //Sticekr Header Effect
+    //Sticky Header Effect
     stickHeader = () => {
         if (window.scrollY > 100 === this.state.hideHeader) return;
         if (window.scrollY > 100) {

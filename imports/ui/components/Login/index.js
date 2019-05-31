@@ -2,9 +2,14 @@ import React from 'react';
 
 //Styles
 import './login.css';
+import LinkedInLoginModal from "../LinkedInLoginModal";
 
 class Login extends React.PureComponent {
+    state = {
+        loginModalVisible: false,
+    }
     render() {
+        const { loginModalVisible } = this.state;
         return (
             <div className="login-wrapper">
                 <form onSubmit={this.login}>
@@ -23,6 +28,9 @@ class Login extends React.PureComponent {
                 <div className="linkedIn-button">
                     <img src="/img/logos/linkedInButton.png" alt=""/>
                 </div>
+                <LinkedInLoginModal
+                    visible={loginModalVisible}
+                />
             </div>
         );
     }
