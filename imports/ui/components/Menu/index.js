@@ -1,8 +1,14 @@
 import React from 'react';
+
+// Router
 import { withRouter } from 'react-router-dom';
+
+// Redux
+import { compose } from 'redux';
 
 //Styles
 import './menu.css';
+import withMobile from '../../hoc/withMobile';
 
 const menuItems = [
     {
@@ -36,7 +42,7 @@ class Menu extends React.PureComponent {
     render() {
         const { history } = this.props;
         const activeUrl = history.location.pathname;
-        return (
+        return isMObi(
             <nav className="menu">
                 <div className="menu-inner">
                     {menuItems.map(({ title, link, permissions }, index) => (
@@ -62,4 +68,7 @@ class Menu extends React.PureComponent {
     };
 }
 
-export default withRouter(Menu);
+export default compose(
+    withRouter,
+    withMobile,
+)(Menu);

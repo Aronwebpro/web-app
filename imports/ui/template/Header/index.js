@@ -107,6 +107,6 @@ class Header extends React.Component {
     handleMobileLoginClick = () => {
         console.log('handleMobileLoginClick');
     }
-}
+}export default withMobile({})(Header);
 
-export default withMobile({})(Header);
+
