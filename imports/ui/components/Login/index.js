@@ -1,15 +1,14 @@
 import React from 'react';
 
-//Styles
+// Components
+import Message  from '/imports/ui/components/Message';
+
+// Styles
 import './login.css';
-import LinkedInLoginModal from "../LinkedInLoginModal";
 
 class Login extends React.PureComponent {
-    state = {
-        loginModalVisible: false,
-    }
     render() {
-        const { loginModalVisible } = this.state;
+        const { handleLinkedInLogin } = this.props;
         return (
             <div className="login-wrapper">
                 <form onSubmit={this.login}>
@@ -26,11 +25,12 @@ class Login extends React.PureComponent {
                     </div>
                 </form>
                 <div className="linkedIn-button">
-                    <img src="/img/logos/linkedInButton.png" alt=""/>
+                    <img
+                        src="/img/logos/linkedInButton.png"
+                        alt="Login LinkedIn"
+                        onClick={handleLinkedInLogin}
+                    />
                 </div>
-                <LinkedInLoginModal
-                    visible={loginModalVisible}
-                />
             </div>
         );
     }
@@ -39,7 +39,9 @@ class Login extends React.PureComponent {
         e.preventDefault();
         const name = this.userInput.value;
         const pass = this.passInput.value;
-        alert('Labas');
+        Message.success('Login');
+
+
         // //Validation
         // switch (true) {
         //     case name === '' && pass === '' :

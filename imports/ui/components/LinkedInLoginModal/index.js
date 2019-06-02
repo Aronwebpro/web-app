@@ -7,7 +7,10 @@ export default class LinkedInLoginModal extends React.PureComponent {
             visible,
         } = this.props;
         return (
-            <Modal>
+            <Modal
+                visible={visible}
+                onClose={() => {}}
+            >
                 <div>
                     Byrka
                 </div>

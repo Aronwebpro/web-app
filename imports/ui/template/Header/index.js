@@ -3,21 +3,16 @@ import React from 'react';
 // Router
 import { Link } from 'react-router-dom';
 
-// HOC
-import withMobile from '../../hoc/withMobile';
+// Components
+import Menu from '/imports/ui/components/Menu';
+import Login from '/imports/ui/components/Login';
+import LinkedInLoginModal from '/imports/ui/components/LinkedInLoginModal';
 
-// Antd
-import Icon from 'antd/lib/icon';
-
-//Components
-import Menu from '../../components/Menu';
-import Login from '../../components/Login';
-
-//Styles
+// Styles
 import './header.css';
 
 
-class Header extends React.Component {
+export default class Header extends React.Component {
     state = {
         top: '0px',
         headerMobile: '70px',
@@ -27,17 +22,20 @@ class Header extends React.Component {
         status: '',
         shake: '',
         hideHeader: false,
+        loginModalVisible: false,
     };
 
     render() {
-        const { isMobile } = this.props;
+        const { top, headerMobileInner, headerMobile, loginModalVisible } = this.state;
         return (
-            <header style={{ top: this.state.top }}>
+            <header style={{ top }}>
                 <div ref={(input) => this.loginRow = input} className="login-section">
-                    <Login/>
+                    <Login
+                        handleLinkedInLogin={this.handleLinkedInLogin}
+                    />
                 </div>
-                <div className="header-body" style={{ height: this.state.headerMobile }}>
-                    <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
+                <div className="header-body" style={{ height: headerMobile }}>
+                    <div className="header-body-inner" style={{ transform: headerMobileInner }}>
                         <div className='logo-container'>
                             <h1>
                                 <Link to='/' style={{ textDecoration: 'none' }}>
@@ -49,25 +47,19 @@ class Header extends React.Component {
                                 </Link>
                             </h1>
                         </div>
-                        {isMobile && (
-                            <div className='login-container'>
-                                <Icon
-                                    type="login"
-                                    onClick={this.handleMobileLoginClick}
-                                    style={{ fontSize: 35, color: '#fff', display: 'flex' }}
-                                />
-                            </div>
-                        )}
-                        {!isMobile && (
-                            <div className="menu-wrapper">
-                                <Menu {...this.props} />
-                            </div>
-                        )}
+                        <div className="menu-wrapper">
+                            <Menu {...this.props} />
+                        </div>
                     </div>
                 </div>
+                <LinkedInLoginModal
+                    visible={loginModalVisible}
+                />
             </header>
         );
     }
+
+    loginRow = React.createRef();
 
     componentDidMount() {
         window.addEventListener('scroll', this.stickHeader);
@@ -106,7 +98,12 @@ class Header extends React.Component {
 
     handleMobileLoginClick = () => {
         console.log('handleMobileLoginClick');
-    }
-}export default withMobile({})(Header);
+    };
+
+    handleLinkedInLogin = () => {
+        console.log('Logging In with Linkedin')
+    };
+}
+
 
 
