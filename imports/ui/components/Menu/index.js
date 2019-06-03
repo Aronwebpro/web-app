@@ -1,8 +1,20 @@
 import React from 'react';
+
+// Router
 import { withRouter } from 'react-router-dom';
+
+// Redux
+import { compose } from 'redux';
+
+// HOC
+import withMobile from '../../hoc/withMobile';
+
+// Antd
+import Icon from 'antd/lib/icon';
 
 //Styles
 import './menu.css';
+
 
 const menuItems = [
     {
@@ -34,9 +46,9 @@ const menuItems = [
 
 class Menu extends React.PureComponent {
     render() {
-        const { history } = this.props;
+        const { history, isMobile } = this.props;
         const activeUrl = history.location.pathname;
-        return (
+        return !isMobile ? (
             <nav className="menu">
                 <div className="menu-inner">
                     {menuItems.map(({ title, link, permissions }, index) => (
@@ -48,6 +60,14 @@ class Menu extends React.PureComponent {
                     ))}
                 </div>
             </nav>
+        ) : (
+            <div className='login-container'>
+                <Icon
+                    type="login"
+                    onClick={this.handleMobileLoginClick}
+                    style={{ fontSize: 35, color: '#fff', display: 'flex' }}
+                />
+            </div>
         );
     }
 
@@ -62,4 +82,7 @@ class Menu extends React.PureComponent {
     };
 }
 
-export default withRouter(Menu);
+export default compose(
+    withRouter,
+    withMobile({}),
+)(Menu);

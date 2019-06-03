@@ -1,20 +1,21 @@
 import React from 'react';
 
-// HOC
-import withMobile from '../../hoc/withMobile';
+// Router
+import { Link } from 'react-router-dom';
 
-// Antd
-import Icon from 'antd/lib/icon';
+// Api
+import { loginEmail, loginLinkedIn } from '/imports/api/login';
 
-//Components
-import Menu from '../../components/Menu';
-import Login from '../../components/Login';
+// Components
+import Message from "../../components/Message";
+import Menu from '/imports/ui/components/Menu';
+import DesktopLoginView from '/imports/ui/components/DesktopLoginView';
+import LinkedInLoginModal from '/imports/ui/components/LinkedInLoginModal';
 
-//Styles
+// Styles
 import './header.css';
 
-
-class Header extends React.Component {
+export default class Header extends React.Component {
     state = {
         top: '0px',
         headerMobile: '70px',
@@ -24,39 +25,52 @@ class Header extends React.Component {
         status: '',
         shake: '',
         hideHeader: false,
+        LinkedInLoginModalVisible: false,
     };
 
     render() {
-        const { isMobile } = this.props;
+        const {
+            top,
+            headerMobileInner,
+            headerMobile,
+            LinkedInLoginModalVisible
+        } = this.state;
         return (
-            <header style={{ top: this.state.top }}>
+            <header style={{ top }}>
                 <div ref={(input) => this.loginRow = input} className="login-section">
-                    <Login/>
+                    <DesktopLoginView
+                        handleLinkedInLogin={this.openLinkedInLoginModal}
+                        loginWithEmail={this.loginWithEmail}
+                    />
                 </div>
-                <div className="header-body" style={{ height: this.state.headerMobile }}>
-                    <div className="header-body-inner" style={{ transform: this.state.headerMobileInner }}>
+                <div className="header-body" style={{ height: headerMobile }}>
+                    <div className="header-body-inner" style={{ transform: headerMobileInner }}>
                         <div className='logo-container'>
-                            <h1>{`{  I'm Apps Brewer  }  `}</h1>
+                            <h1>
+                                <Link to='/' style={{ textDecoration: 'none' }}>
+                                    {`{`}
+                                    <span style={{ color: '#ffdb4d' }}>{` I'm`}</span>
+                                    <span style={{ color: '#aae3f3' }}>{` Apps`}</span>
+                                    <span style={{ color: '#ec2720' }}>{` Brewer `}</span>
+                                    {`}`}
+                                </Link>
+                            </h1>
                         </div>
-                        {isMobile && (
-                            <div className='login-container'>
-                                <Icon
-                                    type="login"
-                                    onClick={this.handleMobileLoginClick}
-                                    style={{ fontSize: 35, color: '#fff', display: 'flex' }}
-                                />
-                            </div>
-                        )}
-                        {!isMobile && (
-                            <div className="menu-wrapper">
-                                <Menu {...this.props} />
-                            </div>
-                        )}
+                        <div className="menu-wrapper">
+                            <Menu {...this.props} />
+                        </div>
                     </div>
                 </div>
+                <LinkedInLoginModal
+                    visible={LinkedInLoginModalVisible}
+                    close={this.closeLinkedInLoginModal}
+                    login={this.handleMobileLoginClick}
+                />
             </header>
         );
     }
+
+    loginRow = React.createRef();
 
     componentDidMount() {
         window.addEventListener('scroll', this.stickHeader);
@@ -66,7 +80,7 @@ class Header extends React.Component {
         window.removeEventListener('scroll', this.stickHeader);
     }
 
-    //Sticekr Header Effect
+    //Sticky Header Effect
     stickHeader = () => {
         if (window.scrollY > 100 === this.state.hideHeader) return;
         if (window.scrollY > 100) {
@@ -93,9 +107,36 @@ class Header extends React.Component {
         }
     };
 
+    // LinkedIn Modal handlers
+    openLinkedInLoginModal = () => this.setState({ LinkedInLoginModalVisible: true });
+    closeLinkedInLoginModal = () => this.setState({ LinkedInLoginModalVisible: false });
+
+    // Login Handlers
     handleMobileLoginClick = () => {
-        console.log('handleMobileLoginClick');
-    }
+        loginLinkedIn(this.closeLinkedInLoginModal);
+    };
+
+    loginWithEmail = (e) => {
+        e.preventDefault();
+        const email = e.target[0].value;
+        const password = e.target[1].value;
+
+        // Client Side Validation
+        switch (true) {
+            case email === '' && password === '' :
+                Message.error(`Email and Password can't be empty.`);
+                return;
+            case email === '' :
+                Message.error(`Email can't be empty.`);
+                return;
+            case password === '' :
+                Message.error(`Password can't be empty.`);
+                return;
+        }
+        // Login
+        loginEmail({ email, password }, () => {});
+    };
 }
 
-export default withMobile({})(Header);
+
+
