@@ -1,22 +1,23 @@
 import { Meteor } from 'meteor/meteor';
 import '/imports/api/methods/admin';
+import '/imports/api/methods/user';
 
 Meteor.startup(() => {
     //LinkedIn
     //Set LoginWithLinkedIn Settings from settings.json file to meteor_accounts_loginServiceConfiguration collection
-    const linkedin =  Meteor.settings && Meteor.settings.linkedin;
+    const linkedIn =  Meteor.settings && Meteor.settings.linkedIn;
     if (
-        linkedin &&
-        linkedin.clientId &&
-        linkedin.secret
+        linkedIn &&
+        linkedIn.clientId &&
+        linkedIn.secret
     ) {
         ServiceConfiguration.configurations.upsert(
             { service: 'linkedin' },
             {
                 $set: {
                     service: 'linkedin',
-                    clientId: Meteor.settings && Meteor.settings.linkedin && Meteor.settings.linkedin.clientId,
-                    secret: Meteor.settings && Meteor.settings.linkedin && Meteor.settings.linkedin.secret,
+                    clientId: Meteor.settings && Meteor.settings.linkedIn && Meteor.settings.linkedIn.clientId,
+                    secret: Meteor.settings && Meteor.settings.linkedIn && Meteor.settings.linkedIn.secret,
                 }
             }
         );
@@ -24,7 +25,7 @@ Meteor.startup(() => {
     //Method is called when Login/Register with LinkedIn is proceed
     //Update User Profile Picture From services->linkedIn->pictureUrl To profile->pictureUrl fields
     Accounts.validateLoginAttempt(({ user }) => {
-        if ( user && user.isDeactivated) {
+        if ( user && user.isBlocked) {
             return false;
         }
 

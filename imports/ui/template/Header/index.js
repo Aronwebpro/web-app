@@ -3,14 +3,17 @@ import React from 'react';
 // Router
 import { Link } from 'react-router-dom';
 
+// Api
+import { loginEmail, loginLinkedIn } from '/imports/api/login';
+
 // Components
+import Message from "../../components/Message";
 import Menu from '/imports/ui/components/Menu';
-import Login from '/imports/ui/components/Login';
+import DesktopLoginView from '/imports/ui/components/DesktopLoginView';
 import LinkedInLoginModal from '/imports/ui/components/LinkedInLoginModal';
 
 // Styles
 import './header.css';
-
 
 export default class Header extends React.Component {
     state = {
@@ -22,16 +25,22 @@ export default class Header extends React.Component {
         status: '',
         shake: '',
         hideHeader: false,
-        loginModalVisible: false,
+        LinkedInLoginModalVisible: false,
     };
 
     render() {
-        const { top, headerMobileInner, headerMobile, loginModalVisible } = this.state;
+        const {
+            top,
+            headerMobileInner,
+            headerMobile,
+            LinkedInLoginModalVisible
+        } = this.state;
         return (
             <header style={{ top }}>
                 <div ref={(input) => this.loginRow = input} className="login-section">
-                    <Login
-                        handleLinkedInLogin={this.handleLinkedInLogin}
+                    <DesktopLoginView
+                        handleLinkedInLogin={this.openLinkedInLoginModal}
+                        loginWithEmail={this.loginWithEmail}
                     />
                 </div>
                 <div className="header-body" style={{ height: headerMobile }}>
@@ -53,7 +62,9 @@ export default class Header extends React.Component {
                     </div>
                 </div>
                 <LinkedInLoginModal
-                    visible={loginModalVisible}
+                    visible={LinkedInLoginModalVisible}
+                    close={this.closeLinkedInLoginModal}
+                    login={this.handleMobileLoginClick}
                 />
             </header>
         );
@@ -96,12 +107,34 @@ export default class Header extends React.Component {
         }
     };
 
+    // LinkedIn Modal handlers
+    openLinkedInLoginModal = () => this.setState({ LinkedInLoginModalVisible: true });
+    closeLinkedInLoginModal = () => this.setState({ LinkedInLoginModalVisible: false });
+
+    // Login Handlers
     handleMobileLoginClick = () => {
-        console.log('handleMobileLoginClick');
+        loginLinkedIn(this.closeLinkedInLoginModal);
     };
 
-    handleLinkedInLogin = () => {
-        console.log('Logging In with Linkedin')
+    loginWithEmail = (e) => {
+        e.preventDefault();
+        const email = e.target[0].value;
+        const password = e.target[1].value;
+
+        // Client Side Validation
+        switch (true) {
+            case email === '' && password === '' :
+                Message.error(`Email and Password can't be empty.`);
+                return;
+            case email === '' :
+                Message.error(`Email can't be empty.`);
+                return;
+            case password === '' :
+                Message.error(`Password can't be empty.`);
+                return;
+        }
+        // Login
+        loginEmail({ email, password }, () => {});
     };
 }
 

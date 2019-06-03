@@ -1,8 +1,7 @@
 import { Meteor } from 'meteor/meteor';
-import { check } from 'meteor/check';
 
-//Antd
-import message from 'antd/lib/message';
+// Components
+import Message from '/imports/ui/components/Message';
 
 /**
  * Meteor Login Handler
@@ -11,14 +10,12 @@ import message from 'antd/lib/message';
  * @param callback
  * @return Callback -> Function
  */
-const logIn = ({ email, password }, callback) => {
-    check(email, String);
-    check(password, String);
+const loginEmail = ({ email, password }, callback) => {
     Meteor.loginWithPassword({ email }, password, (e, r) => {
         if (e) {
-            alert(e.reason);
+            Message.error('Incorrect Password or Email');
         } else {
-            message.success('Login successful');
+            Message.success('Successfully logged in!');
             if (callback) {
                 return callback();
             }
@@ -26,6 +23,31 @@ const logIn = ({ email, password }, callback) => {
     });
 };
 
+/**
+ * Meteor Login With LinkedIn
+ */
+const loginLinkedIn = (callBack) => {
+    Meteor.loginWithLinkedIn({
+        requestPermissions: ['r_liteprofile', 'r_emailaddress']
+    }, (e) => {
+        if (e) {
+            console.log('error with login is: ', e);
+            Message.error(e.reason || 'Server Error');
+        } else {
+            const user = Meteor.user();
+            if (user === null) {
+                console.log("user object not here");
+            } else {
+                console.log(user);
+            }
+            callBack();
+            //TODO: Set Redux State for USER
+            Message.success('Logged in Successfully.');
+        }
+    });
+};
+
 export {
-    logIn
+    loginEmail,
+    loginLinkedIn
 };
