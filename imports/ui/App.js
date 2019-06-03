@@ -38,7 +38,8 @@ import Home from '../ui/pages/Home/Home';
 import Story from '../ui/pages/Story/Story';
 import Portfolio from '../ui/pages/Portfolio/Portfolio';
 import Resume from '../ui/pages/Resume/Resume';
-import Contact from '../ui/pages/Contact/Contact';
+import PrivacyPolicy from '../ui/pages/Documents/PrivacyPolicy';
+import ServicesTerms from '../ui/pages/Documents/ServicesTerms';
 
 //Pages
 const HomePage = PageLayout({
@@ -69,9 +70,15 @@ const ResumePage = PageLayout({
     SideBarComponent: null,
 });
 
-const ContactPage = PageLayout({
-    PageComponent: Contact,
-    pageId: 'contact',
+const PrivacyPolicyPage = PageLayout({
+    PageComponent: PrivacyPolicy,
+    pageId: 'privacy-policy',
+    layout: 'default',
+    SideBarComponent: null,
+});
+const ServicesTermsPage = PageLayout({
+    PageComponent: ServicesTerms,
+    pageId: 'services-terms',
     layout: 'default',
     SideBarComponent: null,
 });
@@ -99,7 +106,8 @@ class App extends React.Component {
                             <Route path='/my-story' component={MyStoryPage}/>
                             <Route path='/portfolio' component={PortfolioPage}/>
                             <Route path='/resume' component={ResumePage}/>
-                            <Route path='/contact' component={ContactPage}/>
+                            <Route path='/terms-of-services' component={ServicesTermsPage}/>
+                            <Route path='/privacy-policy' component={PrivacyPolicyPage}/>
                             <Route path='/' component={HomePage}/>
                         </Switch>
                         <Footer/>

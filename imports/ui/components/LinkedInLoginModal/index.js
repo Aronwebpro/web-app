@@ -49,9 +49,9 @@ export default class LinkedInLoginModal extends React.PureComponent {
                                 website
                             </p>
                             <p>
-                                <span className='theme-color'><Link to="/terms-of-services">Terms of Service</Link></span>
+                                <span className='theme-color'><Link to="/terms-of-services" onClick={close}>Terms of Service</Link></span>
                                 {` & `}
-                                <span className='theme-color'><Link to="/privacy-policy">Privacy Policy</Link></span>
+                                <span className='theme-color'><Link to="/privacy-policy" onClick={close}>Privacy Policy</Link></span>
                             </p>
                         </div>
                     </div>
