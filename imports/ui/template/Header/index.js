@@ -14,8 +14,9 @@ import LinkedInLoginModal from '/imports/ui/components/LinkedInLoginModal';
 
 // Styles
 import './header.css';
+import withUser from "../../hoc/withUser";
 
-export default class Header extends React.Component {
+class Header extends React.Component {
     state = {
         top: '0px',
         headerMobile: '70px',
@@ -35,10 +36,14 @@ export default class Header extends React.Component {
             headerMobile,
             LinkedInLoginModalVisible
         } = this.state;
+        const {
+            user,
+        } = this.props;
         return (
             <header style={{ top }}>
                 <div ref={(input) => this.loginRow = input} className="login-section">
                     <DesktopLoginView
+                        {...{ user }}
                         handleLinkedInLogin={this.openLinkedInLoginModal}
                         loginWithEmail={this.loginWithEmail}
                     />
@@ -138,5 +143,5 @@ export default class Header extends React.Component {
     };
 }
 
-
+export default withUser({})(Header);
 

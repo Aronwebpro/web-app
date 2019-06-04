@@ -14,7 +14,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 //Redux
 import { Provider } from 'react-redux';
 import store from '/imports/redux/store';
-import { changeIsMobile } from '../redux/actions';
+import { changeIsMobile, setUser } from '../redux/actions';
 
 //Components
 import AuthenticatedRoute from './AuthenticatedRoute';
@@ -92,6 +92,7 @@ class App extends React.Component {
             contactsModalVisible: false,
         };
     }
+
     render() {
         return (
             <BrowserRouter>
@@ -117,7 +118,7 @@ class App extends React.Component {
                                 onClose: this.handleModalClose,
                             }}
                         />
-                        <MobileNavigation />
+                        <MobileNavigation/>
                     </div>
                 </Provider>
             </BrowserRouter>
@@ -143,9 +144,21 @@ class App extends React.Component {
     handleModalClose = () => this.setState({ contactsModalVisible: false });
     handleModalOpen = () => this.setState({ contactsModalVisible: true });
 }
-//TODO: Start to use Redux for USER
+
+// UserMeteor Data
+// Set Redux state
 const getData = () => {
-    const user = Meteor.user();
+    const userObj = Meteor.user();
+    const user = userObj && {
+        email: userObj.profile.email,
+        firstName: userObj.profile.firstName.localized.en_US,
+        lastName: userObj.profile.lastName.localized.en_US,
+        profilePictures: userObj.profile.profilePicture.identifiersUrl,
+    };
+    // Update Redux state
+    store.dispatch(setUser({ user }));
+
+    // Return Props
     return {
         user
     };
