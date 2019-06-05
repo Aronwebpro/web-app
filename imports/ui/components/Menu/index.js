@@ -14,6 +14,9 @@ import Icon from 'antd/lib/icon';
 
 //Styles
 import './menu.css';
+import withUser from '../../hoc/withUser';
+import Modal from '../Modal';
+import { logOut } from '../../../api/logout';
 
 
 const menuItems = [
@@ -46,14 +49,22 @@ const menuItems = [
 
 class Menu extends React.PureComponent {
     render() {
-        const { history, isMobile } = this.props;
+        const {
+            history,
+            isMobile,
+            handleMobileLoginClick,
+            user,
+            handleAvatarClick,
+        } = this.props;
+
         const activeUrl = history.location.pathname;
+
         return !isMobile ? (
             <nav className="menu">
                 <div className="menu-inner">
                     {menuItems.map(({ title, link, permissions }, index) => (
                         <div className={`menu-link ${activeUrl === link && 'active-link'}`} key={index.toString()}>
-                            <a onClick={this.handleClick.bind(this, link)} >
+                            <a onClick={this.handleMenuClick.bind(this, link)} >
                                 {title}
                             </a>
                         </div>
@@ -61,17 +72,39 @@ class Menu extends React.PureComponent {
                 </div>
             </nav>
         ) : (
-            <div className='login-container'>
-                <Icon
-                    type="login"
-                    onClick={this.handleMobileLoginClick}
-                    style={{ fontSize: 35, color: '#fff', display: 'flex' }}
-                />
+            <div className='login-container mobile'>
+                {user ? (
+                    <div className='login-wrapper-user'>
+                        <div
+                            className='login-name-wrapper'
+                            onClick={handleAvatarClick}
+                        >
+                            <div className='user-name-container'>
+                                <p>{`${user.firstName}`}</p>
+                                <p>{`${user.lastName}`}</p>
+                            </div>
+                            <div className='user-avatar-container'>
+                                {user.profilePictures[0] && (
+                                    <img
+                                        src={user.profilePictures[0]}
+                                        alt={`${user.firstName} ${user.lastName}`}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <Icon
+                        type="login"
+                        onClick={handleMobileLoginClick}
+                        style={{ fontSize: 35, color: '#fff', display: 'flex' }}
+                    />
+                )}
             </div>
         );
     }
 
-    handleClick = (link) => {
+    handleMenuClick = (link) => {
         const { openModal } = this.props;
         if (link === '/contact') {
             openModal();
@@ -80,9 +113,15 @@ class Menu extends React.PureComponent {
             this.forceUpdate();
         }
     };
+
+    logout = () => {
+        logOut();
+        this.setState({ showLogout: false });
+    }
 }
 
 export default compose(
     withRouter,
+    withUser({}),
     withMobile({}),
 )(Menu);

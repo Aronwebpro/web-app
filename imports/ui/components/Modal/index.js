@@ -67,11 +67,8 @@ export default class Modal extends React.PureComponent {
                             {this.props.children}
                         </div>
                         <div className="modal-footer">
-                            {footer ? footer() : (
+                            {footer ? <footer /> : (
                                 <>
-                                    {footer && (
-                                        <span>{footer}</span>
-                                    )}
                                     {okText && (
                                         <button
                                             type="button"

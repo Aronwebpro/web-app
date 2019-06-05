@@ -94,6 +94,62 @@ input[type="submit"].top-row_login:active {
     transform: scale(1.1);
 }
 
+/* Logged In User UI*/
+
+.login-wrapper-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.login-wrapper-user img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+.user-avatar-container {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-name-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-wrapper-user .logout-button-container {
+    height: 100%;
+    max-width: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f2329;
+    overflow: hidden;
+    transition: ease-in 600ms;
+    cursor: pointer;
+}
+
+.mobile .user-name-container {
+    color: #fff;
+}
+
+.login-wrapper-user .logout-button-container.active {
+    max-width: 100px;
+    padding: 0 10px;
+}
+.login-wrapper-user .logout-button {
+    color: #fff;
+}
+
+
+
 @media all and (max-width: 600px) {
     .login-section:after {
         height: 0;

@@ -1,0 +1,90 @@
+.mobile-login-wrapper form {
+    flex: 1;
+    display: flex;
+}
+
+.mobile-login-wrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mobile-login-wrapper label {
+    font-size: 1.2em;
+    margin: 3px 0;
+}
+
+.mobile-login-wrapper input {
+    border: 1px solid #ededed;
+    width: 97%;
+    height: 27px;
+    margin: 5px 0;
+}
+
+.mobile-login-wrapper button {
+    margin: 0 0 0 6px;
+    padding: 3px 12px;
+}
+
+.mobile-login-wrapper .top-row-login-button {
+    width: 100%;
+    padding-right: 5px;
+    text-align: center;
+}
+
+.mobile-login-wrapper input[type="submit"].top-row_login {
+    width: 98%;
+    height: 34px;
+    margin: 10px auto;
+    color: #70cde9;
+    background-color: transparent;
+    border-radius: 3px;
+    font-size: 1.2em;
+    border: 1px solid #70cde9;
+    cursor: pointer;
+}
+
+.mobile-login-or {
+    margin: 30px 0 0;
+}
+
+.mobile-login-or h3 {
+    margin: 10px 0 20px;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ededed;
+    line-height: 0.1em;
+}
+
+.mobile-login-or h3 span {
+    background-color: #fff;
+    padding: 0 10px;
+}
+
+.mobile-login-wrapper input[type="submit"].top-row_login:hover, input[type="submit"].top-row_login:active {
+    /*background-color: #00679a;*/
+    background-color: #70cde9;
+    color: #fff;
+    transition: all 0.6s;
+}
+
+.mobile-login-wrapper input[type="submit"].top-row_login:active {
+    transform: scale(1.1);
+}
+
+.mobile-login-modal-disclosure {
+    text-align: center;
+    line-height: 25px;
+}
+
+.login-with-linkedin-modal img {
+    border: 1px solid #ededed;
+    padding: 8px 40px;
+    border-radius: 5px;
+}
+
+.login-container.mobile {
+    padding-right: 10px;
+}

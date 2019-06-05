@@ -1,0 +1,12 @@
+
+@media all and (max-width: 1200px)  {
+    #privacy-policy .content {
+        margin: -40px 2% 0;
+    }
+}
+
+@media all and (max-width: 500px)  {
+    #privacy-policy .inner-content {
+        padding: 20px;
+    }
+}

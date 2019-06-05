@@ -105,22 +105,6 @@
     }
 }
 
-@media all and (max-width: 600px) {
-    .login-wrapper {
-        visibility: hidden;
-        height: 15px;
-        display: none;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    .title-wrapper {
-        width: 100%;
-    }
-}
-
 .mobile-login_button {
     display: none;
 }
@@ -148,4 +132,19 @@
         margin-right: 4px;
         color: red;
     }
+
+    .login-wrapper {
+        visibility: hidden;
+        height: 15px;
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .title-wrapper {
+        width: 100%;
+    }
+
 }

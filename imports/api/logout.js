@@ -1,9 +1,7 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 
-//Antd
-import message from 'antd/lib/message';
+// Components
+import Message from '/imports/ui/components/Message';
 
 /**
  * Meteor Logout Handler
@@ -11,9 +9,8 @@ import message from 'antd/lib/message';
  */
 const logOut = () => {
     Meteor.logout(() => {
-        message.success('Logout successful');
+        Message.success('successfully Logged out.');
     });
-    return <Redirect to='/' push/>;
 };
 
 export {

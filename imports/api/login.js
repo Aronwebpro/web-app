@@ -38,10 +38,9 @@ const loginLinkedIn = (callBack) => {
             if (user === null) {
                 console.log("user object not here");
             } else {
-                console.log(user);
+                //TODO: 
             }
             callBack();
-            //TODO: Set Redux State for USER
             Message.success('Logged in Successfully.');
         }
     });
