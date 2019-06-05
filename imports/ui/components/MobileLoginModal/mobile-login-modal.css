@@ -73,3 +73,18 @@
 .mobile-login-wrapper input[type="submit"].top-row_login:active {
     transform: scale(1.1);
 }
+
+.mobile-login-modal-disclosure {
+    text-align: center;
+    line-height: 25px;
+}
+
+.login-with-linkedin-modal img {
+    border: 1px solid #ededed;
+    padding: 8px 40px;
+    border-radius: 5px;
+}
+
+.login-container.mobile {
+    padding-right: 10px;
+}

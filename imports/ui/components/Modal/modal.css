@@ -137,3 +137,9 @@
 .modal-close-button:active {
     transform: scale(1.1);
 }
+
+@media all and (max-width: 500px) {
+    .modal-footer-button {
+        padding: 5px 15px;
+    }
+}

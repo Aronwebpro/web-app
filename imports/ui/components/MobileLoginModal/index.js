@@ -55,7 +55,7 @@ export default class MobileLoginModal extends React.PureComponent {
                     <div>
                         <section className='contact-container'>
                             <div className='login-with-linkedin-modal'>
-                                <p>To Create or Login with LinkedIn click the button bellow.</p>
+                                <p>Login with LinkedIn by clicking button bellow.</p>
                                 <div className='link'>
                                     <img
                                         id="linkedin-img"
@@ -64,23 +64,34 @@ export default class MobileLoginModal extends React.PureComponent {
                                         onClick={loginLinkedIn}
                                     />
                                 </div>
-                                <div>
-                                    <p>By clicking this button you accept
+                                <div className='mobile-login-modal-disclosure'>
+                                    <div>By clicking this button you accept
                                         <br/>
                                         {` {`}
                                         <span style={{ color: '#ffdb4d' }}>{` I'm `}</span>
                                         <span style={{ color: '#aae3f3' }}>{` Apps`}</span>
                                         <span style={{ color: '#ec2720' }}>{` Brewer `}</span>
                                         {`} `}
-                                        <br/>
-                                        website
-                                    </p>
-                                    <p>
-                                        <span className='theme-color'><Link to="/terms-of-services" onClick={close}>Terms of Service</Link></span>
-                                        {` & `}
-                                        <span className='theme-color'><Link to="/privacy-policy"
-                                                                            onClick={close}>Privacy Policy</Link></span>
-                                    </p>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <Link
+                                                to="/terms-of-services"
+                                                className='theme-color'
+                                                onClick={close}
+                                            >
+                                                Terms of Service
+                                            </Link>
+                                            {` & `}
+                                            <Link
+                                                to="/privacy-policy"
+                                                className='theme-color'
+                                                onClick={close}
+                                            >
+                                                Privacy Policy
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </section>
