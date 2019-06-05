@@ -3,6 +3,7 @@ header {
     top: 0;
     z-index: 99;
     width: 100%;
+    overflow: hidden;
     transition: all 0.7s;
 }
 
@@ -53,11 +54,46 @@ header {
     padding-right: 3%;
 }
 
+.mobile-logout-button-container {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+    background-color: #fff;
+    margin-right: -70px;
+    transition: all 600ms;
+}
+
+.mobile-logout-button-container.hide {
+    margin-right: -70px;
+}
+
+.mobile-logout-button-container.show {
+    margin-right: 0;
+}
+
 @media all and (max-width: 600px) {
     header {
         top: -40px !important;
     }
+    .header-body-inner {
+        flex: unset;
+        width: 100%;
+    }
     .menu-wrapper {
         padding-right: 0;
+    }
+
+    .logo-container {
+        flex: 1;
+    }
+
+    .login-container.mobile .user-name-container p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-body-inner.logout {
+        margin-left: -65px;
     }
 }

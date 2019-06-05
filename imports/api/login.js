@@ -38,7 +38,7 @@ const loginLinkedIn = (callBack) => {
             if (user === null) {
                 console.log("user object not here");
             } else {
-                console.log(user);
+                //TODO: 
             }
             callBack();
             Message.success('Logged in Successfully.');

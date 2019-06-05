@@ -48,20 +48,14 @@ const menuItems = [
 ];
 
 class Menu extends React.PureComponent {
-
-    state = {
-        showLogout: false
-    };
-
     render() {
         const {
             history,
             isMobile,
             handleMobileLoginClick,
             user,
+            handleAvatarClick,
         } = this.props;
-
-        const { showLogout } = this.state;
 
         const activeUrl = history.location.pathname;
 
@@ -70,7 +64,7 @@ class Menu extends React.PureComponent {
                 <div className="menu-inner">
                     {menuItems.map(({ title, link, permissions }, index) => (
                         <div className={`menu-link ${activeUrl === link && 'active-link'}`} key={index.toString()}>
-                            <a onClick={this.handleClick.bind(this, link)} >
+                            <a onClick={this.handleMenuClick.bind(this, link)} >
                                 {title}
                             </a>
                         </div>
@@ -83,10 +77,11 @@ class Menu extends React.PureComponent {
                     <div className='login-wrapper-user'>
                         <div
                             className='login-name-wrapper'
-                            onClick={this.handleAvatarClick}
+                            onClick={handleAvatarClick}
                         >
                             <div className='user-name-container'>
-                                {`${user.firstName} ${user.lastName}`}
+                                <p>{`${user.firstName}`}</p>
+                                <p>{`${user.lastName}`}</p>
                             </div>
                             <div className='user-avatar-container'>
                                 {user.profilePictures[0] && (
@@ -97,14 +92,6 @@ class Menu extends React.PureComponent {
                                 )}
                             </div>
                         </div>
-                        {/*<div*/}
-                            {/*className={`logout-button-container ${showLogout ? 'active' : 'passive'}`}*/}
-                            {/*onClick={this.logout}*/}
-                        {/*>*/}
-                            {/*<div className='logout-button '>*/}
-                                {/*Logout*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
                     </div>
                 ) : (
                     <Icon
@@ -117,7 +104,7 @@ class Menu extends React.PureComponent {
         );
     }
 
-    handleClick = (link) => {
+    handleMenuClick = (link) => {
         const { openModal } = this.props;
         if (link === '/contact') {
             openModal();
@@ -125,11 +112,6 @@ class Menu extends React.PureComponent {
             this.props.history.push(link);
             this.forceUpdate();
         }
-    };
-
-    handleAvatarClick = () => {
-        const currentState = this.state.showLogout;
-        this.setState({ showLogout: !currentState });
     };
 
     logout = () => {
