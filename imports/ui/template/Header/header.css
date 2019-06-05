@@ -57,4 +57,7 @@ header {
     header {
         top: -40px !important;
     }
+    .menu-wrapper {
+        padding-right: 0;
+    }
 }

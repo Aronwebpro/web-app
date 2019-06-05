@@ -14,6 +14,9 @@ import Icon from 'antd/lib/icon';
 
 //Styles
 import './menu.css';
+import withUser from '../../hoc/withUser';
+import Modal from '../Modal';
+import { logOut } from '../../../api/logout';
 
 
 const menuItems = [
@@ -45,9 +48,23 @@ const menuItems = [
 ];
 
 class Menu extends React.PureComponent {
+
+    state = {
+        showLogout: false
+    };
+
     render() {
-        const { history, isMobile } = this.props;
+        const {
+            history,
+            isMobile,
+            handleMobileLoginClick,
+            user,
+        } = this.props;
+
+        const { showLogout } = this.state;
+
         const activeUrl = history.location.pathname;
+
         return !isMobile ? (
             <nav className="menu">
                 <div className="menu-inner">
@@ -61,12 +78,41 @@ class Menu extends React.PureComponent {
                 </div>
             </nav>
         ) : (
-            <div className='login-container'>
-                <Icon
-                    type="login"
-                    onClick={this.handleMobileLoginClick}
-                    style={{ fontSize: 35, color: '#fff', display: 'flex' }}
-                />
+            <div className='login-container mobile'>
+                {user ? (
+                    <div className='login-wrapper-user'>
+                        <div
+                            className='login-name-wrapper'
+                            onClick={this.handleAvatarClick}
+                        >
+                            <div className='user-name-container'>
+                                {`${user.firstName} ${user.lastName}`}
+                            </div>
+                            <div className='user-avatar-container'>
+                                {user.profilePictures[0] && (
+                                    <img
+                                        src={user.profilePictures[0]}
+                                        alt={`${user.firstName} ${user.lastName}`}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                        {/*<div*/}
+                            {/*className={`logout-button-container ${showLogout ? 'active' : 'passive'}`}*/}
+                            {/*onClick={this.logout}*/}
+                        {/*>*/}
+                            {/*<div className='logout-button '>*/}
+                                {/*Logout*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                    </div>
+                ) : (
+                    <Icon
+                        type="login"
+                        onClick={handleMobileLoginClick}
+                        style={{ fontSize: 35, color: '#fff', display: 'flex' }}
+                    />
+                )}
             </div>
         );
     }
@@ -80,9 +126,20 @@ class Menu extends React.PureComponent {
             this.forceUpdate();
         }
     };
+
+    handleAvatarClick = () => {
+        const currentState = this.state.showLogout;
+        this.setState({ showLogout: !currentState });
+    };
+
+    logout = () => {
+        logOut();
+        this.setState({ showLogout: false });
+    }
 }
 
 export default compose(
     withRouter,
+    withUser({}),
     withMobile({}),
 )(Menu);

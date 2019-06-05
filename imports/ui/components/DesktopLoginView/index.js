@@ -59,7 +59,10 @@ export default class DesktopLoginView extends React.PureComponent {
                     </div>
                 ) : (
                     <div className="login-wrapper-user">
-                        <div className='login-name-wrapper' onClick={this.handleAvatarClick}>
+                        <div
+                            className='login-name-wrapper'
+                            onClick={this.handleAvatarClick}
+                        >
                             <div className='user-name-container'>
                                 {`${user.firstName} ${user.lastName}`}
                             </div>

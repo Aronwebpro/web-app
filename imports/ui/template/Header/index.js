@@ -6,15 +6,18 @@ import { Link } from 'react-router-dom';
 // Api
 import { loginEmail, loginLinkedIn } from '/imports/api/login';
 
+
 // Components
-import Message from "../../components/Message";
+import Message from '../../components/Message';
 import Menu from '/imports/ui/components/Menu';
 import DesktopLoginView from '/imports/ui/components/DesktopLoginView';
 import LinkedInLoginModal from '/imports/ui/components/LinkedInLoginModal';
+import MobileLoginModal from '../../components/MobileLoginModal';
 
 // Styles
 import './header.css';
-import withUser from "../../hoc/withUser";
+import withUser from '../../hoc/withUser';
+
 
 class Header extends React.Component {
     state = {
@@ -26,7 +29,8 @@ class Header extends React.Component {
         status: '',
         shake: '',
         hideHeader: false,
-        LinkedInLoginModalVisible: false,
+        linkedInLoginModalVisible: false,
+        mobileLoginModalVisible: false,
     };
 
     render() {
@@ -34,7 +38,8 @@ class Header extends React.Component {
             top,
             headerMobileInner,
             headerMobile,
-            LinkedInLoginModalVisible
+            linkedInLoginModalVisible,
+            mobileLoginModalVisible
         } = this.state;
         const {
             user,
@@ -62,14 +67,24 @@ class Header extends React.Component {
                             </h1>
                         </div>
                         <div className="menu-wrapper">
-                            <Menu {...this.props} />
+                            <Menu
+                                {...this.props}
+                                handleMobileLoginClick={this.openMobileLoginModal}
+                            />
                         </div>
                     </div>
                 </div>
                 <LinkedInLoginModal
-                    visible={LinkedInLoginModalVisible}
+                    visible={linkedInLoginModalVisible}
                     close={this.closeLinkedInLoginModal}
-                    login={this.handleMobileLoginClick}
+                    login={this.loginLinkedIn}
+                />
+                <MobileLoginModal
+                    visible={mobileLoginModalVisible}
+                    onClose={this.closeMobileLoginModal}
+                    loginWithEmail={this.loginWithEmail}
+                    loginLinkedIn={this.loginLinkedInMobile}
+
                 />
             </header>
         );
@@ -113,12 +128,16 @@ class Header extends React.Component {
     };
 
     // LinkedIn Modal handlers
-    openLinkedInLoginModal = () => this.setState({ LinkedInLoginModalVisible: true });
-    closeLinkedInLoginModal = () => this.setState({ LinkedInLoginModalVisible: false });
+    openLinkedInLoginModal = () => this.setState({ linkedInLoginModalVisible: true });
+    closeLinkedInLoginModal = () => this.setState({ linkedInLoginModalVisible: false });
 
     // Login Handlers
-    handleMobileLoginClick = () => {
+    loginLinkedIn = () => {
         loginLinkedIn(this.closeLinkedInLoginModal);
+    };
+
+    loginLinkedInMobile = () => {
+        loginLinkedIn(this.closeMobileLoginModal);
     };
 
     loginWithEmail = (e) => {
@@ -139,8 +158,14 @@ class Header extends React.Component {
                 return;
         }
         // Login
-        loginEmail({ email, password }, () => {});
+        loginEmail({ email, password }, () => {
+        });
     };
+
+    // Mobile Login Modal handlers
+    openMobileLoginModal = () => this.setState({ mobileLoginModalVisible: true });
+    closeMobileLoginModal = () => this.setState({ mobileLoginModalVisible: false });
+
 }
 
 export default withUser({})(Header);

@@ -41,7 +41,6 @@ const loginLinkedIn = (callBack) => {
                 console.log(user);
             }
             callBack();
-            //TODO: Set Redux State for USER
             Message.success('Logged in Successfully.');
         }
     });

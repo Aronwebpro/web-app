@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Styles
+import './policies-pages.css';
+
 export default class PrivacyPolicy extends React.Component {
     render() {
         return (

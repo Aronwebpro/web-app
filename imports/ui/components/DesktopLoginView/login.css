@@ -131,8 +131,13 @@ input[type="submit"].top-row_login:active {
     justify-content: center;
     align-items: center;
     background-color: #1f2329;
+    overflow: hidden;
     transition: ease-in 600ms;
     cursor: pointer;
+}
+
+.mobile .user-name-container {
+    color: #fff;
 }
 
 .login-wrapper-user .logout-button-container.active {
