@@ -23,5 +23,8 @@
   "exclude": [
     ".meteor",
     "node_modules"
+  ],
+  "files": [
+    "./typings/index.d.ts"
   ]
 }

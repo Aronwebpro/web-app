@@ -1,25 +1,44 @@
-import React from 'react';
+import * as React from 'react';
 
 // Router
-import { withRouter } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 // Redux
 import { compose } from 'redux';
 
 // HOC
-import withMobile from '../../hoc/withMobile';
+import withMobile from 'imports/ui/hoc/withMobile.js';
+import withUser from '../../hoc/withUser.js';
 
 // Antd
 import Icon from 'antd/lib/icon';
 
+// Api
+import { logOut } from 'imports/api/logout';
+
 //Styles
 import './menu.css';
-import withUser from '../../hoc/withUser';
-import Modal from '../Modal';
-import { logOut } from '../../../api/logout';
 
+// @types
+interface ReduxProps {
+    isMobile: boolean
+    user: User
+}
 
-const menuItems = [
+interface Props {
+    handleMobileLoginClick: () => void
+    handleAvatarClick: () => void
+    openModal?: () => void
+}
+
+interface MenuItem {
+    title: string
+    link: string
+    permissions: string[]
+}
+
+// Local variables
+const menuItems: MenuItem[] = [
     {
         title: 'Home',
         link: '/',
@@ -47,7 +66,7 @@ const menuItems = [
     },
 ];
 
-class Menu extends React.PureComponent {
+class Menu extends React.PureComponent<Props & ReduxProps & RouteComponentProps, {}> {
     render() {
         const {
             history,
@@ -62,7 +81,7 @@ class Menu extends React.PureComponent {
         return !isMobile ? (
             <nav className="menu">
                 <div className="menu-inner">
-                    {menuItems.map(({ title, link, permissions }, index) => (
+                    {menuItems.map<JSX.Element>(({ title, link, permissions }, index) => (
                         <div className={`menu-link ${activeUrl === link && 'active-link'}`} key={index.toString()}>
                             <a onClick={this.handleMenuClick.bind(this, link)} >
                                 {title}
@@ -104,7 +123,8 @@ class Menu extends React.PureComponent {
         );
     }
 
-    handleMenuClick = (link) => {
+    // Handle Menu Link click
+    handleMenuClick = (link: string): void => {
         const { openModal } = this.props;
         if (link === '/contact') {
             openModal();
@@ -113,14 +133,9 @@ class Menu extends React.PureComponent {
             this.forceUpdate();
         }
     };
-
-    logout = () => {
-        logOut();
-        this.setState({ showLogout: false });
-    }
 }
 
-export default compose(
+export default compose<React.ComponentType<Props>>(
     withRouter,
     withUser({}),
     withMobile({}),

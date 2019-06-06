@@ -1,26 +1,44 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import * as React from 'react';
+
+// Router
+import { Link, withRouter,  RouteComponentProps } from 'react-router-dom';
 
 // Redux
 import { compose } from 'redux';
 
-//HOC
+// HOC
 import withMobile from '../../hoc/withMobile';
 
-//Antd
+// AntD
 import Icon from 'antd/lib/icon';
 
 //Styles
 import './mobile-navigation.css';
 
+interface MenuItem {
+    title: string
+    icon: string
+    labelComponent: JSX.Element
+    link: string
+}
 
-//Menu Items
-const iconStyles = {
+interface ReduxProps {
+    isMobile: boolean
+
+}
+
+interface State {
+    activeLink: string
+}
+
+// Local variables
+const iconStyles: {[key:string]: string} = {
     fontSize: '25px',
     color: '#fff',
 };
 
-const navigationItems = [
+// Menu Items
+const navigationItems: MenuItem[] = [
     {
         title: 'Home',
         icon: 'home',
@@ -71,7 +89,7 @@ const navigationItems = [
     },
 ];
 
-class MobileNavigation extends React.PureComponent {
+class MobileNavigation extends React.PureComponent<ReduxProps & RouteComponentProps, State> {
     state = {
         activeLink: '/',
     };
@@ -82,10 +100,10 @@ class MobileNavigation extends React.PureComponent {
         return (
             <div className='mobile-navigation-container shadow' style={{ bottom: isMobile ? 0 : -110 }}>
                 <div className='mobile-navigation-wrapper'>
-                    {navigationItems.map(({ title, icon, link }, index) => {
+                    {navigationItems.map<JSX.Element>(({ title, icon, link }, index) => {
                         const hasBorder = index !== navigationItems.length - 1 ? 'has-border' : '';
                         const active = activeLink === link ? 'active' : '';
-                        const iconStyles = {
+                        const iconStyles: {[key:string]: string} = {
                             fontSize: '25px',
                             color: active ? '#5f5f5f' : 'lightgray',
                             marginTop: '15px',
@@ -117,11 +135,11 @@ class MobileNavigation extends React.PureComponent {
         this.setState({ activeLink: history.location.pathname });
     }
 
-    handleClick = (activeLink) => this.setState({ activeLink });
+    handleClick = (activeLink: string): void => this.setState({ activeLink });
 }
 
 
-export default compose (
+export default compose<React.ComponentType<ReduxProps & RouteComponentProps>>(
     withMobile({}),
     withRouter,
 )(MobileNavigation);

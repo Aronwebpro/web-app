@@ -1,17 +1,27 @@
-import React from 'react';
+import * as React from 'react';
 
-//Redux
+// Redux
 import { compose } from 'redux';
 
-//HOC
-import withMobile from '/imports/ui/hoc/withMobile';
+// HOC
+import withMobile from 'imports/ui/hoc/withMobile';
 
 //Styles
 import './hero-image.css';
 
+// Local variables
 const initYPosition = 220;
 
-class HeroImage extends React.PureComponent {
+// @types
+interface ReduxProps {
+    isMobile: boolean
+}
+
+interface State {
+    backgroundPositionY: number
+}
+
+class HeroImage extends React.PureComponent<ReduxProps, State> {
     state = {
         backgroundPositionY: this.props.isMobile ? 0 : -(initYPosition),
     };
@@ -41,7 +51,7 @@ class HeroImage extends React.PureComponent {
         }
     }
 
-    imageMove = () => {
+    imageMove = (): void => {
         const { isMobile } = this.props;
         if (window.scrollY < 440) {
             if (isMobile) {

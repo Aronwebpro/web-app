@@ -1,15 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
 // Api
-import { logOut } from '/imports/api/logout';
+import { logOut } from 'imports/api/logout';
 
 // Styles
 import './login.css';
 
-export default class DesktopLoginView extends React.PureComponent {
+// @types
+interface Props {
+    handleLinkedInLogin: () => void
+    loginWithEmail: () => void
+    user: User
+
+}
+
+interface State {
+    showLogout: boolean
+}
+
+export default class DesktopLoginView extends React.PureComponent<Props, State> {
     static propTypes = {
+        user: PropTypes.object,
         handleLinkedInLogin: PropTypes.func.isRequired,
         loginWithEmail: PropTypes.func.isRequired,
     };
@@ -89,12 +101,14 @@ export default class DesktopLoginView extends React.PureComponent {
         );
     }
 
-    handleAvatarClick = () => {
+    // Show Logout button on user avatar click
+    handleAvatarClick = (): void => {
         const currentState = this.state.showLogout;
         this.setState({ showLogout: !currentState });
     };
 
-    logout = () => {
+    // Logout user
+    logout = (): void => {
         logOut();
         this.setState({ showLogout: false });
     }

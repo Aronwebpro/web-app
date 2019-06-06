@@ -1,18 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
-//Redux
+// Redux
 import { compose } from 'redux';
 
-//HOC
-import withMobile  from '/imports/ui/hoc/withMobile';
+// HOC
+import withMobile  from 'imports/ui/hoc/withMobile';
 
-//Components
+// Components
 import ResponsiveTableDesktop from './ResponsiveTableDesktop';
 import ResponsiveTableMobile from './ResponsiveTableMobile';
 
-
-class ResponsiveTable extends React.Component {
+interface ReduxProps {
+    isMobile: boolean
+}
+class ResponsiveTable extends React.Component<ReduxProps, {}> {
     static propTypes = {
         isMobile: PropTypes.bool,
     };

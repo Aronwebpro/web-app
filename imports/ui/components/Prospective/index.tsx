@@ -1,14 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 
 //Constants
 import {
     workingImages,
     studyingImages,
     goingImages,
-} from '/imports/lib/constants/prospectiveComponent';
+} from 'imports/lib/constants/prospectiveComponent';
 
 //Components
-import AnimatedImagesCircle from '/imports/ui/components/AnimatedImagesCircle';
+import AnimatedImagesCircle from 'imports/ui/components/AnimatedImagesCircle';
 
 //Styles
 import './prospective.css';

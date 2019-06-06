@@ -1,10 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
 // Styles
 import './arrow.css';
 
-export default class Arrow extends React.PureComponent {
+interface Props {
+    state: string
+    color: string
+}
+
+export default class Arrow extends React.PureComponent<Props, {}> {
     static propTypes = {
         state: PropTypes.string.isRequired,
         color: PropTypes.string,

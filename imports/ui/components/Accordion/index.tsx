@@ -1,17 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
-//Components
-import Arrow from '/imports/ui/components/Arrow';
+// Components
+import Arrow from 'imports/ui/components/Arrow';
 
+// Styles
 import './accordion.css';
 
-export default class Accordion extends React.Component {
+// @types
+interface Props {
+    title: string | JSX.Element,
+    headerStyles: {
+        [key: string]: string
+    }
+    expandOnRender: boolean
+}
+
+interface State {
+    height: number
+}
+
+export default class Accordion extends React.Component<Props, State> {
     static propTypes = {
         title: PropTypes.object.isRequired,
         headerStyles: PropTypes.object,
         expandOnRender: PropTypes.bool,
     };
+
     static defaultProps = {
         headerStyles: {
             backgroundColor: 'transparent',
@@ -20,7 +35,8 @@ export default class Accordion extends React.Component {
         },
         expandOnRender: false,
     };
-    state = {
+
+    state: Readonly<State> = {
         height: 0,
     };
 
@@ -61,8 +77,9 @@ export default class Accordion extends React.Component {
         );
     }
 
-    titleHeader = React.createRef();
-    innerContent = React.createRef();
+    // Refs
+    titleHeader: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
+    innerContent: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
     componentDidMount() {
         const { expandOnRender } = this.props;
@@ -71,21 +88,13 @@ export default class Accordion extends React.Component {
         }
     }
 
-    //Expand Widget Header on Click
-    expand = () => {
+    // Show or Hide Content on Click
+    expand = (): void => {
         const currentHeight = this.state.height;
         if (currentHeight === 0) {
             this.setState({ height: this.innerContent.current.clientHeight + 10 });
         } else {
             this.setState({ height: 0 });
-        }
-    };
-
-    changeBtn = (position) => {
-        if (position === 'down') {
-            this.arrow.style.transform = 'rotateZ(-90deg) translate(7%, 40%)';
-        } else {
-            this.arrow.style.transform = 'rotateZ(0deg) translate(20%, 0%)';
         }
     };
 }

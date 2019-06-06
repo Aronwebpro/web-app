@@ -1,15 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
-//Constants
-import { otherSkillsRow1, otherSkillsRow2 } from '/imports/lib/constants/skillsDiagram';
+// Constants
+import { otherSkillsRow1, otherSkillsRow2 } from 'imports/lib/constants/skillsDiagram';
 
-//Styles
+// Styles
 import './other-skills.css';
 
 export default class OtherSkillsDiagram extends React.PureComponent {
-    static propTypes = {};
-
     render() {
         return (
             <>
@@ -42,7 +39,6 @@ export default class OtherSkillsDiagram extends React.PureComponent {
                     ))}
                 </div>
             </>
-
         );
     }
 }

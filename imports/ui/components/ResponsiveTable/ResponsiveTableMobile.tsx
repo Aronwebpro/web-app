@@ -1,9 +1,19 @@
-import React from 'react';
+import * as React from 'react';
+
+// Utils
+import { getObjectPropertyByStringRegex } from 'imports/lib/utils';
+
+// Columns
 import Accordion from '../Accordion';
-import { getObjectPropertyByStringRegex } from '../../../lib/utils';
+import { ResponsiveTableColumn } from './ResponsiveTableTypes';
 
+//@types
+interface Props {
+    data: any[]//TODO: Make generic
+    columns: ResponsiveTableColumn[]
+}
 
-export default class ResponsiveTableMobile extends React.PureComponent {
+export default class ResponsiveTableMobile extends React.PureComponent<Props, {}> {
     render() {
         const {
             data,
@@ -17,17 +27,17 @@ export default class ResponsiveTableMobile extends React.PureComponent {
         }
         return data.map((row, index) => (
             <Accordion
-                key={index.toString()}
-                title={<div>{headerColumns.map(column => this.renderColumn(column, row))}</div>}
+                key={`${index}`}
+                title={<div>{headerColumns.map<JSX.Element>(column => this.renderColumn(column, row))}</div>}
                 expandOnRender={!index}
             >
-                {hiddenColumns.map((column) => this.renderColumn(column, row))}
+                {hiddenColumns.map<JSX.Element>((column) => this.renderColumn(column, row))}
             </Accordion>
         ));
     }
 
-
-    renderColumn = ({ dataIndex, key, render, renderOnMobile, textAlign }, row) => {
+    // Render Table Columns
+    renderColumn = ({ dataIndex, key, render, renderOnMobile, textAlign }: ResponsiveTableColumn, row: any ) => {
         return (
             <div {...{ key }} className={`cell ${textAlign || ''} ${row.customClass || ''}`}>
                 {
@@ -42,7 +52,8 @@ export default class ResponsiveTableMobile extends React.PureComponent {
         );
     };
 
-    partitionColumns = (columns, key) => {
+    // Partition Columns into two groups by key, who has it and not
+    partitionColumns = (columns: ResponsiveTableColumn[], key: string): [ResponsiveTableColumn[], ResponsiveTableColumn[]] => {
         const columns1 = [];
         const columns2 = [];
         for (let i = 0; i < columns.length; i++) {

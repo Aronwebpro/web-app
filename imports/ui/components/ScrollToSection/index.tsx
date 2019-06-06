@@ -1,23 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
 // Redux
 import { compose } from 'redux';
 
 // HOC
-import withMobile from '../../hoc/withMobile';
+import withMobile from 'imports/ui/hoc/withMobile';
 
-//Styles
+// Styles
 import './scroll-to-section.css';
 
-class ScrollToSection extends React.Component {
+//@types
+interface ReduxProps {
+    isMobile: boolean
+}
+
+interface Props {
+    title: string
+    index: number
+}
+
+interface State {
+    isOpen: boolean
+    height: string
+    sticky: boolean
+
+}
+
+class ScrollToSection extends React.Component<Props & ReduxProps, State> {
     static propTypes = {
         title: PropTypes.string,
     };
     static defaultProps = {
         title: 'Header Title'
     };
-    state = {
+
+    state: Readonly<State> = {
         isOpen: true,
         height: '0px',
         sticky: false,
@@ -49,9 +67,9 @@ class ScrollToSection extends React.Component {
         );
     }
 
-    titleHeader = React.createRef();
+    titleHeader: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
-    innerContent = React.createRef();
+    innerContent: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
     componentDidMount() {
         window.addEventListener('scroll', this.onScroll);
@@ -61,7 +79,7 @@ class ScrollToSection extends React.Component {
         window.removeEventListener('scroll', this.onScroll);
     }
 
-    onScroll = () => {
+    onScroll = (): void => {
         const { index, isMobile } = this.props;
         if (!isMobile) {
             if ((this.innerContent.current.getBoundingClientRect().top + window.scrollY - 158 - (index * 50)) < (window.scrollY)) {
@@ -74,7 +92,7 @@ class ScrollToSection extends React.Component {
         }
     };
 
-    scrollTo = () => {
+    scrollTo = (): void => {
         const { index } = this.props;
         window.scrollTo({
             top: window.scrollY + this.innerContent.current.getBoundingClientRect().top - (150 + (index * 50)),

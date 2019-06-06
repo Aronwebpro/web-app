@@ -1,11 +1,25 @@
-import React from 'react';
+import * as React from 'react';
 
 //Styles
 import './portfolio-timeline.css';
 
-//Components
+interface TimeLineItemProps {
+    title: string
+    img: string
+    date: string
+    type: string
+    appType: string
+    appTypeColor: {
+        backgroundColor: string
+    }
+    render?: () => JSX.Element
+}
 
-class TimelineItem extends React.PureComponent {
+interface TimeLineProps {
+    data: any[]
+}
+
+class TimelineItem extends React.PureComponent<TimeLineItemProps, {}> {
     render() {
         const {
             title,
@@ -50,14 +64,14 @@ class TimelineItem extends React.PureComponent {
     }
 }
 
-export default class TimeLine extends React.Component {
+export default class TimeLine extends React.Component <TimeLineProps> {
     render() {
         const { data } = this.props;
         return (
             <section className="timeline">
                 <div className='timeline-container'>
                     {data.map((project, index) => (
-                        <TimelineItem {...project} key={index.toString()}/>
+                        <TimelineItem {...project} key={`${index}`}/>
                     ))}
                 </div>
             </section>

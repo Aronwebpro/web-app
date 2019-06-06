@@ -1,13 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
-//Utils
-import { getObjectPropertyByStringRegex } from '/imports/lib/utils';
+// Utils
+import { getObjectPropertyByStringRegex } from 'imports/lib/utils';
 
 //Styles
 import './responsiveTable.css';
 
-export default class ResponsiveTableDesktop extends React.PureComponent {
+//@types
+import { ResponsiveTableColumn } from './ResponsiveTableTypes';
+
+interface Props {
+    columns: ResponsiveTableColumn[]
+    data: any[]
+    bordered: boolean
+}
+
+export default class ResponsiveTableDesktop extends React.PureComponent<Props, {}> {
     static propTypes = {
         columns: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string.isRequired,
@@ -36,7 +45,7 @@ export default class ResponsiveTableDesktop extends React.PureComponent {
                 <table className={`res-table ${bordered && 'res-table-bordered'}`}>
                     <thead>
                         <tr>
-                            {columns.map(({ title }, index) => {
+                            {columns.map<JSX.Element>(({ title }, index) => {
                                 return (
                                     <th key={index.toString()}>
                                         {title}
@@ -46,10 +55,10 @@ export default class ResponsiveTableDesktop extends React.PureComponent {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.length > 0 && data.map((row, index) => {
+                        {data.length > 0 && data.map<JSX.Element>((row, index) => {
                             return (
-                                <tr key={index.toString()}>
-                                    {columns.map(({ dataIndex, key, render, textAlign }) => {
+                                <tr key={`${index}`}>
+                                    {columns.map<JSX.Element>(({ dataIndex, key, render, textAlign }) => {
                                         return (
                                             <td {...{ key }} className={`${textAlign || 'center'} ${row.customClass || ''}`}>
                                                 {

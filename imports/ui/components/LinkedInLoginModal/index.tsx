@@ -1,16 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
 // Router
 import { Link } from 'react-router-dom';
 
 // Components
-import Modal from '/imports/ui/components/Modal';
+import Modal from 'imports/ui/components/Modal';
 
 // Styles
 import './linkedin-login-modal.css';
 
-export default class LinkedInLoginModal extends React.PureComponent {
+//@types
+interface Props {
+    visible: string
+    close: () => void
+    login: () => void
+}
+
+export default class LinkedInLoginModal extends React.PureComponent<Props, {}> {
     static propTypes = {
         visible: PropTypes.bool.isRequired,
         close: PropTypes.func.isRequired,

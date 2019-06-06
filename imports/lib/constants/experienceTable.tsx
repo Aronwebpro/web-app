@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const resumeTableColumns = [
     {
@@ -82,6 +82,24 @@ const resumeTableColumns = [
         )
     },
 ];
+
+export interface ResumeTableDataType {
+    year: {
+        start: string
+        end: string
+    }
+    position: string
+    company: {
+        title: string
+        img: string
+    }
+    website: {
+        title: string
+        link: string
+    }
+    responsibilities: string[]
+    customClass?: string
+}
 
 const resumeTableData = [
     {

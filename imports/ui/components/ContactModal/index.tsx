@@ -1,13 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
-//Components
-import Modal from '/imports/ui/components/Modal';
+// Components
+import Modal from 'imports/ui/components/Modal';
 
-//Styles
+// Styles
 import './contact-modal.css';
 
-export default class ContactModal extends React.PureComponent {
+interface Props {
+    visible: boolean
+    onClose: () => void
+}
+
+export default class ContactModal extends React.PureComponent<Props, {}> {
     static propTypes = {
         visible: PropTypes.bool.isRequired,
         onClose: PropTypes.func.isRequired,
@@ -38,5 +43,4 @@ export default class ContactModal extends React.PureComponent {
             </Modal>
         );
     }
-
 }

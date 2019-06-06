@@ -1,19 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
 // Router
 import { Link } from 'react-router-dom';
 
 // Components
-import Modal from '/imports/ui/components/Modal';
+import Modal from 'imports/ui/components/Modal';
 
 // Styles
 import './mobile-login-modal.css';
 
-export default class MobileLoginModal extends React.PureComponent {
+//@types
+
+interface Props {
+    visible: boolean
+    onClose: () => void
+    loginLinkedIn: () => void
+    loginWithEmail: () => void
+
+}
+export default class MobileLoginModal extends React.PureComponent<Props, {}> {
     static propTypes = {
         visible: PropTypes.bool.isRequired,
         onClose: PropTypes.func.isRequired,
+        loginWithEmail: PropTypes.func.isRequired,
+        loginLinkedIn: PropTypes.func.isRequired,
     };
 
     render() {
