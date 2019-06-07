@@ -10,7 +10,7 @@ import './accordion.css';
 // @types
 interface Props {
     title: string | JSX.Element,
-    headerStyles: {
+    headerStyles?: {
         [key: string]: string
     }
     expandOnRender: boolean

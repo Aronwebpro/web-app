@@ -27,7 +27,6 @@ export default class ResponsiveTableMobile extends React.PureComponent<Props, {}
         }
         return data.map((row, index) => (
             <Accordion
-                key={`${index}`}
                 title={<div>{headerColumns.map<JSX.Element>(column => this.renderColumn(column, row))}</div>}
                 expandOnRender={!index}
             >

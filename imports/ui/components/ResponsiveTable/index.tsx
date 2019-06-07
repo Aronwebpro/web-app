@@ -14,6 +14,7 @@ import ResponsiveTableMobile from './ResponsiveTableMobile';
 interface ReduxProps {
     isMobile: boolean
 }
+
 class ResponsiveTable extends React.Component<ReduxProps, {}> {
     static propTypes = {
         isMobile: PropTypes.bool,
