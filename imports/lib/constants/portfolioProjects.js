@@ -10,7 +10,7 @@ const portfolioProjects = [
                 img: '/img/projects/vanee-project.png',
                 type: 'Work',
                 appType: 'Web Application',
-                appTypeColor: { backgroundColor: '#fed656' },
+                appTypeColor: { backgroundColor: '#b0d1b6' },
                 url: '',
                 description: '',
                 render: () => (
