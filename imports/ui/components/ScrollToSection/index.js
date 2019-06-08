@@ -54,11 +54,11 @@ class ScrollToSection extends React.Component {
     innerContent = React.createRef();
 
     componentDidMount() {
-        window.addEventListener('scroll', this.onScroll);
+        //window.addEventListener('scroll', this.onScroll);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScroll);
+        //window.removeEventListener('scroll', this.onScroll);
     }
 
     onScroll = () => {
