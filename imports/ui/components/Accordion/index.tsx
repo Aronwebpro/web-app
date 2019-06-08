@@ -6,14 +6,16 @@ import Arrow from 'imports/ui/components/Arrow';
 
 // Styles
 import './accordion.css';
+import { ReactNode } from 'react';
 
 // @types
 interface Props {
-    title: string | JSX.Element,
+    title: string | JSX.Element | JSX.Element[] ,
     headerStyles?: {
         [key: string]: string
     }
     expandOnRender: boolean
+    children?: JSX.Element[]
 }
 
 interface State {

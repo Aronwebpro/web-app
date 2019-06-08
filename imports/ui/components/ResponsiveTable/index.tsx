@@ -15,7 +15,7 @@ interface ReduxProps {
     isMobile: boolean
 }
 
-class ResponsiveTable extends React.Component<ReduxProps, {}> {
+class ResponsiveTable extends React.Component<ReduxProps & ResponsiveTableMobile['props'] & ResponsiveTableDesktop['props'], {}> {
     static propTypes = {
         isMobile: PropTypes.bool,
     };

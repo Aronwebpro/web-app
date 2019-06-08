@@ -11,8 +11,8 @@ import { loginEmail, loginLinkedIn } from '/imports/api/login';
 import { logOut } from '../../../api/logout';
 
 // Hoc
-import withUser from '../../hoc/withUser';
-import withMobile from '../../hoc/withMobile';
+import withUser from '/imports/ui/hoc/withUser';
+import withMobile from '/imports/ui/hoc/withMobile';
 
 // Components
 import Message from '../../components/Message';

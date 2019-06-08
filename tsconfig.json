@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["es6", "dom", "es7"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -13,7 +13,10 @@
     "strictNullChecks": false,
     "experimentalDecorators": true,
     "declaration": true,
-    "typeRoots": ["node_modules/@types/", "typings/"]
+    "typeRoots": ["node_modules/@types/", "typings/"],
+    "paths": {
+      "*": ["*"]
+    }
   },
   "include": [
     "client/**/*",
