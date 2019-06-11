@@ -135,7 +135,7 @@ class Menu extends React.PureComponent<Props & ReduxProps & RouteComponentProps,
     };
 }
 
-export default compose<React.ComponentType<Props>>(
+export default compose<React.ComponentType>(
     withRouter,
     withUser({}),
     withMobile({}),

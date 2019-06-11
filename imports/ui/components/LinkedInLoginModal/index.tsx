@@ -17,7 +17,7 @@ interface Props {
     login: () => void
 }
 
-export default class LinkedInLoginModal extends React.PureComponent<Props, {}> {
+export default class LinkedInLoginModal extends React.PureComponent<any, {}> {
     static propTypes = {
         visible: PropTypes.bool.isRequired,
         close: PropTypes.func.isRequired,

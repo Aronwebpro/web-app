@@ -1,14 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 
 //Styles
 import './portfolio.css';
 
 //Constants
-import { portfolioProjects } from '/imports/lib/constants/portfolioProjects';
+import { portfolioProjects } from 'imports/lib/constants/portfolioProjects';
 
 //Components
-import ScrollToSection from "/imports/ui/components/ScrollToSection";
-import TimeLine from "/imports/ui/components/TimeLine";
+import ScrollToSection from "imports/ui/components/ScrollToSection/index.tsx";
+import TimeLine from "imports/ui/components/TimeLine";
 
 class Portfolio extends React.Component {
     render() {

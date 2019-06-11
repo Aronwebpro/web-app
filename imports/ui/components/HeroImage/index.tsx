@@ -27,12 +27,14 @@ class HeroImage extends React.PureComponent<ReduxProps, State> {
     };
 
     render() {
-        let { backgroundPositionY } = this.state;
+        let {backgroundPositionY} = this.state;
         return (
-            <div
-                className='hero-image-container'
-                style={{ backgroundPositionY }}
-            />
+            <>
+                <div
+                    className='hero-image-container'
+                    style={{backgroundPositionY}}
+                />
+            </>
         );
     }
 
@@ -46,18 +48,18 @@ class HeroImage extends React.PureComponent<ReduxProps, State> {
 
     componentDidUpdate(prevProps) {
         if (prevProps.isMobile !== this.props.isMobile) {
-            const { backgroundPositionY } = this.state;
-            this.setState({ backgroundPositionY: this.props.isMobile ? backgroundPositionY : backgroundPositionY / 2 });
+            const {backgroundPositionY} = this.state;
+            this.setState({backgroundPositionY: this.props.isMobile ? backgroundPositionY : backgroundPositionY / 2});
         }
     }
 
     imageMove = (): void => {
-        const { isMobile } = this.props;
+        const {isMobile} = this.props;
         if (window.scrollY < 440) {
             if (isMobile) {
-                this.setState({ backgroundPositionY: ((window.scrollY * -1.2)) });
+                this.setState({backgroundPositionY: ((window.scrollY * -1.2))});
             } else {
-                this.setState({ backgroundPositionY: ((window.scrollY * -1.6) - initYPosition) });
+                this.setState({backgroundPositionY: ((window.scrollY * -1.6) - initYPosition)});
             }
 
         }

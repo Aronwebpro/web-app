@@ -19,7 +19,7 @@ interface Props {
     loginWithEmail: () => void
 
 }
-export default class MobileLoginModal extends React.PureComponent<Props, {}> {
+export default class MobileLoginModal extends React.PureComponent<any, {}> {
     static propTypes = {
         visible: PropTypes.bool.isRequired,
         onClose: PropTypes.func.isRequired,

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 //Router
 import {
@@ -13,13 +13,13 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 //Redux
 import { Provider } from 'react-redux';
-import store from '/imports/redux/store';
+import store from 'imports/redux/store';
 import { changeIsMobile, setUser } from '../redux/actions';
 
 //Components
 import AuthenticatedRoute from './AuthenticatedRoute';
-import ContactModal from '/imports/ui/components/ContactModal';
-import MobileNavigation from '/imports/ui/components/MobileNavigation';
+import ContactModal from 'imports/ui/components/ContactModal';
+import MobileNavigation from 'imports/ui/components/MobileNavigation';
 
 //Template
 import PageLayout from './template/PageLayout';
@@ -30,7 +30,7 @@ import Footer from '../ui/template/Footer';
 import { logOut } from '../api/logout';
 
 //Theme Styles
-import '/imports/assets/css/theme.css';
+// import 'imports/assets/css/theme.css';
 
 
 //Page Components
@@ -83,8 +83,14 @@ const ServicesTermsPage = PageLayout({
     SideBarComponent: null,
 });
 
+type State = {
+    contactsModalVisible: boolean
+}
 
-class App extends React.Component {
+type MeteorDataProps = {
+    user?: any
+}
+class App extends React.Component<{}, State> {
     constructor(props) {
         super(props);
         store.dispatch(changeIsMobile(window.innerWidth < 600));
@@ -147,7 +153,7 @@ class App extends React.Component {
 
 // UserMeteor Data
 // Set Redux state
-const getData = () => {
+const getData = (): MeteorDataProps => {
     const userObj = Meteor.user();
     const user = userObj && {
         email: userObj.profile.email,

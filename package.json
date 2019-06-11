@@ -21,6 +21,7 @@
     "bcrypt": "^3.0.6",
     "d3": "^5.9.2",
     "hoist-non-react-statics": "^3.3.0",
+    "imports": "^1.0.0",
     "indexof": "0.0.1",
     "jsonwebtoken": "^8.5.1",
     "less": "^3.9.0",

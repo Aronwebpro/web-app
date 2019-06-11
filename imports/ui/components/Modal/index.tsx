@@ -1,11 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import PropTypes = require('prop-types');
 
 //Styles
 import './modal.css';
 
+type Props = {
+    visible: boolean
+    header: any
+    footer: any
+    title: any
+    onClose: () => void
+    okText: string
+    width: string
+    maxWidth: string
+}
 
-export default class Modal extends React.PureComponent {
+type State = {
+    top: string
+}
+
+export default class Modal extends React.PureComponent<any, any> {
     static propTypes = {
         visible: PropTypes.bool.isRequired,
         title: PropTypes.string,

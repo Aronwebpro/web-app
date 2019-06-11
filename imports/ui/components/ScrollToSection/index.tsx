@@ -27,7 +27,7 @@ interface State {
 
 }
 
-class ScrollToSection extends React.Component<Props & ReduxProps, State> {
+class ScrollToSection extends React.Component<any, any> {
     static propTypes = {
         title: PropTypes.string,
     };

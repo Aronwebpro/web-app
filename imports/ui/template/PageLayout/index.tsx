@@ -1,12 +1,19 @@
-import React  from 'react';
+import * as React  from 'react';
 
 //Components
-import HeroImage from '/imports/ui/components/HeroImage';
+import HeroImage from 'imports/ui/components/HeroImage';
 
-const PageLayout = ({ PageComponent, SideBarComponent, pageId, layout }) => {
+type Props = {
+    PageComponent: React.ComponentType
+    SideBarComponent: React.ComponentType<{page: string}>
+    pageId: string
+    layout: string
+}
+
+const PageLayout = ({ PageComponent, SideBarComponent, pageId, layout }: Props) => {
     switch (layout) {
         case 'withSidebar' :
-            return class extends React.Component {
+            return class extends React.Component<Props, {}> {
                 render() {
                     return (
                         <div id={pageId ? `${pageId}` : 'page'} className="page-container">

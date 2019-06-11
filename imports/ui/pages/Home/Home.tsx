@@ -1,4 +1,4 @@
-import React from 'react';
+import * as  React from 'react';
 
 //Style
 import './home.css';
@@ -42,6 +42,8 @@ class Home extends React.Component {
             </div>
         );
     }
+
+    private isUnmounted: boolean = false;
 
     componentDidMount() {
         //Scroll Page to Top on Start
