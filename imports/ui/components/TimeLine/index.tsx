@@ -52,11 +52,11 @@ class TimelineItem extends React.PureComponent<TimeLineItemProps, {}> {
                         <div className='timeline-card-description'>
                             {render && render()}
                         </div>
-                        <div className='timeline-card-button-container'>
-                            <button className='btn'>
-                                More
-                            </button>
-                        </div>
+                        {/*<div className='timeline-card-button-container'>*/}
+                            {/*<button className='btn'>*/}
+                                {/*More*/}
+                            {/*</button>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>

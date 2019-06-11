@@ -72,11 +72,11 @@ class ScrollToSection extends React.Component<Props & ReduxProps, State> {
     innerContent: React.RefObject<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
     componentDidMount() {
-        window.addEventListener('scroll', this.onScroll);
+        //window.addEventListener('scroll', this.onScroll);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScroll);
+        //window.removeEventListener('scroll', this.onScroll);
     }
 
     onScroll = (): void => {
