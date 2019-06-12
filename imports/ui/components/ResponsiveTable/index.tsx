@@ -5,25 +5,17 @@ import PropTypes = require('prop-types');
 import { compose } from 'redux';
 
 // HOC
-import withMobile  from 'imports/ui/hoc/withMobile';
+import withMobile, { WithMobileProps } from 'imports/ui/hoc/withMobile';
 
 // Components
 import ResponsiveTableDesktop from './ResponsiveTableDesktop';
 import ResponsiveTableMobile from './ResponsiveTableMobile';
 
-interface ReduxProps {
-    isMobile: boolean
-}
+// @types
+type Props = ResponsiveTableDesktop['props'] &
+    ResponsiveTableMobile['props'] & {}
 
-class ResponsiveTable extends React.Component<ReduxProps, {}> {
-    static propTypes = {
-        isMobile: PropTypes.bool,
-    };
-
-    static defaultProps = {
-        isMobile: false,
-    };
-
+class ResponsiveTable extends React.Component<Props & WithMobileProps, {}> {
     render() {
         const { isMobile } = this.props;
         return isMobile ? (
@@ -34,6 +26,6 @@ class ResponsiveTable extends React.Component<ReduxProps, {}> {
     }
 }
 
-export default compose(
+export default compose<React.ComponentType<Props>>(
     withMobile({})
 )(ResponsiveTable);

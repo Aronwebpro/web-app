@@ -19,17 +19,7 @@ export default class GetSocial extends React.PureComponent {
                                 </a>
                             </div>
                             <div className="get-social-column section-column">
-                                <a href="https://www.codewars.com/users/Aronwebpro" target="_blank">
-                                    <img
-                                        id="codewars-img"
-                                        src="https://www.codewars.com/users/Aronwebpro/badges/large"
-                                        alt="Code Wars"
-                                    />
-                                    <h3>Code Wars</h3>
-                                </a>
-                            </div>
-                            <div className="get-social-column section-column">
-                                <a href="https://github.com/Aronwebpro/" target="_blank">
+                                <a href="https://github.com" target="_blank">
                                     <img id="git-hub-img" src="/img/github-logo.png" alt="GitHub"/>
                                 </a>
                             </div>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-//Constants
+// Constants
 import {
     workingImages,
     studyingImages,
@@ -13,7 +13,7 @@ import AnimatedImagesCircle from 'imports/ui/components/AnimatedImagesCircle';
 //Styles
 import './prospective.css';
 
-export default class Prospective extends React.PureComponent {
+export default class Prospective extends React.PureComponent<{}, {}> {
     render() {
         return (
             <section className="prospective-body-section shadow">

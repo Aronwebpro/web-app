@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 //Router
 import {
@@ -13,13 +13,12 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 //Redux
 import { Provider } from 'react-redux';
-import store from '/imports/redux/store';
+import store from 'imports/redux/store';
 import { changeIsMobile, setUser } from '../redux/actions';
 
 //Components
-import AuthenticatedRoute from './AuthenticatedRoute';
-import ContactModal from '/imports/ui/components/ContactModal';
-import MobileNavigation from '/imports/ui/components/MobileNavigation';
+import ContactModal from 'imports/ui/components/ContactModal';
+import MobileNavigation from 'imports/ui/components/MobileNavigation';
 
 //Template
 import PageLayout from './template/PageLayout';
@@ -32,7 +31,6 @@ import { logOut } from '../api/logout';
 //Theme Styles
 import '/imports/assets/css/theme.css';
 
-
 //Page Components
 import Home from '../ui/pages/Home/Home';
 import Story from '../ui/pages/Story/Story';
@@ -40,6 +38,15 @@ import Portfolio from '../ui/pages/Portfolio/Portfolio';
 import Resume from '../ui/pages/Resume/Resume';
 import PrivacyPolicy from '../ui/pages/Documents/PrivacyPolicy';
 import ServicesTerms from '../ui/pages/Documents/ServicesTerms';
+
+// @types
+type MeteorProps = {
+    user: User
+}
+
+type State = {
+    contactsModalVisible: boolean
+}
 
 //Pages
 const HomePage = PageLayout({
@@ -84,7 +91,7 @@ const ServicesTermsPage = PageLayout({
 });
 
 
-class App extends React.Component {
+class App extends React.Component<MeteorProps, State> {
     constructor(props) {
         super(props);
         store.dispatch(changeIsMobile(window.innerWidth < 600));
@@ -100,9 +107,6 @@ class App extends React.Component {
                     <div>
                         <Header {...{ openModal: this.handleModalOpen }} />
                         <Switch>
-                            <Route path='/logout' render={logOut}/>
-                            {/*<Route path='/enroll-account/:token' render={({ match }) => <ManagePassword token={match && match.params && match.params.token} firstPassword={true}/>}/>*/}
-                            <AuthenticatedRoute path='/dashboard' render={() => <div>Hello Dashboard!</div>}/>
                             {/*Public Pages*/}
                             <Route path='/my-story' component={MyStoryPage}/>
                             <Route path='/portfolio' component={PortfolioPage}/>
@@ -133,7 +137,7 @@ class App extends React.Component {
         window.removeEventListener('resize', this.updateDimensions);
     }
 
-    updateDimensions = () => {
+    updateDimensions = (): void => {
         const currIsMobile = window.innerWidth < 600;
         const prevIsMobile = store.getState().isMobile;
         if (prevIsMobile !== currIsMobile) {
@@ -141,8 +145,8 @@ class App extends React.Component {
         }
     };
 
-    handleModalClose = () => this.setState({ contactsModalVisible: false });
-    handleModalOpen = () => this.setState({ contactsModalVisible: true });
+    handleModalClose = (): void => this.setState({ contactsModalVisible: false });
+    handleModalOpen = (): void => this.setState({ contactsModalVisible: true });
 }
 
 // UserMeteor Data

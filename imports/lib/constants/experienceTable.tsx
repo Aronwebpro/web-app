@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { ResponsiveTableColumn } from 'imports/ui/components/ResponsiveTable/ResponsiveTableTypes';
 
-const resumeTableColumns = [
+const resumeTableColumns: ResponsiveTableColumn[] = [
     {
         title: 'Years',
         dataIndex: 'year',
@@ -83,87 +84,23 @@ const resumeTableColumns = [
     },
 ];
 
-export interface ResumeTableDataType {
-    year: {
-        start: string
-        end: string
-    }
-    position: string
-    company: {
-        title: string
-        img: string
-    }
-    website: {
-        title: string
-        link: string
-    }
-    responsibilities: string[]
-    customClass?: string
-}
-
 const resumeTableData = [
     {
-        year: { start: '2018 April', end: 'Present' },
-        position: 'JavaScript Engineer',
-        company: { title: 'Plaidypus, Inc.', img: '/img/resume-companies/plaidypus-logo.png' },
-        website: { title: 'Click to Visit', link: 'https://www.plaidypus.com/' },
-        responsibilities: ['Develop Mobile/Web Apps from A to Z', 'REST APIs',  'Design apps architecture', 'Agile team work environment', 'Daily morning stand-ups'],
+        year: { start: '2012 April', end: 'Present' },
+        position: 'Software Developer',
+        company: { title: 'Microsoft, Inc.', img: 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31' },
+        website: { title: 'Click to Visit', link: 'https://www.microsoft.com/en-us/' },
+        responsibilities: ['Develop Mobile/Web Apps from A to Z', 'Design apps architecture', 'Agile team work environment', 'Daily morning stand-ups'],
         customClass: 'plaidypus'
     },
     {
-        year: { start: '2016 November', end: '2018 April' },
-        position: 'Front End Web developer',
-        company: { title: 'Dealer eProcess', img: '/img/resume-companies/DealerEProcess_logo.png' },
-        website: { title: 'Click to Visit', link: 'http://www.dealereprocess.com/' },
-        responsibilities: ['Create custom pages for clients', 'Database Management', 'Create JavaScript applications'],
+        year: { start: '2008 April', end: 'Present' },
+        position: 'Intern',
+        company: { title: 'Apple, Inc.', img: 'https://www.arabianbusiness.com/sites/default/files/styles/full_img/public/images/2017/01/17/apple-logo-rainbow.jpg' },
+        website: { title: 'Click to Visit', link: 'https://www.apple.com/' },
+        responsibilities: ['Develop Mobile/Web Apps from A to Z'],
+        customClass: 'plaidypus'
     },
-    {
-        year: { start: '2015 July', end: '2016 November' },
-        position: 'Web developer / Student',
-        company: { title: 'Independent Contractor', img: '' },
-        website: { title: '', link: '' },
-        responsibilities: ['Web Developing', 'CMS management', 'WordPress, Open Cart', 'Domain and server management with cPanel'],
-    },
-    {
-        year: { start: '2014 March', end: '2015 July' },
-        position: 'Sales Executive',
-        company: { title: 'JML-Group LTD', img: '/img/resume-companies/jml-logo.png' },
-        website: { title: 'Click to Visit', link: 'https://jml-group.ltd/' },
-        responsibilities: [
-            'Responsibility of lighting (LED) products sales.',
-            'Manage company\'s websites, SEO analysis, eShop strategy preparation and eShop website maintenance.',
-            'Making B2B sales of LED, Induction lighting products.',
-            'Market Analysis'
-        ],
-        customClass: 'jml'
-    },
-    {
-        year: { start: '2012 March', end: '2014 March' },
-        position: 'Sales Manager',
-        company: { title: 'JML-Group LTD', img: '/img/resume-companies/jml-logo.png' },
-        website: { title: 'Click to Visit', link: 'https://jml-group.ltd/' },
-        responsibilities: [
-            'Listening to customer requirements and presenting appropriately to make a sale.',
-            'Negotiating on price, costs, delivery and specifications with buyers to reach agreement.',
-            'Gathering market and customer information.',
-        ],
-        customClass: 'jml'
-    },
-    {
-        year: { start: '2008 August', end: '2010 September' },
-        position: 'Real Estate Manager',
-        company: { title: 'UAB "Egilis"', img: '/img/resume-companies/silas_logo.jpg' },
-        website: { title: 'Click to Visit', link: 'http://www.silas.lt/' },
-        responsibilities: ['Rent and Manage Real Estate properties for Super Market "Silas"'],
-    },
-
-    {
-        year: { start: '2007 July', end: '2008 August' },
-        position: 'Real Estate Broker',
-        company: { title: 'Ober-Haus LTD', img: '/img/resume-companies/oh-logo.png' },
-        website: { title: 'Click to Visit', link: 'http://www.ober-haus.lt/en/' },
-        responsibilities: ['Represent Commercial Real Estate to clients', 'Selling/Buying paperwork', 'Market Analysis'],
-    }
 ];
 
 export {

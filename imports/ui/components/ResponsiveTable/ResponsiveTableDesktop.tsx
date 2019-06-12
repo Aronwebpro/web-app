@@ -8,12 +8,10 @@ import { getObjectPropertyByStringRegex } from 'imports/lib/utils';
 import './responsiveTable.css';
 
 //@types
-import { ResponsiveTableColumn } from './ResponsiveTableTypes';
-
 interface Props {
-    columns: ResponsiveTableColumn[]
+    columns: any[]
     data: any[]
-    bordered: boolean
+    bordered?: boolean
 }
 
 export default class ResponsiveTableDesktop extends React.PureComponent<Props, {}> {

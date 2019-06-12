@@ -1,9 +1,18 @@
-import React  from 'react';
+import * as React  from 'react';
 
 //Components
-import HeroImage from '/imports/ui/components/HeroImage';
+import HeroImage from 'imports/ui/components/HeroImage';
 
-const PageLayout = ({ PageComponent, SideBarComponent, pageId, layout }) => {
+type PageLayoutArgsTypes = {
+    PageComponent: React.ComponentType
+    SideBarComponent?:  React.ComponentType<{page:string}>
+    pageId: string
+    layout: string
+}
+
+type PageLayoutType = (args: PageLayoutArgsTypes) => React.ComponentType
+
+const PageLayout: PageLayoutType = ({ PageComponent, SideBarComponent, pageId, layout }) => {
     switch (layout) {
         case 'withSidebar' :
             return class extends React.Component {

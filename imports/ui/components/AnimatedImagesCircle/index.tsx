@@ -11,49 +11,41 @@ import withMobile from 'imports/ui/hoc/withMobile';
 import './animated-images-circle.css';
 
 // @types
-interface Item {
-    img: string
-    text: string
-    length?: number
-    translatePosition?: string
-}
-
-interface CenterElStyles {
+type CenterElStyles = {
     opacity: number
     height?: string
     width?: string
 }
 
-interface TextStyles {
+type TextStyles = {
     fontSize?: string
     opacity?: number
 }
 
-interface ReduxProps {
+type ReduxProps = {
     isMobile: boolean
-
 }
 
-interface Props {
-    data: Item[]
+type Props =  {
+    data: ProspectiveDataItemType[]
     title: string
-
 }
 
-interface State {
+type State = {
     liStyles: { transform: string }[]
     centerElStyles: CenterElStyles
     textStyles: TextStyles
     loaded: boolean
-
 }
 
 class AnimatedImagesCircle extends React.Component<Props & ReduxProps, State> {
     static propTypes = {
         data: PropTypes.arrayOf(PropTypes.shape({
-            img: PropTypes.string,
-            text: PropTypes.string,
-        })),
+            img: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+            translatePosition: PropTypes.string,
+        })).isRequired,
         title: PropTypes.string.isRequired,
     };
 
@@ -141,10 +133,9 @@ class AnimatedImagesCircle extends React.Component<Props & ReduxProps, State> {
             }
             this.setState({ liStyles, centerElStyles, textStyles, loaded: true, });
         }
-
     }
 }
 
-export default compose(
+export default compose<React.ComponentType<Props>>(
     withMobile({}),
 )(AnimatedImagesCircle);

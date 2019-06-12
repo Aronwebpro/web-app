@@ -1,4 +1,23 @@
-const dataSet = {
+type BasicSkillsDiagram = {
+    name: string,
+    url: string,
+    img: string,
+}
+
+type SkillsDiagramItem = BasicSkillsDiagram & {
+    size: number
+    text?: string
+    color?: string
+    textColor?: string
+    strokeColor?: string
+    tooltip?: string
+}
+
+type DataSet = {
+    children: SkillsDiagramItem[],
+}
+
+const dataSet: DataSet = {
     children: [
         {
             name: 'JavaScript',
@@ -144,7 +163,7 @@ const dataSet = {
 };
 
 
-const otherSkillsRow1 = [
+const otherSkillsRow1: BasicSkillsDiagram[] = [
     {
         name: 'MySql',
         img: '/img/logos/mysql.png',
@@ -172,7 +191,7 @@ const otherSkillsRow1 = [
     },
 ];
 
-const otherSkillsRow2 = [
+const otherSkillsRow2: BasicSkillsDiagram[] = [
     {
         name: 'Robo 3t',
         img: '/img/logos/robo.png',

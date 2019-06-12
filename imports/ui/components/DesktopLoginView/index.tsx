@@ -6,11 +6,12 @@ import { logOut } from 'imports/api/logout';
 
 // Styles
 import './login.css';
+import { FormEvent } from 'react';
 
 // @types
 interface Props {
-    handleLinkedInLogin: () => void
-    loginWithEmail: () => void
+    handleLinkedInLogin: (e: any) => void
+    loginWithEmail: (e: FormEvent<HTMLFormElement>) => void
     user: User
 
 }

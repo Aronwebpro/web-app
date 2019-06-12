@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-const educationTableColumns = [
+const educationTableColumns: ResponsiveTableColumn[] = [
     {
         title: 'Years',
         dataIndex: 'year',
@@ -23,7 +23,7 @@ const educationTableColumns = [
         key: 'institute',
         render: ({ img }) => (
             <div className='center'>
-                <img src={img}/>
+                <img src={img} style={{width: '100%', maxWidth: '35px'}}/>
             </div>
         )
     },
@@ -50,11 +50,12 @@ const educationTableColumns = [
 
 const educationTableData = [
     {
-        year: '2004-2008 year',
-        degree: 'Bachelor',
-        institute: { img: '/img/resume-companies/ism-logo.png' },
-        link: { title: 'Website', link: 'https://ism.lt/en' },
-        occupation: 'Management and business administration studies',
+        year: '2000-2010 year',
+        degree: 'Master',
+        institute: { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Illinois_Fighting_Illini_logo.svg/1200px-Illinois_Fighting_Illini_logo.svg.png' },
+        link: { title: 'Website', link: 'https://illinois.edu/' },
+        occupation: 'Computer Sciences',
+        customClass: 'plaidypus'
     },
 ];
 

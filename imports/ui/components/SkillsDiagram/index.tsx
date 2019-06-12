@@ -1,25 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 import * as d3 from 'd3';
 
-//Redux
-import { compose } from 'redux';
-
-//HOC
-import withMobile from '/imports/ui/hoc/withMobile';
-
 //Constants
-import { dataSet } from '/imports/lib/constants/skillsDiagram';
+import { dataSet } from 'imports/lib/constants/skillsDiagram';
 
 //Styles
 import './skills-diagram.css';
 
-class SkillsDiagram extends React.Component {
+class SkillsDiagram extends React.Component<{}, {}> {
     render() {
         return (
             <div className='skills-diagram-container'>
-                <div className='skills-diagram-canvas'>
-
-                </div>
+                <div className='skills-diagram-canvas'/>
             </div>
         );
     }
@@ -33,7 +25,7 @@ class SkillsDiagram extends React.Component {
         window.removeEventListener('resize', this.drawChart);
     }
 
-    drawChart = () => {
+    drawChart = (): void => {
         //Canvas diameter
         const diameter = window.innerWidth > 1000 ?
             600 :
@@ -218,6 +210,4 @@ class SkillsDiagram extends React.Component {
     };
 }
 
-export default compose(
-    withMobile({})
-)(SkillsDiagram);
+export default SkillsDiagram;

@@ -12,7 +12,7 @@ import './linkedin-login-modal.css';
 
 //@types
 interface Props {
-    visible: string
+    visible: boolean
     close: () => void
     login: () => void
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 // Router
 import { Link } from 'react-router-dom';
@@ -7,24 +7,43 @@ import { Link } from 'react-router-dom';
 import { compose } from 'redux';
 
 // Api
-import { loginEmail, loginLinkedIn } from '/imports/api/login';
-import { logOut } from '../../../api/logout';
+import { loginEmail, loginLinkedIn } from 'imports/api/login';
+import { logOut } from 'imports/api/logout';
 
 // Hoc
-import withUser from '../../hoc/withUser';
-import withMobile from '../../hoc/withMobile';
+import withUser, { WithUserProps } from '../../hoc/withUser';
+import withMobile, { WithMobileProps } from '../../hoc/withMobile';
 
 // Components
-import Message from '../../components/Message';
-import Menu from '/imports/ui/components/Menu';
-import DesktopLoginView from '/imports/ui/components/DesktopLoginView';
-import LinkedInLoginModal from '/imports/ui/components/LinkedInLoginModal';
-import MobileLoginModal from '../../components/MobileLoginModal';
+import Message from 'imports/ui/components/Message';
+import Menu from 'imports/ui/components/Menu';
+import DesktopLoginView from 'imports/ui/components/DesktopLoginView';
+import LinkedInLoginModal from 'imports/ui/components/LinkedInLoginModal';
+import MobileLoginModal from 'imports/ui/components/MobileLoginModal';
 
 // Styles
 import './header.css';
+import { FormEvent } from 'react';
 
-class Header extends React.Component {
+type Props = {
+    openModal: () => void
+}
+
+type State = {
+    top: string
+    headerMobile: string
+    headerMobileInner: string
+    headerMobileInnerMarginTop: string
+    flashMessage: string
+    status: string
+    shake: string
+    hideHeader: boolean
+    linkedInLoginModalVisible: boolean
+    mobileLoginModalVisible: boolean
+    showLogout: boolean
+}
+
+class Header extends React.Component<Props & WithMobileProps & WithUserProps, State> {
     state = {
         top: '0px',
         headerMobile: '70px',
@@ -52,9 +71,13 @@ class Header extends React.Component {
             user,
             isMobile,
         } = this.props;
+
         return (
             <header style={{ top }}>
-                <div ref={(input) => this.loginRow = input} className="login-section">
+                <div
+                    ref={this.loginRow}
+                    className="login-section"
+                >
                     <DesktopLoginView
                         {...{ user }}
                         handleLinkedInLogin={this.openLinkedInLoginModal}
@@ -67,10 +90,10 @@ class Header extends React.Component {
                             <h1>
                                 <Link to='/' style={{ textDecoration: 'none' }}>
                                     {`{`}
-                                    <span style={{ color: '#ffdb4d' }}>{` I'm`}</span>
-                                    <span style={{ color: '#aae3f3' }}>{` Apps`}</span>
+                                    <span style={{ color: '#ffdb1d' }}>{` I'm`}</span>
+                                    <span style={{ color: '#aae2f3' }}>{` Apps`}</span>
                                     {isMobile && (<br/>)}
-                                    <span style={{ color: '#ec2720' }}>{` Brewer `}</span>
+                                    <span style={{ color: '#ec2920' }}>{` Brewer `}</span>
                                     {`}`}
                                 </Link>
                             </h1>
@@ -105,7 +128,7 @@ class Header extends React.Component {
         );
     }
 
-    loginRow = React.createRef();
+    private loginRow: React.RefObject<HTMLDivElement> = React.createRef();
 
     componentDidMount() {
         window.addEventListener('scroll', this.stickHeader);
@@ -128,7 +151,7 @@ class Header extends React.Component {
                 });
             } else {
                 this.setState({
-                    top: -(this.loginRow.clientHeight - 10) + 'px',
+                    top: -(this.loginRow.current.clientHeight - 10) + 'px',
                     hideHeader: window.scrollY > 100,
                 });
             }
@@ -143,8 +166,8 @@ class Header extends React.Component {
     };
 
     // LinkedIn Modal handlers
-    openLinkedInLoginModal = () => this.setState({ linkedInLoginModalVisible: true });
-    closeLinkedInLoginModal = () => this.setState({ linkedInLoginModalVisible: false });
+    openLinkedInLoginModal = (): void => this.setState({ linkedInLoginModalVisible: true });
+    closeLinkedInLoginModal = (): void => this.setState({ linkedInLoginModalVisible: false });
 
     // Login Handlers
     loginLinkedIn = () => {
@@ -155,7 +178,7 @@ class Header extends React.Component {
         loginLinkedIn(this.closeMobileLoginModal);
     };
 
-    loginWithEmail = (e) => {
+    loginWithEmail = (e: FormEvent<HTMLElement>): void => {
         e.preventDefault();
         const email = e.target[0].value;
         const password = e.target[1].value;
@@ -177,21 +200,21 @@ class Header extends React.Component {
         });
     };
 
-    logout = () => {
+    logout = (): void => {
         logOut();
         this.setState({ showLogout: false });
     };
 
     // Mobile Login Modal handlers
-    openMobileLoginModal = () => this.setState({ mobileLoginModalVisible: true });
-    closeMobileLoginModal = () => this.setState({ mobileLoginModalVisible: false });
+    openMobileLoginModal = (): void => this.setState({ mobileLoginModalVisible: true });
+    closeMobileLoginModal = (): void => this.setState({ mobileLoginModalVisible: false });
 
     // Handle Mobile Avatar click
-    handleAvatarClick = () => this.setState({ showLogout: !this.state.showLogout });
+    handleAvatarClick = (): void => this.setState({ showLogout: !this.state.showLogout });
 
 }
 
-export default compose(
+export default compose<React.ComponentType<Props>>(
     withUser({}),
     withMobile({}),
 )(Header);

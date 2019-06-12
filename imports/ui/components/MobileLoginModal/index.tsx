@@ -11,12 +11,13 @@ import Modal from 'imports/ui/components/Modal';
 import './mobile-login-modal.css';
 
 //@types
+import { FormEvent } from 'react';
 
 interface Props {
     visible: boolean
     onClose: () => void
     loginLinkedIn: () => void
-    loginWithEmail: () => void
+    loginWithEmail: (e: FormEvent<HTMLFormElement>) => void
 
 }
 export default class MobileLoginModal extends React.PureComponent<Props, {}> {

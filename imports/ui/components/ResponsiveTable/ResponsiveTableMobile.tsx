@@ -10,7 +10,8 @@ import { ResponsiveTableColumn } from './ResponsiveTableTypes';
 //@types
 interface Props {
     data: any[]//TODO: Make generic
-    columns: ResponsiveTableColumn[]
+    columns: any[]
+    bordered?: boolean
 }
 
 export default class ResponsiveTableMobile extends React.PureComponent<Props, {}> {

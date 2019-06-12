@@ -7,7 +7,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { compose } from 'redux';
 
 // HOC
-import withMobile from 'imports/ui/hoc/withMobile.js';
+import withMobile from 'imports/ui/hoc/withMobile';
 import withUser from '../../hoc/withUser.js';
 
 // Antd

@@ -1,17 +1,16 @@
-import React from 'react';
+import * as React from 'react';
 
 //Constants
-import { resumeTableColumns, resumeTableData } from '/imports/lib/constants/experienceTable';
-import { educationTableColumns, educationTableData } from '/imports/lib/constants/educationTable';
+import { resumeTableColumns, resumeTableData } from 'imports/lib/constants/experienceTable';
+import { educationTableColumns, educationTableData } from 'imports/lib/constants/educationTable';
 
 //Components
-import ResponsiveTable from '/imports/ui/components/ResponsiveTable';
-import SkillsDiagram from '/imports/ui/components/SkillsDiagram';
-import OtherSkillsDiagram from "../../components/OtherSkillsDiagram";
+import ResponsiveTable from 'imports/ui/components/ResponsiveTable';
+import SkillsDiagram from 'imports/ui/components/SkillsDiagram';
+import OtherSkillsDiagram from "imports/ui/components/OtherSkillsDiagram";
 
 //Styles
 import './resume.css';
-
 
 class Resume extends React.Component {
     render() {
@@ -42,7 +41,6 @@ class Resume extends React.Component {
                                     <ResponsiveTable
                                         columns={educationTableColumns}
                                         data={educationTableData}
-                                        bordered={false}
                                     />
                                 </div>
                             </div>
@@ -55,12 +53,6 @@ class Resume extends React.Component {
                                     <p className="skills-note">
                                         Each bubble represents years of experience combined with time I spend working with each technology every day.
                                     </p>
-                                    <SkillsDiagram />
-                                </div>
-                                <div className="resume-title">
-                                    <h2>Other skills</h2>
-                                </div>
-                                <div className="skills-body">
                                     <OtherSkillsDiagram />
                                 </div>
                             </div>

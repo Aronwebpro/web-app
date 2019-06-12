@@ -1,4 +1,4 @@
-const workingImages = [
+const workingImages: ProspectiveDataItemType[] = [
     {
         text: 'JavaScript',
         img: '/img/iam/javascript.png',
@@ -26,7 +26,7 @@ const workingImages = [
     },
 ];
 
-const studyingImages = [
+const studyingImages: ProspectiveDataItemType[]  = [
     {
         text: 'Computer Science',
         img: '/img/iam/cs.png',
@@ -48,7 +48,7 @@ const studyingImages = [
 
 ];
 
-const goingImages = [
+const goingImages: ProspectiveDataItemType[]  = [
     {
         text: 'Cyber Security Developer',
         img: '/img/iam/cyber_security.png',
