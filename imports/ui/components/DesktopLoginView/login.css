@@ -12,8 +12,7 @@
     display: block;
     height: 10px;
     width: 100%;
-    background: linear-gradient(90deg, #ffec29 0%, #fdca70 20%, #61dafb 60%, #ed7061 85%, #ec1919 95%);
-    /*background: linear-gradient(90deg, #ffba67 0%, #fdca70 20%, #bdbf6d 60%, #ed7061 85%, #7db5da 95%);*/
+    background: linear-gradient(90deg, #3aff62 0%, #495afd 20%, #fbe900 60%, #ed060b 85%, #ec1919 95%);
 }
 
 .login-wrapper {

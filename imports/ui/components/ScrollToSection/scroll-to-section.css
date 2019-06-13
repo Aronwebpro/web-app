@@ -2,33 +2,22 @@
 
 .scroll-to-wrapper {
     position: relative;
-    padding: 0;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
 }
 
 /* Header*/
-/*TODO: Temp disable*/
-/*.scroll-to-header {*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*padding: 10px 5px;*/
-    /*font-size: 1.5em;*/
-    /*cursor: pointer;*/
-    /*z-index: 2;*/
-    /*border-left: 1px dotted #a6d1bc;*/
-    /*border-right: 1px dotted #a6d1bc;*/
-/*}*/
-
 .scroll-to-header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 5px;
     font-size: 1.5em;
-    background-color: #1f2329;
+    cursor: pointer;
     z-index: 2;
+    border-left: 1px dotted #a6d1bc;
+    border-right: 1px dotted #a6d1bc;
 }
 
 .scroll-to-wrapper:last-of-type.scroll-to-sticky-header .scroll-to-header {
@@ -45,28 +34,19 @@
     background-color: #fff;
 }
 
-/*.scroll-to-header h3 {*/
-    /*margin: 10px 0 20px;*/
-    /*padding: 0;*/
-    /*width: 100%;*/
-    /*text-align: center;*/
-    /*border-bottom: 1px dotted #a6d1bc;*/
-    /*line-height: 0.1em;*/
-/*}*/
-
 .scroll-to-header h3 {
-    margin: 0;
-    padding: 15px;
+    margin: 10px 0 20px;
+    padding: 0;
     width: 100%;
     text-align: center;
+    border-bottom: 1px dotted #a6d1bc;
     line-height: 0.1em;
-    color: #ffffff;
 }
 
-/*.scroll-to-header h3 span {*/
-    /*background: #fff;*/
-    /*padding: 0 10px;*/
-/*}*/
+.scroll-to-header h3 span {
+    background: #fff;
+    padding: 0 10px;
+}
 
 /*Plus Icon */
 .plus-wrapper {

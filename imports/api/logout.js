@@ -7,12 +7,8 @@ import Message from '/imports/ui/components/Message';
  * Meteor Logout Handler
  * @returns React.Component -> Redirects to "/"
  */
-const logOut = () => {
+export const logOut = () => {
     Meteor.logout(() => {
         Message.success('successfully Logged out.');
     });
-};
-
-export {
-    logOut
 };

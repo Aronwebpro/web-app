@@ -106,8 +106,7 @@
     top: 8px;
     display: inline-block;
     padding: 10px;
-    /*background: #eb1917;*/
-    background: #711f26;
+    background: #eb1917;
     color: #FFFFFF;
 }
 
@@ -125,15 +124,14 @@
 .timeline-container:nth-child(odd) .timeline-item-container:nth-child(odd) .timeline-card::after {
     right: -27px;
     border-width: 20px 0 19px 28px;
-    /*border-color: transparent transparent transparent #eb1917;*/
-    border-color: transparent transparent transparent #711f26;
+    border-color: transparent transparent transparent #eb1917;
 }
 
 /*Right Date Arrow*/
 .timeline-container .timeline-item-container:nth-child(even) .timeline-card:after {
     left: -27px;
     border-width: 20px 28px 19px 0;
-    border-color: transparent #711f26 transparent transparent;
+    border-color: transparent #eb1917 transparent transparent;
 }
 
 /*Card Body */
@@ -248,7 +246,7 @@
         right: -27px;
         left: unset;
         border-width: 20px 0 19px 28px;
-        border-color: transparent transparent transparent #711f26;
+        border-color: transparent transparent transparent #eb1917;
     }
 }
 

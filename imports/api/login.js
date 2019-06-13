@@ -10,7 +10,7 @@ import Message from '/imports/ui/components/Message';
  * @param callback
  * @return Callback -> Function
  */
-const loginEmail = ({ email, password }, callback) => {
+export const loginEmail = ({ email, password }, callback) => {
     Meteor.loginWithPassword({ email }, password, (e, r) => {
         if (e) {
             Message.error('Incorrect Password or Email');
@@ -26,7 +26,7 @@ const loginEmail = ({ email, password }, callback) => {
 /**
  * Meteor Login With LinkedIn
  */
-const loginLinkedIn = (callBack) => {
+export const loginLinkedIn = (callBack) => {
     Meteor.loginWithLinkedIn({
         requestPermissions: ['r_liteprofile', 'r_emailaddress']
     }, (e) => {
@@ -44,9 +44,4 @@ const loginLinkedIn = (callBack) => {
             Message.success('Logged in Successfully.');
         }
     });
-};
-
-export {
-    loginEmail,
-    loginLinkedIn
 };
