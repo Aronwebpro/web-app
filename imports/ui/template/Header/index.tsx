@@ -8,7 +8,7 @@ import { compose } from 'redux';
 
 // Api
 import { loginEmail, loginLinkedIn } from 'imports/api/login';
-import { logOut } from 'imports/api/logout';
+import { logOut } from 'imports/api/logout.js';
 
 // Hoc
 import withUser, { WithUserProps } from '../../hoc/withUser';
