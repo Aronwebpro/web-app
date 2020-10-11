@@ -91,9 +91,8 @@ class Header extends React.Component<Props & WithMobileProps & WithUserProps, St
                                 <Link to='/' style={{ textDecoration: 'none' }}>
                                     {`{`}
                                     <span style={{ color: '#ffdb1d' }}>{` I'm`}</span>
-                                    <span style={{ color: '#aae2f3' }}>{` Apps`}</span>
+                                    <span style={{ color: '#aae2f3' }}>{` Developer `}</span>
                                     {isMobile && (<br/>)}
-                                    <span style={{ color: '#ec2920' }}>{` Brewer `}</span>
                                     {`}`}
                                 </Link>
                             </h1>
