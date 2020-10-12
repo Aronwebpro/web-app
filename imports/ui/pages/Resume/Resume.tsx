@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 //Constants
-import { resumeTableColumns, resumeTableData } from 'imports/lib/constants/experienceTable';
-import { educationTableColumns, educationTableData } from 'imports/lib/constants/educationTable';
+import { resumeTableColumns, resumeTableData } from 'imports/lib/data/experienceTable';
+import { educationTableColumns, educationTableData } from 'imports/lib/data/educationTable';
 
 //Components
 import ResponsiveTable from 'imports/ui/components/ResponsiveTable';

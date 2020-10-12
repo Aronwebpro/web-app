@@ -5,7 +5,7 @@ import {
     workingImages,
     studyingImages,
     goingImages,
-} from 'imports/lib/constants/prospectiveComponent';
+} from 'imports/lib/data/prospectiveComponent';
 
 //Components
 import AnimatedImagesCircle from 'imports/ui/components/AnimatedImagesCircle';

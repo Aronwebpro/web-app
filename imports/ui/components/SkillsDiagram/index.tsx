@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as d3 from 'd3';
 
 //Constants
-import { dataSet } from 'imports/lib/constants/skillsDiagram';
+import { dataSet } from 'imports/lib/data/skillsDiagram';
 
 //Styles
 import './skills-diagram.css';
