@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Constants
-import { otherSkillsRow1, otherSkillsRow2 } from 'imports/lib/constants/skillsDiagram';
+import { otherSkillsRow1, otherSkillsRow2 } from 'imports/lib/data/skillsDiagram';
 
 // Styles
 import './other-skills.css';

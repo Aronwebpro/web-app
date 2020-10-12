@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PropTypes = require('prop-types');
+import  * as PropTypes from 'prop-types';
 
 // Redux
 import { compose } from 'redux';
@@ -12,14 +12,14 @@ import './animated-images-circle.css';
 
 // @types
 type CenterElStyles = {
-    opacity: number
-    height?: string
-    width?: string
+    opacity: number;
+    height?: string;
+    width?: string;
 }
 
 type TextStyles = {
-    fontSize?: string
-    opacity?: number
+    fontSize?: string;
+    opacity?: number;
 }
 
 type ReduxProps = {
@@ -27,15 +27,15 @@ type ReduxProps = {
 }
 
 type Props =  {
-    data: ProspectiveDataItemType[]
-    title: string
+    data: ProspectiveDataItemType[];
+    title: string;
 }
 
 type State = {
-    liStyles: { transform: string }[]
-    centerElStyles: CenterElStyles
-    textStyles: TextStyles
-    loaded: boolean
+    liStyles: { transform: string }[];
+    centerElStyles: CenterElStyles;
+    textStyles: TextStyles;
+    loaded: boolean;
 }
 
 class AnimatedImagesCircle extends React.Component<Props & ReduxProps, State> {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 //Constants
-import { portfolioProjects } from 'imports/lib/constants/portfolioProjects';
+import { portfolioProjects } from 'imports/lib/data/portfolioProjects';
 
 //Styles
 import './portfolio.css';
