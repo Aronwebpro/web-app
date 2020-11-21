@@ -8,8 +8,8 @@ import Modal from 'imports/ui/components/Modal';
 import './contact-modal.css';
 
 interface Props {
-    visible: boolean
-    onClose: () => void
+    visible: boolean;
+    onClose: () => void;
 }
 
 export default class ContactModal extends React.PureComponent<Props, {}> {

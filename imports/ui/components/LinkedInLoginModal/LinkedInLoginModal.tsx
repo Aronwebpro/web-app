@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PropTypes = require('prop-types');
+import * as PropTypes from 'prop-types';
 
 // Router
 import { Link } from 'react-router-dom';
@@ -12,9 +12,9 @@ import './linkedin-login-modal.css';
 
 //@types
 interface Props {
-    visible: boolean
-    close: () => void
-    login: () => void
+    visible: boolean;
+    close: () => void;
+    login: () => void;
 }
 
 export default class LinkedInLoginModal extends React.PureComponent<Props, {}> {

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes = require('prop-types');
 
 // Redux
 import { compose } from 'redux';
