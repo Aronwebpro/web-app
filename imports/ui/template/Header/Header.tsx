@@ -30,17 +30,17 @@ type Props = {
 }
 
 type State = {
-    top: string
-    headerMobile: string
-    headerMobileInner: string
-    headerMobileInnerMarginTop: string
-    flashMessage: string
-    status: string
-    shake: string
-    hideHeader: boolean
-    linkedInLoginModalVisible: boolean
-    mobileLoginModalVisible: boolean
-    showLogout: boolean
+    top: string;
+    headerMobile: string;
+    headerMobileInner: string;
+    headerMobileInnerMarginTop: string;
+    flashMessage: string;
+    status: string;
+    shake: string;
+    hideHeader: boolean;
+    linkedInLoginModalVisible: boolean;
+    mobileLoginModalVisible: boolean;
+    showLogout: boolean;
 }
 
 class Header extends React.Component<Props & WithMobileProps & WithUserProps, State> {

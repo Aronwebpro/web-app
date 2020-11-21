@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PropTypes = require('prop-types');
+import * as PropTypes from 'prop-types';
 
 // Components
 import Modal from 'imports/ui/components/Modal';
@@ -8,8 +8,8 @@ import Modal from 'imports/ui/components/Modal';
 import './contact-modal.css';
 
 interface Props {
-    visible: boolean
-    onClose: () => void
+    visible: boolean;
+    onClose: () => void;
 }
 
 export default class ContactModal extends React.PureComponent<Props, {}> {

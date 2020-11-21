@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PropTypes = require('prop-types');
+import * as PropTypes from 'prop-types';
 
 // Components
 import Arrow from 'imports/ui/components/Arrow';

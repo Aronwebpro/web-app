@@ -1,12 +1,12 @@
 import * as React from 'react';
-import PropTypes = require('prop-types');
+import * as PropTypes from 'prop-types';
 
 // Styles
 import './arrow.css';
 
 interface Props {
-    state: string
-    color: string
+    state: string;
+    color: string;
 }
 
 export default class Arrow extends React.PureComponent<Props, {}> {
@@ -18,7 +18,7 @@ export default class Arrow extends React.PureComponent<Props, {}> {
         color: '#000',
     };
 
-    render() {
+    public render() {
         const { state, color } = this.props;
         return (
             <div className={`arrows ${state}`}>

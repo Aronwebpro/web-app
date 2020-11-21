@@ -1,2 +1,1 @@
-import AnimatedImageCircle from "./AnimatedImageCircle";
-export default AnimatedImageCircle;
+export { default } from "./AnimatedImageCircle";
